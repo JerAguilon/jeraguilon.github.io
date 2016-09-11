@@ -11,4 +11,16 @@ $(document).ready(function () {
              window.location.hash = target;
          });
      });
+
+    $('.content-area').each(function(i, obj) {
+
+        $(this).hide().fadeIn(3000);
+    });
+
+
+
  });
+
+
+
+

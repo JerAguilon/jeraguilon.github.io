@@ -1,7 +1,15 @@
 
 .img-circle {
     border-radius: 50%;
-    width:200px;
+    width:50%;
+}
+
+.info-box {
+    background-color:#d8d7d7;
+    height:100%;
+    margin:0;
+    border-radius:6px;
+    overflow:hidden;
 }
 
 .project {
@@ -9,6 +17,12 @@
 	
 }
 
+.project-text {
+}
+
+.links {
+    margin: 0 auto;
+}
 
 .jumbotron {
     background-color:#FFF !important; 
