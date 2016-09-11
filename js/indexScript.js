@@ -14,7 +14,7 @@ $(document).ready(function () {
 
     $('.content-area').each(function(i, obj) {
 
-        $(this).hide().fadeIn(3000);
+        $(this).hide().fadeIn(2000);
     });
 
 
