@@ -19,8 +19,8 @@
   	<body>
 
 
-		<nav class="navbar navbar-inverse">
-			<div class="container">
+		<nav class="navbar navbar-fixed-top navbar-inverse">
+			<div class="container-fluid">
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu">
 						<span class="sr-only">Toggle navigation</span>
@@ -32,10 +32,10 @@
 				</div>
 				<div class="collapse navbar-collapse" id="main-menu">
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="#about">About</a></l>
-						<li><a href="#experience">Experience</a>
+						<li><a href="#about">About</a></li>
+						<li><a href="#experience">Experience</a></li>
 						<li><a href="#portfolio">Portfolio</a></li>
-						<li><a href="#education"></a></li>
+						<li><a href="#education">Education</a></li>
 						<li><a href="#contact">Contact</a></li>
 						<li><a href="terminal.html">Top Secret</a></li>
 					</ul>
@@ -44,128 +44,203 @@
 		</nav>
 
 
-		<div id="about" class="container-fluid bg-3 text-center row-buffer">
-			<div class="jumbotron">
-				<img src="images/propic.jpg" class="img-circle">
-				  
-				<h1>About me</h1>
 
-				<div class="row">
-			  		<div class="col-sm-2">
-			  			
-			  		</div>
+		<div class="container">
+			<div class="row">
+				<div id="about" class="container-fluid col-md-8 bg-3 text-center">
+					<div class="jumbotron">
+						<h1>About me</h1>
+						<img src="images/propic.jpg" class="img-circle"><br><br>
+						<div class="row">
+					  			<p  class="intro" align="left">	
+						  			Currently I'm a second year in Georgia Tech's Computer Science program, set to graduate May 2018. I self-taught myself Java out of curiosity in high school and have been hooked since. <br>
+						  			<br>If I had to pick my favorite personal project, it's hands down my Icon-Based Asthma Action Plan, which I did for research out in Tech Square. As somebody who was constantly troubled by the disease, I find value in knowing that my work could measurably improve the lives of others around me. <br>
+						  			<br>I have a lot of uncommon interests, but my best "party trick" is the fact that by the time you finish reading this sentence, I could have solved an entire Rubik's Cube.
 
-			  		<div class="col-sm-8">
-			  			<p align="left">	
-				  			Currently I'm a second year in Georgia Tech's Computer Science program, set to graduate May 2018. I self-taught myself Java out of curiosity in high school and have been hooked since. <br>
-				  			<br>If I had to pick my favorite personal project, it's hands down my Icon-Based Asthma Action Plan, which I did for research out in Tech Square. As somebody who was constantly troubled by the disease, I find value in knowing that my work could measurably improve the lives of others around me. <br>
-				  			<br>I have a lot of uncommon interests, but my best "party trick" is the fact that by the time you finish reading this sentence, I could have solved an entire Rubik's Cube.
+						  		</p> <br>
+						  		<p><small>Download my resume</small></p>
 
-				  		</p> <br>
-				  		<p><small>Download my resume</small></p>
-
-				  		<a href="content/jeremyAguilonResume.pdf" target="_blank"><img src="images/document.png" style="width:60px"></a>
-			  		</div>
-			  		<div class="col-sm-2"></div>
-		  		</div>
-	  		</div>
-  		</div>
-
-		<div id="experience" class="container-fluid bg-3 text-center row-buffer">
-			<div class="jumbotron">
-				  
-				<h1>Experience</h1>
-				<div class="row">
-
-			  		<div class = "col-sm-4">
-			  			<img src="images/tsrb.jpg" style="width:50%">
-			  			<p>Researcher<br>Full stack developer</p>
-			  			<p>
-			  				Asthma is a chronic condition that afflicts 8.6% of all children, with a higher rate for those of low socioeconomic status. One of the most effective ways for parents to manage their childrens' asthma is through an Asthma Action Plan. Research has shown that icon-based plans have improved the health care management of those with lower reading comprehension. My role under <a href=http://www.cc.gatech.edu/people/rosa-arriaga>Dr. Rosa Arriaga</a> was to implement the backend of the IBAAP with the front end prototype. 
-			  			</p>
-
-			  		</div>
-
-			  		<div class = "col-sm-4">
-			  			<img src="images/vertafore.jpg" style="width:50%">
-			  			<p>Software Engineering Intern <br>Backend &amp Test</p>
-			  			<p>
-			  				This summer I had the opportunity to intern at Vertafore for the purpose of aiding them in developing insurance software to facilitate productivity. I helped integrate an array of cloud storage management solutions that are being implemented across all of the company's products. I also contributed to the initiative of providing high quality unit and end-to-end tests across the entire platform.
-			  			</p>
-
-			  		</div>
-			  		<div class = "col-sm-4">
-			  			<img src="images/coclogo.jpg" style="width:50%">
-			  			<p>Outreach Programming Teacher<br>Middle School Level</p>
-			  			<p>
-			  				The initiative of the Outreach Program at Georgia Tech is to facilitate computational learning in disadvantaged areas in Atlanta. As a tutor, I got to introduce middle schoolers to functional programming, a term I had never even heard of at their age. By working weekly with these kids, I really got to understand how accessible, enjoyable, and fulfilling programming can be for people of all walks of life.
-			  			</p>
-
+						  		<a href="content/jeremyAguilonResume.pdf" target="_blank"><img src="images/document.png" style="width:60px"></a>
+					  		<div class="col-md-2"></div>
+				  		</div>
 			  		</div>
 		  		</div>
-	  		</div>
-  		</div>
 
+		  		<div class="col-md-4">
+			  		<div class="jumbotron">
+							<h1>Tech Skills</h1>
+							<div class="row">
+						  			<h3>Java</h3>
+									<div class="progress">
+									  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="70"
+									  aria-valuemin="0" aria-valuemax="100" style="width:70%">
+									    <span class="sr-only">75% Complete</span>
+									  </div>
+									</div>
 
+									<h3>Git/GitHub</h3>
+									<div class="progress">
+									  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="65"
+									  aria-valuemin="0" aria-valuemax="100" style="width:65%">
+									    <span class="sr-only">65% Complete</span>
+									  </div>
+									</div>		
+						  			<h3>C#.NET</h3>
+									<div class="progress">
+									  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="65"
+									  aria-valuemin="0" aria-valuemax="100" style="width:65%">
+									    <span class="sr-only">65% Complete</span>
+									  </div>
+									</div>
+						  			<h3>HTML, CSS</h3>
+									<div class="progress">
+									  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60"
+									  aria-valuemin="0" aria-valuemax="100" style="width:60%">
+									    <span class="sr-only">60% Complete</span>
+									  </div>
+									</div>
+						  			<h3>JavaScript</h3>
+									<div class="progress">
+									  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="55"
+									  aria-valuemin="0" aria-valuemax="100" style="width:55%">
+									    <span class="sr-only">55% Complete</span>
+									  </div>
+									</div>	
 
-		  	
+						  			<h3>Python</h3>
+									<div class="progress">
+									  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="50"
+									  aria-valuemin="0" aria-valuemax="100" style="width:50%">
+									    <span class="sr-only">50% Complete</span>
+									  </div>
+									</div>									
+								</div>
+				  		</div>
+			  		</div>
+			</div>
 
-		<div id="portfolio" class="container-fluid bg-3 text-center row-buffer">
-			<div class="jumbotron">
-				  <div class="container text-center">
-				    <h1>Portfolio</h1>
-				  </div>
-		  	<div class="row">
-			    <div class="col-sm-4">
-			      <img src="images/ibaap.png" class="project img-circle">
-			      <p class="project-text">IBAAP <br>An icon-based, mobile-oriented asthma action plan that I developed as part of research under Dr. Arriaga. The goal is to aid disadvantaged families by making these plans easily understandable. Has full CRUD functionalities in order to track statistics of childrens' health.</p>
-			    </div>
-
-			    <div class="col-sm-4">
-			    	<img src="images/foobar.png" class="project img-circle">
-			      <p class="project-text">Google Foobar <br>A collection of my solutions, thought processes, and tests for the hacker challenges I did under a hidden search engine challenge given by Google. Topics include computational challenges behind cryptographic hashing, graph theory, counting, and complexity.</p>
-		      	</div>
-
-			    <div class="col-sm-4">
-			    	<img src="images/sprayandpray.png" class="project img-circle">
-			      <p class="project-text">Spray and Pray <br> A practice tool for the popular game <i>Counter-Strike: Global Offensive</i>, the most competitive shooter in the e-Sports industry and a personal pasttime of mine. Released on Reddit to 500 upvoting users who can now practice on the go without needing a powerful computer.</p>
-			    </div>
-		    </div>
 
 			<div class="row">
-			    <div class="col-sm-4">
-			      
-			    </div>
-
-			    <div class="col-sm-4">
-			    	<img src="images/water.jpg" class="project img-circle">
-			      <p class="project-text">Crowd Sourced Clean Water<br>An ongoing collaborative project that aims to provide a means for people to crowd source clean water to the 783 million people worldwide who do not have access to potable water.</p>
-		      	</div>
-
-			    <div class="col-sm-4">
-			    </div>
-		    </div>
-
-	    </div>
 
 
-		
+				<div id="experience" class="container-fluid bg-3 text-center">
+					<div class="jumbotron">
+						  
+						<h1>Experience</h1><br><br>
+						<div class="row">
 
-		<div id="contact" class="container-fluid bg-3 text-center row-buffer">
-			<div class="jumbotron">
-				  <div class="container text-center">
-				    <h1>Contact</h1>
-				  </div>
-		  	<div class="row"> 
-		  		<div class="col-sm-4"></div>
-		  		<div class="col-sm-4">
-		  			<p>E-mail: jeremy.aguilon@gatech.edu</p>
-		  			<p>LinkedIn: <a href="https://linkedin.com/in/jeraguilon">jeraguilon</a>
-		  			<p>GitHub: <a href="https://github.com/jeraguilon">jeraguilon</a>
+					  		<div class = "col-md-4 col-sm-12 col-xs-12">
+					  			<img src="images/gatech.jpg" style="width:35%" class="img-circle">
+					  			<p>TSRB Researcher<br>Full stack developer</p>
+					  			<p>
+					  				Asthma is a chronic condition that afflicts 8.6% of all children, with a higher rate for those of low socioeconomic status. One of the most effective ways for parents to manage their childrens' asthma is through an Asthma Action Plan. Research has shown that icon-based plans have improved the health care management of those with lower reading comprehension. My role under <a href=http://www.cc.gatech.edu/people/rosa-arriaga>Dr. Rosa Arriaga</a> was to implement the backend of the IBAAP with the front end prototype. 
+					  			</p>
+
+					  		</div>
+
+					  		<div class = "col-md-4 col-sm-12 col-xs-12">
+					  			<img src="images/vertafore.png" style="width:35%" class="img-circle">
+					  			<p>Software Engineering Intern <br>Backend &amp Test</p>
+					  			<p >
+					  				This summer I had the opportunity to intern at Vertafore for the purpose of aiding them in developing insurance software to facilitate productivity. I helped integrate an array of cloud storage management solutions that are being implemented across all of the company's products. I also contributed to the initiative of providing high quality unit and end-to-end tests across the entire platform.
+					  			</p>
+
+					  		</div>
+					  		<div class = "col-md-4 col-sm-12 col-xs-12">
+					  			<img src="images/gatech.jpg" style="width:35%" class="img-circle">
+					  			<p>CoC Outreach Program<br>Programming Teacher</p>
+					  			<p>
+					  				The initiative of the Outreach Program at Georgia Tech is to facilitate computational learning in disadvantaged areas in Atlanta. As a tutor, I got to introduce middle schoolers to functional programming, a term I had never even heard of at their age. By working weekly with these kids, I really got to understand how accessible, enjoyable, and fulfilling programming can be for people of all walks of life.
+					  			</p>
+
+					  		</div>
+				  		</div>
+			  		</div>
 		  		</div>
-	  			<div class="col-sm-4"></div>
-		  	</div>
-	    </div>
+
+  				<div id="portfolio" class="container-fluid bg-3 text-center">
+					<div class="jumbotron">
+					  	<div class="container text-center">
+					    	<h1>Portfolio</h1><br><br>
+					  	</div>
+					
+					  	<div class="row">
+						    <div class="col-md-4 col-sm-12 col-xs-12">					<img src="images/ibaap.png" class="img-circle">
+						      	<p class="project-text"><h3>IBAAP</h3> <br>An icon-based, mobile-oriented asthma action plan that I developed as part of research under Dr. Arriaga. The goal is to aid disadvantaged families by making these plans easily understandable. Has full CRUD functionalities in order to track statistics of childrens' health.</p>
+						    </div>
+
+						    <div class="col-md-4 col-sm-12 col-xs-12">
+						    	<img src="images/foobar.png" class="img-circle">
+						      	<p class="project-text"> <h3>Google Foobar</h3><br>A collection of my solutions, thought processes, and tests for the hacker challenges I did under a hidden search engine challenge given by Google. Topics include computational challenges behind cryptographic hashing, graph theory, counting, and complexity.</p>
+					      	</div>
+
+						    <div class="col-md-4 col-sm-12 col-xs-12">
+						    	<img src="images/sprayandpray.png" class="img-circle">
+						      	<p class="project-text"><h3>Spray and Pray</h3> <br> A practice tool for the popular game <i>Counter-Strike: Global Offensive</i>, the most competitive shooter in the e-Sports industry and a personal pasttime of mine. Released on Reddit to 500 upvoting users who can now practice on the go without needing a powerful computer.</p>
+						    </div>
+					    </div>
+
+						<div class="row">
+						    <div class="col-md-4">
+						      
+						    </div>
+
+						    <div class="col-md-4 col-sm-12 col-xs-12">
+						    	<img src="images/water.jpg" class="img-circle">
+						      <p class="project-text"><h3>Crowd Sourced Clean Water</h3><br>An ongoing collaborative project that aims to provide a means for people to crowd source clean water to the 783 million people worldwide who do not have access to potable water.</p>
+					      	</div>
+
+						    <div class="col-md-4">
+						    </div>
+					    </div>
+
+				    </div>
+				</div>
+		
+				<div id="education" class="container-fluid bg-3 text-center">
+					<div class="jumbotron">
+						  <div class="container text-center">
+						    <h1>Education</h1>
+						  </div><br><br>
+
+						<div class="row">
+							<div class="col-md-2"></div>
+							<div class="col-md-4">
+						    	<img src="images/gt.png" class="img-circle">
+
+							</div>
+							<div class="col-md-4">
+								<br>
+								<p><big>Georgia Institute of Technology</big></p>	
+					      		<p><small>Computer Science Bachelor's, May 2018</small></p>
+					      		<p><small>Threads: Information Internetworks &amp Media</small></p>
+					      		<p><small>GPA: 4.0/4.0</small></p>
+							</div>
+							<div class="col-md-2"></div>
+
+					      		
+
+					    </div>
+
+			    	</div>
+				</div>
+
+				<div id="contact" class="container-fluid bg-3 text-center">
+					<div class="jumbotron">
+						<div class="container text-center">
+						    <h1>Contact</h1>
+						</div>
+					  	<div class="row"> 
+					  			<p>E-mail: jeremy.aguilon@gatech.edu</p>
+					  			<p>LinkedIn: <a href="https://linkedin.com/in/jeraguilon">jeraguilon</a></p>
+					  			<p>GitHub: <a href="https://github.com/jeraguilon">jeraguilon</a></p>
+					  	</div>
+			    	</div>
+				</div>
+
+			</div>
+		</div>
+
 
 		<footer class="container-fluid text-center">
 		  <p></p>
