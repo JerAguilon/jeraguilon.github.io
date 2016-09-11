@@ -9,14 +9,16 @@
 
 		<!-- jQuery library -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-
+		<script src = "js/indexScript.js"></script>
 		<!-- Latest compiled JavaScript -->
 		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
 
-		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
   	</head>
 
   	<body>
+
+
 		<nav class="navbar navbar-inverse">
 			<div class="container">
 				<div class="navbar-header">
@@ -33,8 +35,9 @@
 						<li><a href="#about">About</a></l>
 						<li><a href="#experience">Experience</a>
 						<li><a href="#portfolio">Portfolio</a></li>
+						<li><a href="#education"></a></li>
 						<li><a href="#contact">Contact</a></li>
-						<li><a href="/secret">Top Secret</a></li>
+						<li><a href="terminal.html">Top Secret</a></li>
 					</ul>
 				</div>
 			</div>
@@ -54,26 +57,51 @@
 
 			  		<div class="col-sm-8">
 			  			<p align="left">	
-				  			Currently I'm a second year in Georgia Tech's Computer Science program, set to graduate May 2018. I self-taught myself the gateway drug we call Java in high school and have been hooked since. <br>
-				  			<br>If I had to pick my favorite personal project, it's hands down my Icon-Based Asthma Action Plan, which I did for research out in Tech Square. As somebody who was constantly troubled by the disease, I know the struggles of managing the condition, even with parents who were highly literate. I find value in knowing that my work could measurably improve the lives of others around me. 
+				  			Currently I'm a second year in Georgia Tech's Computer Science program, set to graduate May 2018. I self-taught myself Java out of curiosity in high school and have been hooked since. <br>
+				  			<br>If I had to pick my favorite personal project, it's hands down my Icon-Based Asthma Action Plan, which I did for research out in Tech Square. As somebody who was constantly troubled by the disease, I find value in knowing that my work could measurably improve the lives of others around me. <br>
+				  			<br>I have a lot of uncommon interests, but my best "party trick" is the fact that by the time you finish reading this sentence, I could have solved an entire Rubik's Cube.
+
 				  		</p> <br>
 				  		<p><small>Download my resume</small></p>
 
-				  		<a href="content/jeremyAguilonResume.pdf"><img src="images/document.png" style="width:60px"></a>
+				  		<a href="content/jeremyAguilonResume.pdf" target="_blank"><img src="images/document.png" style="width:60px"></a>
 			  		</div>
 			  		<div class="col-sm-2"></div>
 		  		</div>
 	  		</div>
   		</div>
 
-		<div id="Experience" class="container-fluid bg-3 text-center row-buffer">
+		<div id="experience" class="container-fluid bg-3 text-center row-buffer">
 			<div class="jumbotron">
-				<img src="images/propic.jpg" class="img-circle">
 				  
 				<h1>Experience</h1>
-
 				<div class="row">
-			  		
+
+			  		<div class = "col-sm-4">
+			  			<img src="images/tsrb.jpg" style="width:50%">
+			  			<p>Researcher<br>Full stack developer</p>
+			  			<p>
+			  				Asthma is a chronic condition that afflicts 8.6% of all children, with a higher rate for those of low socioeconomic status. One of the most effective ways for parents to manage their childrens' asthma is through an Asthma Action Plan. Research has shown that icon-based plans have improved the health care management of those with lower reading comprehension. My role under <a href=http://www.cc.gatech.edu/people/rosa-arriaga>Dr. Rosa Arriaga</a> was to implement the backend of the IBAAP with the front end prototype. 
+			  			</p>
+
+			  		</div>
+
+			  		<div class = "col-sm-4">
+			  			<img src="images/vertafore.jpg" style="width:50%">
+			  			<p>Software Engineering Intern <br>Backend &amp Test</p>
+			  			<p>
+			  				This summer I had the opportunity to intern at Vertafore for the purpose of aiding them in developing insurance software to facilitate productivity. I helped integrate an array of cloud storage management solutions that are being implemented across all of the company's products. I also contributed to the initiative of providing high quality unit and end-to-end tests across the entire platform.
+			  			</p>
+
+			  		</div>
+			  		<div class = "col-sm-4">
+			  			<img src="images/coclogo.jpg" style="width:50%">
+			  			<p>Outreach Programming Teacher<br>Middle School Level</p>
+			  			<p>
+			  				The initiative of the Outreach Program at Georgia Tech is to facilitate computational learning in disadvantaged areas in Atlanta. As a tutor, I got to introduce middle schoolers to functional programming, a term I had never even heard of at their age. By working weekly with these kids, I really got to understand how accessible, enjoyable, and fulfilling programming can be for people of all walks of life.
+			  			</p>
+
+			  		</div>
 		  		</div>
 	  		</div>
   		</div>
@@ -89,17 +117,17 @@
 				  </div>
 		  	<div class="row">
 			    <div class="col-sm-4">
-			      <img src="images/ibaap.png" class="project">
+			      <img src="images/ibaap.png" class="project img-circle">
 			      <p class="project-text">IBAAP <br>An icon-based, mobile-oriented asthma action plan that I developed as part of research under Dr. Arriaga. The goal is to aid disadvantaged families by making these plans easily understandable. Has full CRUD functionalities in order to track statistics of childrens' health.</p>
 			    </div>
 
 			    <div class="col-sm-4">
-			    	<img src="images/foobar.png" class="project">
+			    	<img src="images/foobar.png" class="project img-circle">
 			      <p class="project-text">Google Foobar <br>A collection of my solutions, thought processes, and tests for the hacker challenges I did under a hidden search engine challenge given by Google. Topics include computational challenges behind cryptographic hashing, graph theory, counting, and complexity.</p>
 		      	</div>
 
 			    <div class="col-sm-4">
-			    	<img src="images/sprayandpray.png" class="project">
+			    	<img src="images/sprayandpray.png" class="project img-circle">
 			      <p class="project-text">Spray and Pray <br> A practice tool for the popular game <i>Counter-Strike: Global Offensive</i>, the most competitive shooter in the e-Sports industry and a personal pasttime of mine. Released on Reddit to 500 upvoting users who can now practice on the go without needing a powerful computer.</p>
 			    </div>
 		    </div>
@@ -110,7 +138,7 @@
 			    </div>
 
 			    <div class="col-sm-4">
-			    	<img src="images/water.jpg" class="project">
+			    	<img src="images/water.jpg" class="project img-circle">
 			      <p class="project-text">Crowd Sourced Clean Water<br>An ongoing collaborative project that aims to provide a means for people to crowd source clean water to the 783 million people worldwide who do not have access to potable water.</p>
 		      	</div>
 
