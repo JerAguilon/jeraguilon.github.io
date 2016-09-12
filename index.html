@@ -52,9 +52,9 @@
 				<div id="about" class="container-fluid col-md-8 bg-3 text-center">
 					<div class="jumbotron">
 						<h1>About me</h1>
-						<img src="images/propic.jpg" class="img-circle" style="width:50%"><br><br>
+						<img src="images/propic.jpg" class="img-circle"><br><br>
 						<div class="row">
-					  			<p align="left">	
+					  			<p  class="intro" align="left">	
 						  			Currently I'm a second year in Georgia Tech's Computer Science program, set to graduate May 2018. I self-taught myself Java out of curiosity in high school and have been hooked since. <br>
 						  			<br>If I had to pick my favorite personal project, it's hands down my Icon-Based Asthma Action Plan, which I did for research out in Tech Square. As somebody who was constantly troubled by the disease, I find value in knowing that my work could measurably improve the lives of others around me. <br>
 						  			<br>I have a lot of uncommon interests, but my best "party trick" is the fact that by the time you finish reading this sentence out loud, I could have solved an entire Rubik's Cube.
@@ -69,9 +69,7 @@
 
 		  		<div class="col-md-4">
 			  		<div class="jumbotron">
-							<div align="center">
-								<h1>Skills</h1>
-							</div>
+							<h1>Tech Skills</h1>
 							<div class="row">
 						  			<h3>Java</h3>
 									<div class="progress">
@@ -128,9 +126,17 @@
 						  
 						<h1>Experience</h1><br><br>
 						<div class="row">
+					  		<div class = "col-md-4 col-sm-12 col-xs-12">
+					  			<img src="images/vertafore.png" class="img-circle">
+					  			<h3>Software Engineering Intern <br>Backend &amp Test</br></h3>
+					  			<p>
+					  				This summer I had the opportunity to intern at Vertafore for the purpose of aiding them in developing insurance software to facilitate productivity. I helped integrate an array of cloud storage management solutions that are being implemented across all of the company's products. I also contributed to the initiative of providing high quality unit and end-to-end tests across the entire platform.
+					  			</p>
+
+					  		</div>
 
 					  		<div class = "col-md-4 col-sm-12 col-xs-12">
-					  			<img src="images/gatech.jpg" style="width:35%" class="img-circle">
+					  			<img src="images/gatech.jpg" class="img-circle">
 					  			<h3>TSRB Researcher<br>Full stack developer
 					  			</h3>
 					  			<p>
@@ -140,15 +146,7 @@
 					  		</div>
 
 					  		<div class = "col-md-4 col-sm-12 col-xs-12">
-					  			<img src="images/vertafore.png" style="width:35%" class="img-circle">
-					  			<h3>Software Engineering Intern <br>Backend &amp Test</br></h3>
-					  			<p>
-					  				This summer I had the opportunity to intern at Vertafore for the purpose of aiding them in developing insurance software to facilitate productivity. I helped integrate an array of cloud storage management solutions that are being implemented across all of the company's products. I also contributed to the initiative of providing high quality unit and end-to-end tests across the entire platform.
-					  			</p>
-
-					  		</div>
-					  		<div class = "col-md-4 col-sm-12 col-xs-12">
-					  			<img src="images/gatech.jpg" style="width:35%" class="img-circle">
+					  			<img src="images/gatech.jpg" class="img-circle">
 					  			<h3>CoC Outreach Program<br>Programming Teacher</br></h3>
 					  			<p>
 					  				The initiative of the Outreach Program at Georgia Tech is to facilitate computational learning in disadvantaged areas in Atlanta. As a tutor, I got to introduce middle schoolers to functional programming, a term I had never even heard of at their age. By working weekly with these kids, I really got to understand how accessible, enjoyable, and fulfilling programming can be for people of all walks of life.
@@ -165,14 +163,14 @@
 				    	<div class="row">
 
 						    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-						    	<img src="images/ibaap.png" style="width:35%" class="img-circle">
+						    	<img src="images/ibaap.png" class="img-circle">
 						    	<h4>IBAAP</h4> 
 						      	<p id="ibaap" class="project-text">An icon-based, mobile-oriented asthma action plan that I developed as part of research under Dr. Arriaga. The goal is to aid disadvantaged families by making these plans easily understandable. Has full CRUD functionalities in order to track statistics of childrens' health.</p>
 						    </div>
 
 						    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
 
-						    	<img src="images/foobar.png" style="width:35%" class="img-circle">
+						    	<img src="images/foobar.png" class="img-circle">
 						    	<h4>Google Foobar</h4>
 						      	<p id="foobar" class="project-text">A collection of my solutions, thought processes, and tests for the hacker challenges I did under a hidden search engine challenge given by Google. Topics include computational challenges behind cryptographic hashing, graph theory, counting, and complexity.</p>
 					      	</div>
@@ -181,13 +179,13 @@
 
 				    	<div class="row">
 						    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-						    	<img src="images/water.jpg" style="width:35%" class="img-circle">
+						    	<img src="images/water.jpg" class="img-circle">
 						    	<h4>Crowd Sourced Clean Water</h4>
 						      	<p id="water" class="project-text">An ongoing collaborative project that aims to provide a means for people to crowd source clean water to the 783 million people worldwide who do not have access to potable water.</p>
 					      	</div>
 
 						    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-						    	<img style="width:35%" src="images/sprayandpray.png" class="img-circle">
+						    	<img src="images/sprayandpray.png" class="img-circle">
 						    	<h4>Spray and Pray</h4> 
 						      	<p id="spray" class="project-text"> A practice tool for the popular game <i>Counter-Strike: Global Offensive</i>, the most competitive shooter in the e-Sports industry and a personal pastime of mine. Released on Reddit to 500 upvoting users who can now practice on the go without needing a powerful computer.</p>
 						    </div>				    		
@@ -206,8 +204,9 @@
 						  </div><br><br>
 
 						<div class="row">
-							<div class="col-md-6">
-						    	<img src="images/gt.png" style="width:35%" class="img-circle">
+							<div class="col-md-2"></div>
+							<div class="col-md-4">
+						    	<img src="images/gt.png" class="img-circle">
 
 							</div>
 							<div class="col-md-4">

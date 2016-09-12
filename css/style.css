@@ -1,7 +1,7 @@
 
 .img-circle {
     border-radius: 50%;
-    max-width:300px;
+    max-width:200px;
 }
 .info-box {
     background-color:#d8d7d7;
@@ -547,6 +547,7 @@ iframe {
 .footer .fa-heart {
   color: #fb866a;
 }
+
 /* Extra small devices (phones, less than 768px) */
 @media (max-width: 767px) {
   .header {
@@ -567,6 +568,10 @@ iframe {
   .project-image {
     margin-bottom: 15px;
   }
+
+  .img-circle {
+    width:100px;
+  }
 }
 /* Small devices (tablets, 768px and up) */
 /* Medium devices (desktops, 992px and up) */
@@ -575,5 +580,8 @@ iframe {
 @media (min-width: 1400px) {
   .container {
     width: 1360px;
+  }
+  .img-circle {
+    width: 150px;
   }
 }
