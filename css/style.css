@@ -1,9 +1,8 @@
 
 .img-circle {
     border-radius: 50%;
-    width:50%;
-}
 
+}
 .info-box {
     background-color:#d8d7d7;
     height:100%;
@@ -26,6 +25,10 @@
 
 .jumbotron {
     background-color:#FFF !important; 
+}
+
+.jumbotron div:not(.progress) {
+    padding:10px;
 }
 
 /*   
