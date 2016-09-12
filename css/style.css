@@ -1,7 +1,7 @@
 
 .img-circle {
     border-radius: 50%;
-
+    max-width:300px;
 }
 .info-box {
     background-color:#d8d7d7;
