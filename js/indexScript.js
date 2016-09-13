@@ -17,6 +17,18 @@ $(document).ready(function () {
         $(this).hide().fadeIn(2000);
     });
 
+    $('.project').each(function() {
+        var currSource = $(this).attr('src'); 
+        $(this).mouseover(function() {
+            $(this).attr("src", "images/github.png")  
+        });
+
+        $(this).mouseout(function() {
+            $(this).attr("src", currSource);
+        });
+
+    })
+
 
 
  });
