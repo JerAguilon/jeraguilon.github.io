@@ -20,6 +20,7 @@
   target:;
 }
 
+
 .small-block p {
     font-size:18px;
 }
@@ -211,7 +212,7 @@ iframe {
 }
 .header .name {
   color: #49515a;
-  font-size: 38px;
+  font-size: 70px;
   margin-bottom: 5px;
   margin-top: 30px;
 }
