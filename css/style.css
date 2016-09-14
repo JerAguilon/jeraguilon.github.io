@@ -6,6 +6,16 @@
     text-align:center;
 }
 
+.header {
+  margin-bottom:30px;
+  margin-top:-30px;
+}
+
+.propic {
+  border-radius:50%;
+    width:200px;
+}
+
 .btn {
   target:;
 }
@@ -199,13 +209,13 @@ iframe {
 .header .profile-image {
   margin-right: 30px;
 }
-.header .profile-content .name {
+.header .name {
   color: #49515a;
   font-size: 38px;
   margin-bottom: 5px;
   margin-top: 30px;
 }
-.header .profile-content .desc {
+.header .desc {
   color: #778492;
   font-family: "Lato", arial, sans-serif;
   font-weight: 400;
@@ -614,11 +624,22 @@ iframe {
 /* Medium devices (desktops, 992px and up) */
 /* Large devices (large desktops, 1200px and up) */
 /* Ex-Large devices (large desktops, 1200px and up) */
+
+@media(min-width: 992) {
+  .text-md-left {
+    text-align:left;
+  }
+}
+
 @media (min-width: 1400px) {
   .container {
     width: 1360px;
   }
   .img-circle {
     width: 200px;
+  }
+
+  .text-md-left {
+    text-align:left;
   }
 }
