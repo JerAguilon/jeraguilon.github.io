@@ -1,0 +1,67 @@
+
+                                     Jeremy Arthur Cendana Aguilon
+                        10894 Hiddenwood Dr Sandy, UT 84092 * (513) 335-6127  * US Citizen
+                     jeremy.aguilon@gatech.edu * linkedin.com/in/jeraguilon * jeremyaguilon.me
+
+EDUCATION
+Georgia Institute of Technology, Atlanta, GA                                 Bachelor of Computer Science
+Georgia Tech Honors Program Student                                          Threads: Information Internetworks, Media
+GPA: 4.00                                                                    Expected Graduation Date: May 2019
+
+WORK EXPERIENCE
+Vertafore, Inc.                                                                                   May 2016 - Aug 2016
+ImageRight SDE Backend Intern, Atlanta, GA
+   - Implemented the media streaming endpoints on the web API to allow users to readily view content on a browser ; 
+   - Improved maintainability across 4 CRUD calls of a new cloud content system by introducing a new exception 
+       management pattern 
+   - Promoted code maintainability across 3 projects by writing C# unit, integration, and end-to-end tests ; 
+   - Planned and coded the business logic behind a new optical character recognition engine for the product
+Georgia Tech Undergraduate Research                                                               Jan 2016 - May 2016
+Research Assistant, Atlanta, GA
+   - Contributed in research to fill gaps in pediatric chronic care for diseases such as asthma ; 
+   - Developed the
+
+backend of a mobile application to streamline diagnoses of asthma through agile methodologies
+   - Worked in facility 10 hours per week to research, discuss, and implement new features
+College of Computing Outreach Program                                                              Oct 2015 - May 2016
+Programming Teacher, Atlanta, GA
+   - Provided after-school programming lessons to bring Computer Science to underrepresented groups
+   - Taught a group of 16 children ages 10-13 the fundamentals of functional programming
+   - Served as a mentor to the children by portraying software development as fulfilling career
+
+PROJECTS
+IBAAP Asthma Action Plan: https://github.com/JerAguilon/IBAAPWebsite
+   - Developed an easily accessible asthma action plan as part of undergraduate research
+   - Coded the backend of the stack by interfacing with MongoDB to store user data
+   - Designed the feature to allow parents to store 5 daily data statistics of their child's asthmatic behavior
+   - Utilized feature driven design to receive feedback and suggestions from research professor
+Spray and Pray: https://github.com/JerAguilon/SprayAndPray
+   - Created a JavaScript web app for Counter-Strike: Global Offensive, one of the most competitive e-sports
+   - Addressed the challenge of developing skills in-game while not having access to a powerful gaming computer
+   - Promoted on Reddit to an audience of more than 300 upvoting enthusiasts
+
+LEADERSHIP
+Georgia Tech Bitcoin Club                                                                             Apr 2016 - Present
+VP of Operations
+   - Utilized past event experience to bring blockchain workshops, meetings, and hackathons to campus
+   - Worked with founding team 3 hours twice per week to successfully establish the club on campus
+   - Organized a 2-week Bitcoin scavenger hunt to increase campus involvement in blockchain technology
+Alpha Kappa Psi Professional Co-Ed Business Fraternity                                                Dec 2015 - Present
+Director of Professional Programming
+   - Marketed Round One, a Shark Tank-like competition, to 3 potential mentors and 1 angel investor to 
+       bring them face-to-face with Georgia Tech entrepreneurs
+   - Programmed the Round One website to simplify the application process and display information of 7
+       angel investors
+   -     Presented 2 times per week on topics relating to technical skills, industry-specific developments, and 
+       career-oriented goal seeking
+TSA VEX Robotics                                                                                     Aug 2013 - May 2015
+Team
+ Founder & Captain
+   - Founded the club as a new student after relocating and recruited 8 team members ; 
+   - Oversaw brainstorm and build sessions while teaching RobotC to 2 novice programmers ; 
+   - Qualified for state level as the most successful rookie team in the TSA VEX Robotics Competition
+
+SKILLS/INTERESTS
+   - Programming Skills: C#, Java, Python, HTML, CSS, JavaScript (JQuery/Node.js), version control (git/GitHub) ; 
+   - Hobbies: Blockchain, golf, Rubik's Cube speedsolving, resistance training, traveling
+

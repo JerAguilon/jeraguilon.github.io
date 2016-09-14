@@ -2,6 +2,14 @@
     width:60px;
 }
 
+.small-block p {
+    font-size:18px;
+}
+
+.small-block {
+    padding:0px;
+}
+
 .img-circle {
     border-radius: 50%;
     max-width:200px;
@@ -38,6 +46,7 @@
 
 
 .project-text {
+    text-align:left;
 }
 
 .links {
@@ -602,6 +611,6 @@ iframe {
     width: 1360px;
   }
   .img-circle {
-    width: 150px;
+    width: 200px;
   }
 }
