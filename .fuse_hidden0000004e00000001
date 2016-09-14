@@ -2,6 +2,7 @@
 
 <html lang="en">
   	<head>
+  	  <title>Jeremy Aguilon></title>
   	  <meta charset="utf-8"> 
  		<meta name = "viewport" content = "width=device-width, initial-scale=1"> 
 	 	<!-- Latest compiled and minified CSS -->
@@ -48,7 +49,9 @@
 			<div class="content-area row">
 				<div id="about" class="container-fluid col-md-8 bg-3 text-center">
 					<div class="jumbotron">
+
 						<h1>About Me</h1>
+
 						<img src="images/propic.jpg" class="img-circle"><br><br>
 						<div class="row">
 					  			<p  class="intro" align="left">	
@@ -57,11 +60,10 @@
 						  			<br>I have a lot of uncommon interests, but my best "party trick" is the fact that by the time you finish reading this sentence out loud, I could have solved an entire Rubik's Cube.
 
 						  		</p> <br>
-						  		<div class="links-wrapper">
-							  		<a target="_blank" href="content/jeremyAguilonResume.pdf" type="button" class="btn btn-success"><img src="images/document.png" class="links"> Download my Resume</a>						  			
-						  		</div>
-
-
+						  		<div class="credential-links">
+						  			<p>Resume</p>
+						  			<a href="content/jeremyAguilonResume.pdf" target="_blank"><img src="images/document.png" class="links"></a>
+					  			</div>
 					  		<div class="col-md-2"></div>
 				  		</div>
 			  		</div>
@@ -131,7 +133,12 @@
 			<div class="content-area row"> 
 				<div id="experience" class="container-fluid bg-3 text-center">
 					<div class="jumbotron">
-						  
+						<div class="row">
+							<div class="col-md-8">
+								
+							</div>
+
+						</div> 
 						<h1>Experience</h1><br><br>
 
 				    	<div class="row">
