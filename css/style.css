@@ -44,6 +44,11 @@
   border: 1px solid red;
 }
 
+.img-circle:hover {
+  transform: scale(1.2,1.2);
+  opacity:1;
+}
+
 .project {
 
 }
@@ -651,9 +656,13 @@ iframe {
 /* Large devices (large desktops, 1200px and up) */
 /* Ex-Large devices (large desktops, 1200px and up) */
 
-@media(min-width: 992) {
+@media(min-width: 768) {
   .text-md-left {
     text-align:left;
+  }
+
+  .img-circle {
+    width:100px;
   }
 }
 
