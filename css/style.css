@@ -2,6 +2,10 @@
     width:20px;
 }
 
+.album {
+    width:75px;
+}
+
 .right-pane {
     padding-left:15px;
     padding-right:15px;
