@@ -42,22 +42,20 @@
 		</nav>
 
 		<header class="header">
-			<div class="row text-center">
-				<div class="col-md-2"></div>
-				<div class="col-md-2">
-					<img src="images/propic.jpg" class="propic">	
-				</div>		
-				<div class="col-md-4 text-md-left">
-					<h1 class="name">Jeremy Aguilon</h1>
-					<h4 class="desc">Student | Software Developer | Ramblin' Wreck</h4>
-				</div>		
+			<div class="container">
+				<div class="row text-center">
+					<div class="col-md-2"></div>
+					<div class="col-md-2">
+						<img src="images/propic.jpg" class="propic">	
+					</div>		
+					<div class="col-md-4 text-md-left">
+						<h1 class="name">Jeremy Aguilon</h1>
+						<h4 class="desc">Student | Software Developer | Ramblin' Wreck</h4>
+					</div>		
 
+				</div>
 			</div>
-			
-
 		</header>
-
-
 
 		<div id="about" class="container">
 			<div class="content-area row">
@@ -96,7 +94,14 @@
 
 						    <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
 							   <h4>Software Engineering Intern<br>Personalization, Summer 2017</h4> 
-						      	<p class="project-text">Personalization deals with recommending new products and services to customers. Naturally, one of the biggest challenges with cataloging Amazon's huge array of products is latency. Due to scalability constraints, the methodologies behind the many recommendation widgets on Amazon vary in sophistication. In order to get around the extra processing required for these more complex solutions, I created a new database that preprocesses the product relevance scores, allowing more complex models to be used in a low latency context.</p>
+							    <p class="project-text">
+							        Personalization deals with recommending new products and services to customers.
+								Naturally, one of the biggest challenges with cataloging Amazon's huge array of 
+								products is latency. In order to incorporate more complex (and by extension more relevant)
+								algorithms, there is a tradeoff in computational cost. In order to include this more
+								sophisticated model in widgets with low latency requirements, I created a NoSQL solution
+								with preprocessed recommendation scores for over 100 million listings.
+							    </p>
 						    </div>
 
 				    	</div>
