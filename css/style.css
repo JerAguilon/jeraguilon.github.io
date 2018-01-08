@@ -1,3 +1,12 @@
+.nav.nav-tabs {
+    float: left;
+    display: block;
+    margin-right: 20px;
+    border-bottom:0;
+    border-right: 1px solid #ddd;
+    padding-right: 15px;
+}
+
 .container-header {
     width: 100% !important;
 }

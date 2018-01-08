@@ -1,5 +1,5 @@
 $(document).ready(function () {
-     $('a[href^="#"]').on('click', function (e) {
+     $('a[href^="#"].nav-link').on('click', function (e) {
          e.preventDefault();
 
          var target = this.hash,
@@ -29,10 +29,15 @@ $(document).ready(function () {
 
     })*/
 
-
+    $("div.bhoechie-tab-menu>div.list-group>a").click(function(e) {
+        e.preventDefault();
+        $(this).siblings('a.active').removeClass("active");
+        $(this).addClass("active");
+        var index = $(this).index();
+        $("div.bhoechie-tab>div.bhoechie-tab-content").addClass('d-none');
+        $("div.bhoechie-tab>div.bhoechie-tab-content").eq(index).removeClass('d-none');
+    });
 
  });
-
-
 
 
