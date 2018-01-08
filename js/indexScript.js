@@ -16,28 +16,6 @@ $(document).ready(function () {
 
         $(this).hide().fadeIn(2000);
     });
-
-    /*$('.project').each(function() {
-        var currSource = $(this).attr('src'); 
-        $(this).mouseover(function() {
-            $(this).attr("src", "images/github.png")  
-        });
-
-        $(this).mouseout(function() {
-            $(this).attr("src", currSource);
-        });
-
-    })*/
-
-    $("div.bhoechie-tab-menu>div.list-group>a").click(function(e) {
-        e.preventDefault();
-        $(this).siblings('a.active').removeClass("active");
-        $(this).addClass("active");
-        var index = $(this).index();
-        $("div.bhoechie-tab>div.bhoechie-tab-content").addClass('d-none');
-        $("div.bhoechie-tab>div.bhoechie-tab-content").eq(index).removeClass('d-none');
-    });
-
  });
 
 
