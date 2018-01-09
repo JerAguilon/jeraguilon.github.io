@@ -438,15 +438,6 @@ body {
 }
 h1, h2, h3, h5, h6 {
   font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-  color: #778492;
-  font-size: 24px;
-}
-h4 {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-  color: #778492;
-  font-size: 16px;
 }
 a {
   color: #3AAA64;
@@ -868,6 +859,10 @@ a.dotted-link:hover {
 /* Extra small devices (phones, less than 768px) */
 
 @media (max-width: 768px) {
+  .container-header h1, h2, h3 {
+    text-align: center;
+  }
+
   .content-area {
     width:90%;
   }
