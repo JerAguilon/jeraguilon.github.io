@@ -343,10 +343,12 @@ img {
 }
 
 .propic {
+    margin:auto;
     position: relative;
     overflow: hidden;
     z-index: 1;
     min-width: 200px;
+    max-width: 300px;
 }
 
 .propic img{
@@ -866,6 +868,14 @@ a.dotted-link:hover {
 /* Extra small devices (phones, less than 768px) */
 
 @media (max-width: 768px) {
+  .content-area {
+    width:90%;
+  }
+
+  .propic {
+    width:100px;
+  }
+
   .header {
     text-align: center;
   }
