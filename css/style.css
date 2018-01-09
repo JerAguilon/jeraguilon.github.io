@@ -8,7 +8,6 @@
   position:absolute;
   margin-top: -30px;  
   overflow: hidden;
-  z-index: 1000;
 }
 
 .header-style::before {
