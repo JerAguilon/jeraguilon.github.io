@@ -343,11 +343,10 @@ img {
 }
 
 .propic {
-  position: absolute;
-  width: 200px;
-  height: 200px;
-  overflow: hidden;
-  z-index:1;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    min-width: 200px;
 }
 
 .propic img{
@@ -359,8 +358,8 @@ img {
 .propic-style::after {
   content: '';
     width: 200%;
-    height: 10px;
-    background-color: #F0CA4D;
+    height: 4px;
+    background-color: lightgray;
     position: absolute;
     left: -100px;
     top: 95px;
@@ -523,10 +522,6 @@ a.dotted-link:hover {
   padding: 30px 0;
   background: white;
   border-top: 10px solid #778492;
-}
-.header .btn {
-  margin-top: 60px;
-  font-weight: bold;
 }
 .header .profile-image {
   margin-right: 30px;
@@ -760,67 +755,7 @@ a.dotted-link:hover {
 .info li:last-child {
   margin-bottom: 0;
 }
-/* Skills Section */
 
-.skills .intro {
-  margin-bottom: 30px;
-}
-.skills .skillset .item {
-  margin-bottom: 30px;
-}
-.skills .skillset .level-title {
-  font-size: 16px;
-  position: relative;
-  margin-top: 0;
-  margin-bottom: 10;
-}
-.skills .skillset .level-title .level-label {
-  color: #ccd1d6;
-  font-size: 14px;
-  font-weight: 400;
-  font-family: "Lato", arial, sans-serif;
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-.skills .skillset .level-bar {
-  height: 15px;
-  background: #e8e8e8;
-}
-.skills .skillset .level-bar-inner {
-  height: 15px;
-  background: #66cb8c;
-}
-/* Testimonials section */
-
-.testimonials .item {
-  margin-bottom: 30px;
-}
-.testimonials .item:last-child {
-  margin-bottom: 0;
-}
-.testimonials .item .quote {
-  color: #666;
-  font-size: 16px;
-  border-left-color: #9fdeb7;
-  margin-bottom: 15px;
-}
-.testimonials .item .quote .fa {
-  color: #79d19a;
-  margin-right: 15px;
-}
-.testimonials .item .source {
-  font-size: 14px;
-  padding-left: 30px;
-  font-weight: 500;
-}
-.testimonials .item .source .name {
-  color: #939ea9;
-  font-weight: 600;
-}
-.testimonials .item .source .title {
-  color: #999;
-}
 /* Education section */
 
 .education .item {
