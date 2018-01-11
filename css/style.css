@@ -38,16 +38,15 @@
   }
 
 .jumbotron::before {
-    content: '';
-    width: 100%;
-    background-color: #E37B40;
-    height: 10px;
-    position: absolute;
-    left: calc(-50% + 54px);
-    -o-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    top: -6px;
-    transform: rotate(-45deg);
+  content: '';
+  width: 100%;
+  background-color: #E37B40;
+  height: 10px;
+  top: 0px;
+  position: absolute;
+  -o-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: translate(-50%, 20px) rotate(-45deg);
 }
 
 .jumbotron::after {
@@ -56,11 +55,10 @@
     background-color: #324D5C;
     height: 10px;
     position: absolute;
-    left: calc(-50% + 68px);
     -o-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
-    top: -6px;
-    transform: rotate(-45deg);
+    top: 0px;
+    transform: translate(-50%, 34px) rotate(-45deg);
 }
 
 img {
@@ -358,14 +356,14 @@ img {
 
 .propic-style::after {
   content: '';
-    width: 200%;
-    height: 4px;
-    background-color: lightgray;
-    position: absolute;
-    left: -100px;
-    top: 95px;
-    transform: rotate(-45deg);
-    z-index:-1;
+  width: 136%;
+  height: 4px;
+  background-color: lightgray;
+  position: absolute;
+  left: -18%;
+  top: 50%;
+  transform: rotate(-45deg);
+  z-index: -1;
 }
 .btn {
   target: ;
@@ -428,12 +426,13 @@ img {
 
 body {
   font-family: 'Lato', arial, sans-serif;
-  background: #91CEC2;
+  background: rgb(226,226,226);
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin-top: 80px;
 }
+
 h1, h2, h3, h5, h6 {
   font-family: 'Montserrat', sans-serif;
 }
