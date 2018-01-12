@@ -376,6 +376,7 @@ img {
 }
 .img-circle {
   border-radius: 50%;
+  width: 100%;
   max-width: 150px;
 }
 .img-circle-wrapper {
@@ -383,8 +384,7 @@ img {
   border: 1px solid red;
 }
 .img-circle:hover {
-  transform: scale(1.2, 1.2);
-  opacity: 1;
+  transform: scale(1.1, 1.1);
 }
 .popup-logo {
   opacity: 0;
