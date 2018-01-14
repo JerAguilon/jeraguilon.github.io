@@ -4,6 +4,7 @@
 
 .header-style {
   height:calc(100% - 10px);
+  background-color: #002735;
   width:100%;
   position:absolute;
   margin-top: -30px;  
@@ -40,7 +41,7 @@
 .jumbotron::before {
   content: '';
   width: 100%;
-  background-color: #E37B40;
+  background-color: #F0CA4D;
   height: 10px;
   top: 0px;
   position: absolute;
@@ -52,7 +53,7 @@
 .jumbotron::after {
     content: '';
     width: 100%;
-    background-color: #324D5C;
+    background-color: #F53855;
     height: 10px;
     position: absolute;
     -o-transform: rotate(45deg);
@@ -416,39 +417,48 @@ img {
 
 .jumbotron {
   padding: 30px;
+  background-color: #7c8bbf;
   position: relative;
   overflow: hidden;
-  background-color: #FFF !important;
-}
+  -webkit-box-shadow: 8px 7px 5px -1px rgba(204,204,204,1);
+  -moz-box-shadow: 8px 7px 5px -1px rgba(204,204,204,1);
+  box-shadow: 8px 7px 5px -1px rgba(204,204,204,1);
+  }
+
 .jumbotron p {
   font-size: 16px;
 }
 
 body {
   font-family: 'Lato', arial, sans-serif;
-  background: rgb(226,226,226);
+  background: rgb(241,241,241);
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin-top: 80px;
 }
 
+p, h1, h2, h3, h4, h5, h6 {
+  color: #f7f7f7;
+}
+
 h1, h2, h3, h5, h6 {
   font-family: 'Montserrat', sans-serif;
 }
 a {
-  color: #3AAA64;
+  color: #ffe400;
   -webkit-transition: all 0.4s ease-in-out;
   -moz-transition: all 0.4s ease-in-out;
   -ms-transition: all 0.4s ease-in-out;
   -o-transition: all 0.4s ease-in-out;
 }
 a:hover {
+  color: #ffe400;
   text-decoration: underline;
-  color: #5f6b77;
-  color: #2d844e;
 }
+
 a:focus {
+  color: #ffe400;
   text-decoration: none;
 }
 .btn, a.btn {
@@ -509,6 +519,9 @@ a.dotted-link:hover {
 /* ======= Header ======= */
 
 .header {
+  -webkit-box-shadow: 1px 9px 5px -1px rgba(204,204,204,1);
+  -moz-box-shadow: 1px 9px 5px -1px rgba(204,204,204,1);
+  box-shadow: 1px 9px 5px -1px rgba(204,204,204,1);
   padding: 30px 0;
   background: white;
   border-top: 10px solid #778492;
@@ -915,10 +928,5 @@ a.dotted-link:hover {
   }
   .text-md-left {
     text-align: left;
-  }
-}
-@media screen and (min-width: 768px) {
-  .jumbotron .h1, .jumbotron h1 {
-    font-size: 24px;
   }
 }
