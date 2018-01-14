@@ -111,7 +111,7 @@ img {
   position: absolute;
   display: block;
   width: 4px;
-  background: #f5f5f6;
+  background: #e5edf1;
   /*left: 50%;*/
   top: 20px;
   bottom: 20px;
@@ -119,8 +119,6 @@ img {
 }
 .timeline-centered .timeline-entry {
   position: relative;
-  /*width: 50%;
-        float: right;*/
   margin-top: 5px;
   margin-left: 30px;
   margin-bottom: 10px;
@@ -212,7 +210,7 @@ img {
   font-size: 12px;
 }
 .timeline-centered .timeline-entry .timeline-entry-inner .timeline-icon {
-  background: #f5f5f5;
+  background: #e5edf1;
   color: #737881;
   display: block;
   width: 40px;
@@ -263,7 +261,7 @@ img {
 }
 .timeline-centered .timeline-entry .timeline-entry-inner .timeline-label {
   position: relative;
-  background: #f5f5f6;
+  background: #e5edf1;
   padding: 1em;
   margin-left: 60px;
   -webkit-background-clip: padding-box;
@@ -281,7 +279,7 @@ img {
   height: 0;
   border-style: solid;
   border-width: 9px 9px 9px 0;
-  border-color: transparent #f5f5f6 transparent transparent;
+  border-color: transparent #e5edf1 transparent transparent;
   left: 0;
   top: 10px;
   margin-left: -9px;
@@ -416,8 +414,10 @@ img {
 }
 
 .jumbotron {
+  border: solid #c1c1c1;
+  border-width: 1px;
   padding: 30px;
-  background-color: #7c8bbf;
+  background-color: #f3f3f3;
   position: relative;
   overflow: hidden;
   -webkit-box-shadow: 8px 7px 5px -1px rgba(204,204,204,1);
@@ -431,14 +431,14 @@ img {
 
 body {
   font-family: 'Lato', arial, sans-serif;
-  background: rgb(241,241,241);
+  background: rgb(228, 228, 228);
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin-top: 80px;
 }
 
-p, h1, h2, h3, h4, h5, h6 {
+.header * {
   color: #f7f7f7;
 }
 
