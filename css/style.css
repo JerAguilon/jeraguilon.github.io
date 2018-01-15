@@ -431,7 +431,7 @@ img {
 
 body {
   font-family: 'Lato', arial, sans-serif;
-  background: rgb(228, 228, 228);
+  background: rgb(228, 228, 228) url('../images/geometry2.png');
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -446,19 +446,19 @@ h1, h2, h3, h5, h6 {
   font-family: 'Montserrat', sans-serif;
 }
 a {
-  color: #ffe400;
+  color: #1e8200;
   -webkit-transition: all 0.4s ease-in-out;
   -moz-transition: all 0.4s ease-in-out;
   -ms-transition: all 0.4s ease-in-out;
   -o-transition: all 0.4s ease-in-out;
 }
 a:hover {
-  color: #ffe400;
+  color: #1e8200;
   text-decoration: underline;
 }
 
 a:focus {
-  color: #ffe400;
+  color: #1e8200;
   text-decoration: none;
 }
 .btn, a.btn {
