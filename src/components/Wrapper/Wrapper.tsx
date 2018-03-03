@@ -2,12 +2,11 @@ import * as React from "react";
 import { Jumbotron, Grid, Row, Col, Button } from 'react-bootstrap';
 
 
-require('./Hello.css');
+require('./Wrapper.css');
 
-export interface HelloProps { compiler: string; framework: string; }
 
 const gridInstance = (
-<Jumbotron className={'hello-jumbotron'}>
+<div className={'component-wrapper'}>
   <h1>What's up?</h1>
   <h1>My name is Jeremy Aguilon</h1>
   <p>
@@ -31,12 +30,17 @@ const gridInstance = (
   <p>
     <Button bsStyle="primary">Learn more</Button>
   </p>
-</Jumbotron>
+</div>
 );
 
 
-export const Hello = (props: HelloProps) => {
+export const Wrapper: React.StatelessComponent<{backgroundColor: string}> = ({children, backgroundColor}) => {
+    const style = {
+        backgroundColor
+    } as React.CSSProperties
     return (
-        gridInstance
+        <div className={'component-wrapper'} style={style}>
+            {children}
+        </div>
     );
 }
