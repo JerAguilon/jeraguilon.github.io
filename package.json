@@ -1,0 +1,32 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production",
+    "start": "webpack-dev-server --mode development --open"
+  },
+  "author": "Jeremy Aguilon",
+  "license": "ISC",
+  "dependencies": {
+    "@types/react": "^16.0.40",
+    "@types/react-bootstrap": "^0.32.6",
+    "@types/react-dom": "^16.0.4",
+    "ajv": "^6.2.0",
+    "react": "^16.2.0",
+    "react-bootstrap": "^0.32.1",
+    "react-dom": "^16.2.0"
+  },
+  "devDependencies": {
+    "css-loader": "^0.28.10",
+    "source-map-loader": "^0.2.3",
+    "style-loader": "^0.20.2",
+    "ts-loader": "^4.0.1",
+    "typescript": "^2.8.0-dev.20180302",
+    "webpack": "^4.0.1",
+    "webpack-cli": "^2.0.10",
+    "webpack-dev-server": "^3.1.0"
+  }
+}
