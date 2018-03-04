@@ -1,0 +1,32 @@
+.terminal {
+    background-color: #35383D;
+    color: white;
+    padding: 30px;
+    border-radius: 5px;
+    max-width: 600px;
+    min-height: 330px;
+    font-family: 'Ubuntu Mono', monospace;
+    font-size: 20px;
+}
+
+.Typist p {
+    display: inline-block;
+}
+
+.Typist {
+    display: inline-block;
+}
+
+.Typist span {
+    display: inline-block;
+}
+
+.terminal-header {
+    width: calc(100% + 60px);
+    margin: -30px -30px 13px -30px;
+    text-align: center;
+    border-radius: 4px 4px 0px 0px;
+    background-color: white;
+    color: #5f5f5f;
+}
+
