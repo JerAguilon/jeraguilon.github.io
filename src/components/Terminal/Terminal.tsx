@@ -11,12 +11,7 @@ export interface TerminalState {
     typing: boolean;
 }
 
-const gridInstance = (
-<div>
-    <h1>What's up?</h1>
-    <h1>My name is Jeremy Aguilon</h1>
-</div>
-);
+const SHELL_INPUT = <span>➜  ~ </span>;
 
 export class Terminal extends React.Component<TerminalProps, TerminalState> {
     public constructor(props: TerminalProps) {
@@ -31,8 +26,8 @@ export class Terminal extends React.Component<TerminalProps, TerminalState> {
 
     public render() {
         const { messages } = this.props;
-        const typist = (<Typist avgTypingDelay={30} onTypingDone={this.handleAboutMeDone}>
-                            <p>➜  ~ cat aboutme.txt</p>
+        const typist = (<Typist avgTypingDelay={70} onTypingDone={this.handleAboutMeDone}>
+                            <p>{SHELL_INPUT} cat aboutme.txt</p>
                         </Typist>);
         return (
             <div className={'terminal'}>
@@ -41,6 +36,7 @@ export class Terminal extends React.Component<TerminalProps, TerminalState> {
                 </div>
                 {this.state.typing ? typist : <p>➜  ~ cat aboutme.txt</p>}
                 {!this.state.typing && messages}
+                {!this.state.typing && SHELL_INPUT}
             </div>
         );
     }

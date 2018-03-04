@@ -5,18 +5,18 @@ import { Terminal } from 'components/Terminal'
 import { WorkPanel } from 'components/WorkPanel'
 import { COMPANY } from 'constants/'
 
+import './Greeting.css'
+
 const ABOUT_ME = [
     <p>
-        I'm currently a third year in Georgia Tech's Computer Science program, set to graduate May 2019.
-        I self-taught myself Java out of curiosity in high school and have been hooked since.
+        Hey! Welcome to my abode on the internet. I'm a student,
+        software developer, and product manager from Georgia Tech.
     </p>,
     <p>
-        College has brought me through a wide variety of experiences. As a software engineer
-        I've explored the tech giants at Google and Amazon and tried out agile growers such
-        as Lyft. I got to taste wearing the many hats of a fresh startup through
-        InternBlitz, where I found an admiration for product management.
-        Academically, I've gotten to join wonderful organizations and
-        participate in a few undergraduate research positions.
+        Chances are you're here to learn about my professional side. I've interned as a software
+        engineer at <b>Google</b>, <b>Amazon</b>, <b>Lyft</b>, and <b>Vertafore</b>. I also
+        served as a technical co-founer of <b>InternBlitz</b> for a year. This summer I'll be
+        an APM at Google.
     </p>,
     <p>
         I have a lot of uncommon interests, but my best "party trick" is the fact that
@@ -85,17 +85,23 @@ export class Greeting extends React.Component<{}, GreetingState> {
     public render() {
         console.log(this.state.currentMessages);
         return (
-            <Wrapper backgroundColor={'#F5F4f4'}>
-            <Grid>
-                <Col xs={12}>
-                    <PageHeader>What's up? I'm Jeremy.</PageHeader>
-                    <Terminal messages={this.state.currentMessages}/>
-                </Col>
-                <Col xs={12}>
-                    <PageHeader>Work and Stuff <small>Psst... click on the logos</small></PageHeader>
-                    <WorkPanel handleClick={this.handleMessage}/>
-                </Col>
-            </Grid>
+            <Wrapper backgroundColor={'#ffb836'}>
+                <Grid>
+                    <Col xs={12}>
+                        <PageHeader>Jeremy Aguilon's Page</PageHeader>
+                    </Col>
+                    <Col xs={12} sm={8}>
+                        <Col xs={12}>
+                            <Terminal messages={this.state.currentMessages}/>
+                        </Col>
+                    </Col>
+                    <Col xs={12} sm={4}>
+                        <h1><b>About Me</b></h1>
+                        <h1 className='unselected'>Professional Experience</h1>
+                        <h1 className='unselected'>Education</h1>
+                        <h1 className='unselected'>Portfolio</h1>
+                    </Col>
+                </Grid>
             </Wrapper>
         );
     }

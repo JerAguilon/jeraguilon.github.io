@@ -1,6 +1,16 @@
+.job-entry {
+    position: relative;
+}
+
+.job-entry > h3 {
+    position: absolute;
+    left: -24px;
+    top: -11px;
+}
+
 .workpanels {
     z-index: 0;
-    display: flex;
+    position:relative
 }
 
 .workpanels::before {
@@ -8,17 +18,20 @@
     border: 1px black solid;
     content: "";
     width: 1px;
-    height: 250px;
-    top: calc(100% - 260px);
-    left: 116px;
+    height: 100%;
+    left: 102px;
     z-index: 0;
 }
 
-.workpanels .workpanel-circle:first-child {
-    margin-top: -5px;
+.workpanels .popover {
+    display: block;
+    top: 50px;
+    left: 85px;
+    width: calc(100% - 200px);
+    max-width: 100%;
 }
 
-.workpanels .workpanel-circle:not(:last-child) {
+.workpanels .job-entry:not(:last-child) .workpanel-circle {
     margin-bottom: 20px;
 }
 
@@ -28,6 +41,7 @@
     border-radius: 50%;
     width: 40px;
     height: 40px;
+    margin-left: 55px;
 }
 
 .workpanels .years {
@@ -43,12 +57,6 @@
 .workpanels .circles {
     padding-left: 28px;
     z-index: 0;
-}
-
-.workpanel-circle > h3 {
-    position: relative;
-    left: 0px;
-    top: 0px;
 }
 
 .workpanels-content {

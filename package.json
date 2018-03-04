@@ -14,11 +14,13 @@
     "@types/react": "^16.0.40",
     "@types/react-bootstrap": "^0.32.6",
     "@types/react-dom": "^16.0.4",
+    "@types/webfontloader": "^1.6.29",
     "ajv": "^6.2.0",
     "react": "^16.2.0",
     "react-bootstrap": "^0.32.1",
     "react-dom": "^16.2.0",
-    "react-typist": "^2.0.4"
+    "react-typist": "^2.0.4",
+    "webfontloader": "^1.6.28"
   },
   "devDependencies": {
     "css-loader": "^0.28.10",
