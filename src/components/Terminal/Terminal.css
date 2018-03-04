@@ -9,6 +9,18 @@
     font-size: 20px;
 }
 
+.Typist p {
+    display: inline-block;
+}
+
+.Typist {
+    display: inline-block;
+}
+
+.Typist span {
+    display: inline-block;
+}
+
 .terminal-header {
     width: calc(100% + 60px);
     margin: -30px -30px 13px -30px;

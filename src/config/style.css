@@ -18,3 +18,23 @@ body {
 .subheading {
   font-weight: 300;
 }
+
+/*
+ * CSS for react-typist: https://github.com/jstejada/react-typist/
+ */
+.Cursor {
+    display: inline-block;
+}
+.Cursor--blinking {
+    opacity: 1;
+    animation: blink 1s linear infinite;
+}
+
+@keyframes blink {
+    0% {
+    opacity: 1; }
+    50% {
+    opacity: 0; }
+    100% {
+    opacity: 1; }
+}

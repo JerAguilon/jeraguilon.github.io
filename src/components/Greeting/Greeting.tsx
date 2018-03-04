@@ -73,21 +73,26 @@ const MESSAGES_MAP = {
     VERTAFORE: VERTAFORE_MESSAGES,
 }
 
+enum PageColor {
+    ABOUT='#62c5e2',
+    PROFESSIONAL='#ffb836'
+}
+
 export interface GreetingState {
-    currentMessages: React.ReactNode[]
+    currentMessages: React.ReactNode[],
+    pageColor: PageColor
 }
 
 export class Greeting extends React.Component<{}, GreetingState> {
     public constructor(props) {
         super(props);
-        this.state = {currentMessages: ABOUT_ME}
+        this.state = {currentMessages: ABOUT_ME, pageColor: PageColor.ABOUT}
     }
 
     public render() {
-        console.log(this.state.currentMessages);
         return (
             <HashRouter>
-                <Wrapper backgroundColor={'#ffb836'}>
+                <Wrapper backgroundColor={this.state.pageColor}>
                     <Grid>
                         <Col xs={12}>
                             <PageHeader>Jeremy Aguilon's Page</PageHeader>
@@ -98,20 +103,26 @@ export class Greeting extends React.Component<{}, GreetingState> {
                                     <Terminal {...routeProps} messages={this.state.currentMessages}/>
                                 )}/>
                                 <Route exact path="/professional" render={(routeProps) => (
-                                    <WorkPanel {...routeProps} handleClick={this.handleMessage}/>
+                                    <WorkPanel {...routeProps} />
                                 )}/>
                             </Col>
                         </Col>
                         <Col xs={12} sm={4}>
-                            <NavLink to='/'><h1>About Me</h1></NavLink>
-                            <NavLink to='/professional'><h1>Professional Experience</h1></NavLink>
-                            <li>Education</li>
-                            <li>Portfolio</li>
+                            <div className="affix">
+                                <NavLink to='/' onClick={() => this.setColor(PageColor.ABOUT)}><h1>About Me</h1></NavLink>
+                                <NavLink to='/professional' onClick={() => this.setColor(PageColor.PROFESSIONAL)}><h1>Professional Experience</h1></NavLink>
+                                <li>Education</li>
+                                <li>Portfolio</li>
+                            </div>
                         </Col>
                     </Grid>
                 </Wrapper>
             </HashRouter>
         );
+    }
+
+    private setColor = (pageColor: PageColor) => {
+        this.setState({pageColor});
     }
 
     private handleMessage = (company: string) => {

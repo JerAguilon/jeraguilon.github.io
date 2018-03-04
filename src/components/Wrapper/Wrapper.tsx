@@ -36,7 +36,7 @@ const gridInstance = (
 
 export const Wrapper: React.StatelessComponent<{backgroundColor: string}> = ({children, backgroundColor}) => {
     const style = {
-        backgroundColor
+        backgroundColor: backgroundColor,
     } as React.CSSProperties
     return (
         <div className={'component-wrapper'} style={style}>
