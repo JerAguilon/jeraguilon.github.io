@@ -1,10 +1,10 @@
 .terminal {
     background-color: #35383D;
     color: white;
-    width: 50%;
     padding: 30px;
     border-radius: 5px;
     max-width: 600px;
+    min-height: 330px;
 }
 
 .terminal-header {

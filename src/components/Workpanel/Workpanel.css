@@ -1,0 +1,56 @@
+.workpanels {
+    z-index: 0;
+    display: flex;
+}
+
+.workpanels::before {
+    position: absolute;
+    border: 1px black solid;
+    content: "";
+    width: 1px;
+    height: 250px;
+    top: calc(100% - 260px);
+    left: 116px;
+    z-index: 0;
+}
+
+.workpanels .workpanel-circle:first-child {
+    margin-top: -5px;
+}
+
+.workpanels .workpanel-circle:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.workpanel-circle {
+    background-color: black;
+    display: block;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+.workpanels .years {
+    width: 55px;
+    display:block;
+    margin-top: -20px;
+}
+
+.workpanels .years .entry:not(:last-child) {
+    margin-bottom: 95px;
+}
+
+.workpanels .circles {
+    padding-left: 28px;
+    z-index: 0;
+}
+
+.workpanel-circle > h3 {
+    position: relative;
+    left: 0px;
+    top: 0px;
+}
+
+.workpanels-content {
+    margin-left: 50px;
+}

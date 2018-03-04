@@ -8,6 +8,11 @@ module.exports = {
         publicPath: "dist/"
     },
 
+    watchOptions: {
+        aggregateTimeout: 300,
+        poll: 1000,
+    },
+
     // Enable sourcemaps for debugging webpack's output.
     devtool: "source-map",
 

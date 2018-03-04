@@ -4,11 +4,11 @@ import Typist from 'react-typist'
 import { delayGenerator } from './helpers'
 
 export interface TerminalProps {
-    messages: string[];
+    messages: React.ReactNode[];
 }
 
 export interface TerminalState {
-    displayAboutMe: boolean;
+    typing: boolean;
 }
 
 const gridInstance = (
@@ -21,28 +21,31 @@ const gridInstance = (
 export class Terminal extends React.Component<TerminalProps, TerminalState> {
     public constructor(props: TerminalProps) {
         super(props);
-        this.state = {displayAboutMe: false};
+        this.state = { typing: true };
     }
+
+
+    public componentWillReceiveProps(props: TerminalProps) {
+        this.setState({typing: true});
+    }
+
     public render() {
-        const messages = this.props.messages;
-        const messagesNodes = messages.map(line => (<p>{line}</p>));
-        messagesNodes.push('~ ➜ ')
+        const { messages } = this.props;
+        const typist = (<Typist avgTypingDelay={30} onTypingDone={this.handleAboutMeDone}>
+                            <p>➜  ~ cat aboutme.txt</p>
+                        </Typist>);
         return (
             <div className={'terminal'}>
                 <div className={'terminal-header'}>
                     About Me
                 </div>
-                <Typist
-                    onTypingDone={this.handleAboutMeDone}
-                >
-                    <p>➜  ~ cat aboutme.txt</p>
-                </Typist>
-                {this.state.displayAboutMe && messagesNodes}
+                {this.state.typing ? typist : <p>➜  ~ cat aboutme.txt</p>}
+                {!this.state.typing && messages}
             </div>
         );
     }
 
     private handleAboutMeDone = () => {
-        this.setState({displayAboutMe: true});
+        this.setState({ typing: false });
     }
 }
