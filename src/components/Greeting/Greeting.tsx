@@ -4,6 +4,7 @@ import { Wrapper } from 'components/Wrapper'
 import { Terminal } from 'components/Terminal'
 import { WorkPanel } from 'components/WorkPanel'
 import { COMPANY } from 'constants/'
+import { Route, NavLink, HashRouter } from 'react-router-dom'
 
 import './Greeting.css'
 
@@ -85,24 +86,31 @@ export class Greeting extends React.Component<{}, GreetingState> {
     public render() {
         console.log(this.state.currentMessages);
         return (
-            <Wrapper backgroundColor={'#ffb836'}>
-                <Grid>
-                    <Col xs={12}>
-                        <PageHeader>Jeremy Aguilon's Page</PageHeader>
-                    </Col>
-                    <Col xs={12} sm={8}>
+            <HashRouter>
+                <Wrapper backgroundColor={'#ffb836'}>
+                    <Grid>
                         <Col xs={12}>
-                            <Terminal messages={this.state.currentMessages}/>
+                            <PageHeader>Jeremy Aguilon's Page</PageHeader>
                         </Col>
-                    </Col>
-                    <Col xs={12} sm={4}>
-                        <h1><b>About Me</b></h1>
-                        <h1 className='unselected'>Professional Experience</h1>
-                        <h1 className='unselected'>Education</h1>
-                        <h1 className='unselected'>Portfolio</h1>
-                    </Col>
-                </Grid>
-            </Wrapper>
+                        <Col xs={12} sm={8}>
+                            <Col xs={12}>
+                                <Route exact path="/" render={(routeProps) => (
+                                    <Terminal {...routeProps} messages={this.state.currentMessages}/>
+                                )}/>
+                                <Route exact path="/professional" render={(routeProps) => (
+                                    <WorkPanel {...routeProps} handleClick={this.handleMessage}/>
+                                )}/>
+                            </Col>
+                        </Col>
+                        <Col xs={12} sm={4}>
+                            <NavLink to='/'><h1>About Me</h1></NavLink>
+                            <NavLink to='/professional'><h1>Professional Experience</h1></NavLink>
+                            <li>Education</li>
+                            <li>Portfolio</li>
+                        </Col>
+                    </Grid>
+                </Wrapper>
+            </HashRouter>
         );
     }
 
