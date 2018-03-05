@@ -62,6 +62,11 @@ export class About extends React.Component<TerminalProps, TerminalState> {
                 <div className={'terminal terminal-about'}>
                     <div className={'terminal-header'}>
                         About Me
+                        <div className={'terminal-buttons'}>
+                            <div className={'terminal-button terminal-button-min'}/>
+                            <div className={'terminal-button terminal-button-max'}/>
+                            <div className={'terminal-button terminal-button-close'}/>
+                        </div>
                     </div>
                     {this.state.step >= TerminalStep.ABOUT_START
                             ? this.createTypist(TerminalStep.ABOUT_START, CALL_ABOUT_ME) : '' }
@@ -75,6 +80,11 @@ export class About extends React.Component<TerminalProps, TerminalState> {
                         ? <div className={'terminal terminal-contact'}>
                               <div className={'terminal-header'}>
                                   Contact Info
+                                  <div className={'terminal-buttons'}>
+                                      <div className={'terminal-button terminal-button-min'}/>
+                                      <div className={'terminal-button terminal-button-max'}/>
+                                      <div className={'terminal-button terminal-button-close'}/>
+                                  </div>
                               </div>
                               {this.createTypist(TerminalStep.CONTACT_START, CALL_CONTACT)}
                               {this.state.step == TerminalStep.DONE
