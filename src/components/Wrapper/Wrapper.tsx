@@ -1,5 +1,5 @@
 import * as React from "react";
-import { PageHeader, Grid, Col } from 'react-bootstrap';
+import { Navbar, Nav, PageHeader, Grid, Col } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom'
 
 import './Wrapper.css';
@@ -14,6 +14,27 @@ export class Wrapper extends React.Component<{backgroundColor: string}, {}> {
         return (
             <div className={'component-wrapper'} style={style}>
                 <Grid>
+                    <Navbar fixedTop inverse collapseOnSelect>
+                        <Navbar.Header>
+                            <Navbar.Toggle />
+                        </Navbar.Header>
+                        <Navbar.Collapse>
+                            <Nav>
+                               <NavLink exact to='/' onClick={this.clickHandler}>
+                                    <h3>About Me</h3>
+                                </NavLink>
+                                <NavLink to='/professional' onClick={this.clickHandler}>
+                                    <h3>Professional Experience</h3>
+                                </NavLink>
+                                <NavLink to='/education' onClick={this.clickHandler}>
+                                    <h3>Education</h3>
+                                </NavLink>
+                                <NavLink to='/portfolio' onClick={this.clickHandler}>
+                                    <h3>Portfolio</h3>
+                                </NavLink>
+                            </Nav>
+                        </Navbar.Collapse>
+                    </Navbar>
                     <Col xs={12}>
                         <PageHeader>Jeremy Aguilon's Page</PageHeader>
                     </Col>

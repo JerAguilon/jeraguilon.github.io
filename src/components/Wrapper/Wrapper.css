@@ -12,3 +12,26 @@
     color: black;
     text-decoration: underline;
 }
+
+.navbar-nav a {
+    text-align:right;
+    display: inherit;
+    margin-right: 15px;
+}
+
+nav {
+    background-color: #adadad !important;
+    border-color: #737373 !important;
+}
+
+@media(min-width: 768px) {
+    nav {
+        visibility: hidden;
+    }
+}
+
+@media(max-width: 767px) {
+    .nav-pane {
+        visibility: hidden;
+    }
+}
