@@ -2,7 +2,7 @@ import * as React from "react";
 import { About } from 'components/About'
 import { EducationPanel } from 'components/EducationPanel'
 import { PortfolioPanel } from 'components/PortfolioPanel'
-import { Route, HashRouter } from 'react-router-dom'
+import { Route, BrowserRouter } from 'react-router-dom'
 import { WorkPanel } from 'components/WorkPanel'
 import { Wrapper } from 'components/Wrapper'
 
@@ -27,7 +27,7 @@ export class App extends React.Component<{}, AppState> {
 
     public render() {
         return (
-            <HashRouter>
+            <BrowserRouter basename={process.env.PUBLIC_URL}>
                 <Wrapper backgroundColor={ this.state.pageColor }>
                     <Route exact path ="/" render={(routeProps) => (
                             <About renderCallback={this.handleTransition(PageColor.ABOUT)}/>
@@ -45,7 +45,7 @@ export class App extends React.Component<{}, AppState> {
 
                     )} />
                 </Wrapper>
-            </HashRouter>
+            </BrowserRouter>
         );
     }
 
