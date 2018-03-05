@@ -21,7 +21,7 @@ export class WorkPanel extends React.Component<WorkPanelProperties, {}> {
                         </div>
                         <div className="timeline-entry">
                             <div className="timeline-entry-title">
-                                <h4><b>Google</b> Associate Poduct Management Intern, <small>Summer 2018</small></h4>
+                                <h4><b>Google</b>Associate Product Management Intern, <small>Summer 2018</small></h4>
                             </div>
                             <p>
                                 Writeup on this summer's experience coming soon!
@@ -34,7 +34,7 @@ export class WorkPanel extends React.Component<WorkPanelProperties, {}> {
                         </div>
                         <div className="timeline-entry">
                             <div className="timeline-entry-title">
-                                <h4><b>Lyft</b> SDE Intern, <small>Winter 2018</small></h4>
+                                <h4><b>Lyft</b>Software Engineering Intern, <small>Winter 2018</small></h4>
                             </div>
                             <p>
                                 Currently a member on <a href="https://lyft.com/expressdrive" target="_blank">
@@ -47,7 +47,7 @@ export class WorkPanel extends React.Component<WorkPanelProperties, {}> {
                         </div>
                         <div className="timeline-entry">
                             <div className="timeline-entry-title">
-                                <h4><b>Amazon</b> SDE Intern, <small>Summer 2017</small></h4>
+                                <h4><b>Amazon</b>Software Engineering Intern, <small>Summer 2017</small></h4>
                             </div>
                             <p>
                                 Personalization deals with recommending new products and
@@ -85,7 +85,7 @@ export class WorkPanel extends React.Component<WorkPanelProperties, {}> {
                         <h3>2016</h3>
                         <div className="timeline-entry">
                             <div className="timeline-entry-title">
-                                <h4><b>Vertafore</b> SDE Intern, <small>Summer 2016</small></h4>
+                                <h4><b>Vertafore</b>Software Engineering Intern, <small>Summer 2016</small></h4>
                             </div>
                             <p>
                                 In summer 2016, I had the opportunity to intern at Vertafore for the
