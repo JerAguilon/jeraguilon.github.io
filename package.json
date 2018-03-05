@@ -6,8 +6,11 @@
   "scripts": {
     "dev": "webpack --mode development",
     "build": "webpack --mode production",
-    "start": "webpack-dev-server --mode development --watch-poll"
+    "start": "webpack-dev-server --mode development --watch-poll",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
+  "homepage": "http://jeraguilon.github.io/portfolio",
   "author": "Jeremy Aguilon",
   "license": "ISC",
   "dependencies": {
@@ -26,6 +29,7 @@
   },
   "devDependencies": {
     "css-loader": "^0.28.10",
+    "gh-pages": "^1.1.0",
     "html-webpack-plugin": "^3.0.4",
     "source-map-loader": "^0.2.3",
     "style-loader": "^0.20.2",
