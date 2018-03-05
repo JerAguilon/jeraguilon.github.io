@@ -8,8 +8,11 @@
     min-height: 100%;
 }
 
-a[aria-current="true"] {
-    color: black;
+.nav-pane a {
+    color: black !important;
+}
+
+.nav-pane a[aria-current="true"] {
     text-decoration: underline;
 }
 
