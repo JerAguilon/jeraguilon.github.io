@@ -23,14 +23,6 @@
     z-index: 0;
 }
 
-.workpanels .popover {
-    display: block;
-    top: 50px;
-    left: 85px;
-    width: calc(100% - 200px);
-    max-width: 100%;
-}
-
 .workpanels .job-entry .workpanel-marker {
     margin-bottom: 20px;
 }

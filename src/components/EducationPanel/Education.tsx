@@ -28,10 +28,10 @@ export class EducationPanel extends React.Component<EducationPanelProperties, {}
                             <h4>Software & Design</h4>
                             <ul>
                                 <li>Objects & Design (CS 1331)</li>
-                                <li>Data Structures & Alorithms (CS 1332)</li>
+                                <li>Data Structures & Algorithms (CS 1332)</li>
                                 <li>Software Design (CS 2340)</li>
                                 <li>System Design & Proramming (CS 2110)</li>
-                                <li>Junior Design Capstone Pt 1(CS 3311)</li>
+                                <li>Junior Design Capstone Pt 1 (CS 3311)</li>
                             </ul>
                         </li>
                         <li>
