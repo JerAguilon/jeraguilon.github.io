@@ -12,11 +12,27 @@ body {
     height: inherit;
 }
 
+#content > div {
+    min-height: 100%
+}
+
 .heading {
   font-weight: 700;
 }
+
 .subheading {
   font-weight: 300;
+}
+
+.slide-out {
+    left:-100%;
+    -webkit-animation: left-to-right .25s linear forwards;
+    animation: left-to-right .25s linear forwards;
+}
+
+@-webkit-keyframes left-to-right{
+    from{left:-100%}
+    to{left:0}
 }
 
 /*

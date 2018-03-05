@@ -1,7 +1,7 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 
-import { Greeting } from "components/Greeting";
+import { App } from "components/App";
 
 import * as WebFont from 'webfontloader';
 
@@ -12,6 +12,6 @@ WebFont.load({
 });
 
 ReactDOM.render(
-    <Greeting />,
+    <App />,
     document.getElementById("content")
 );

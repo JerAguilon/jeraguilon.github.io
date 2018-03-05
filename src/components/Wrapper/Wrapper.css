@@ -7,3 +7,8 @@
     padding: 20px;
     min-height: 100%;
 }
+
+.nav-pane a[aria-current="true"] {
+    color: black;
+    text-decoration: underline;
+}

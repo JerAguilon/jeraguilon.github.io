@@ -5,9 +5,14 @@ import { COMPANY } from '../../constants'
 import './Workpanel.css'
 
 export interface WorkPanelProperties {
+    renderCallback: () => void;
 }
 
 export class WorkPanel extends React.Component<WorkPanelProperties, {}> {
+    public constructor(props) {
+        super(props);
+        this.props.renderCallback();
+    }
     public render() {
         return (
             <div className="workpanels">

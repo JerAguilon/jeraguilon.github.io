@@ -1,1 +1,1 @@
-export * from './Terminal'
+export * from './About'

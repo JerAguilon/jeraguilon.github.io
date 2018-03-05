@@ -31,7 +31,7 @@ export class Terminal extends React.Component<TerminalProps, TerminalState> {
     public render() {
         const { messages } = this.props;
         return (
-            <div className={'terminal'}>
+            <div className={'terminal terminal-about'}>
                 <div className={'terminal-header'}>
                     About Me
                 </div>

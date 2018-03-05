@@ -1,46 +1,54 @@
 import * as React from "react";
-import { Jumbotron, Grid, Row, Col, Button } from 'react-bootstrap';
+import { PageHeader, Grid, Row, Col, Button } from 'react-bootstrap';
+import { NavLink } from 'react-router-dom'
 
+import './Wrapper.css';
 
-require('./Wrapper.css');
+export class Wrapper extends React.Component<{backgroundColor: string}, {}> {
+    public render(){
+        const { backgroundColor, children } = this.props;
+        const style = {
+            backgroundColor
+        } as React.CSSProperties
 
+        return (
+            <div className={'component-wrapper'} style={style}>
+                <Grid>
+                    <Col xs={12}>
+                        <PageHeader>Jeremy Aguilon's Page</PageHeader>
+                    </Col>
+                    <Col xs={12} sm={8}>
+                        <Col xs={12} id="slide-panel">
+                            {children}
+                        </Col>
+                    </Col>
+                    <Col xs={12} sm={4}>
+                        <div className="nav-pane affix">
+                            <NavLink exact to='/' onClick={this.clickHandler}>
+                                <h1>About Me</h1>
+                            </NavLink>
+                            <NavLink to='/professional' onClick={this.clickHandler}>
+                                <h1>Professional Experience</h1>
+                            </NavLink>
+                            <NavLink to='/education' onClick={this.clickHandler}>
+                                <h1>Education</h1>
+                            </NavLink>
+                            <NavLink to='/portfolio' onClick={this.clickHandler}>
+                                <h1>Portfolio</h1>
+                            </NavLink>
+                        </div>
+                    </Col>
+                </Grid>
+            </div>
+        );
+    }
 
-const gridInstance = (
-<div className={'component-wrapper'}>
-  <h1>What's up?</h1>
-  <h1>My name is Jeremy Aguilon</h1>
-  <p>
-    I'm currently a third year in Georgia Tech's Computer Science program, set to graduate May 2019.
-    I self-taught myself Java out of curiosity in high school and have been hooked since.
-  </p>
-
-  <p>
-    College has brought me through a wide variety of experiences. As a software engineer
-    I've explored the tech giants at Google and Amazon and tried out agile growers such
-    as Lyft. I got to taste wearing the many hats of a fresh startup through
-    InternBlitz, where I found an admiration for product management.
-    Academically, I've gotten to join wonderful organizations and
-    participate in a few undergraduate research positions.
-  </p>
-
-  <p>
-    I have a lot of uncommon interests, but my best "party trick" is the fact that
-    by the time you finish reading this sentence out loud, I could have solved an entire Rubik's Cube.
-  </p>
-  <p>
-    <Button bsStyle="primary">Learn more</Button>
-  </p>
-</div>
-);
-
-
-export const Wrapper: React.StatelessComponent<{backgroundColor: string}> = ({children, backgroundColor}) => {
-    const style = {
-        backgroundColor: backgroundColor,
-    } as React.CSSProperties
-    return (
-        <div className={'component-wrapper'} style={style}>
-            {children}
-        </div>
-    );
+    private clickHandler = () => {
+        const element = document.getElementById('slide-panel');
+        element.style.webkitAnimation = 'none';
+        setTimeout(function() {
+            element.style.webkitAnimation = '';
+        }, 5);
+        element.classList.add('slide-out');
+    }
 }

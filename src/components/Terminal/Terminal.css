@@ -7,6 +7,15 @@
     min-height: 330px;
     font-family: 'Ubuntu Mono', monospace;
     font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.terminal-about {
+    min-height: 600px;
+}
+
+.terminal-header {
+    min-height: 240px;
 }
 
 .Typist p {
@@ -29,4 +38,3 @@
     background-color: white;
     color: #5f5f5f;
 }
-
