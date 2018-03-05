@@ -85,7 +85,7 @@ export class WorkPanel extends React.Component<WorkPanelProperties, {}> {
                         <h3>2016</h3>
                         <div className="timeline-entry">
                             <div className="timeline-entry-title">
-                                <h4><b>Vertafore</b>Software Engineering Intern, <small>Summer 2016</small></h4>
+                                <h4><b>Vertafore</b> Software Engineering Intern, <small>Summer 2016</small></h4>
                             </div>
                             <p>
                                 In summer 2016, I had the opportunity to intern at Vertafore for the
