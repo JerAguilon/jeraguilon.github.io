@@ -15,9 +15,9 @@ export class WorkPanel extends React.Component<WorkPanelProperties, {}> {
     public render() {
         return (
             <div className="workpanels">
-                <div className="circles">
+                <div className="entries">
                     <div className="job-entry">
-                        <div data-company={COMPANY.GOOGLE2} className="workpanel-circle">
+                        <div data-company={COMPANY.GOOGLE2} className="workpanel-marker workpanel-marker-google">
                         </div>
                         <div className="timeline-entry">
                             <div className="timeline-entry-title">
@@ -30,7 +30,7 @@ export class WorkPanel extends React.Component<WorkPanelProperties, {}> {
                     </div>
                     <div className="job-entry">
                         <h3>2018</h3>
-                        <div data-company={COMPANY.LYFT} className="workpanel-circle">
+                        <div data-company={COMPANY.LYFT} className="workpanel-marker workpanel-marker-lyft">
                         </div>
                         <div className="timeline-entry">
                             <div className="timeline-entry-title">
@@ -43,7 +43,7 @@ export class WorkPanel extends React.Component<WorkPanelProperties, {}> {
                         </div>
                     </div>
                     <div className="job-entry">
-                        <div data-company={COMPANY.AMAZON} className="workpanel-circle">
+                        <div data-company={COMPANY.AMAZON} className="workpanel-marker workpanel-marker-amazon">
                         </div>
                         <div className="timeline-entry">
                             <div className="timeline-entry-title">
@@ -63,7 +63,7 @@ export class WorkPanel extends React.Component<WorkPanelProperties, {}> {
                     </div>
                     <div className="job-entry">
                         <h3>2017</h3>
-                        <div data-company={COMPANY.GOOGLE1} className="workpanel-circle">
+                        <div data-company={COMPANY.GOOGLE1} className="workpanel-marker workpanel-marker-google">
                         </div>
                         <div className="timeline-entry">
                             <div className="timeline-entry-title">
@@ -80,7 +80,7 @@ export class WorkPanel extends React.Component<WorkPanelProperties, {}> {
                         </div>
                     </div>
                     <div className="job-entry">
-                        <div data-company={COMPANY.VERTAFORE} className="workpanel-circle">
+                        <div data-company={COMPANY.VERTAFORE} className="workpanel-marker workpanel-marker-vertafore">
                         </div>
                         <h3>2016</h3>
                         <div className="timeline-entry">
@@ -99,7 +99,7 @@ export class WorkPanel extends React.Component<WorkPanelProperties, {}> {
                     </div>
                     <div className="job-entry">
                         <h3>2015</h3>
-                        <div className="workpanel-circle">
+                        <div className="workpanel-marker workpanel-marker-tech">
                         </div>
                         <div className="timeline-entry">
                             <div className="timeline-entry-title">
@@ -108,7 +108,7 @@ export class WorkPanel extends React.Component<WorkPanelProperties, {}> {
                         </div>
                     </div>
                     <div className="job-entry">
-                        <div className="workpanel-circle">
+                        <div className="workpanel-marker">
                         </div>
                     </div>
                 </div>

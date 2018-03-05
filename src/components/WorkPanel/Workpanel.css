@@ -31,17 +31,75 @@
     max-width: 100%;
 }
 
-.workpanels .job-entry .workpanel-circle {
+.workpanels .job-entry .workpanel-marker {
     margin-bottom: 20px;
 }
 
-.workpanel-circle {
+.workpanel-marker {
     background-color: black;
     display: block;
-    border-radius: 50%;
+    border-radius: .5rem;
     width: 40px;
     height: 40px;
     margin-left: 55px;
+}
+
+.workpanel-marker-google {
+	background: linear-gradient(
+		0deg
+		, #4285f4 0%
+		, #4285f4 25%
+		, #34a853 25%
+		, #34a853 50%
+		, #fbbc05 50%
+		, #fbbc05 75%
+		, #ea4335 75%
+		, #ea4335 100%
+	);
+}
+
+.workpanel-marker-lyft {
+	background: linear-gradient(
+		0deg
+		, #f3f3f5 0%
+		, #f3f3f5 50%
+		, #ff00bf 50%
+		, #ff00bf 100%
+	);
+}
+
+.workpanel-marker-amazon {
+	background: linear-gradient(
+		0deg
+		, #fefefe 0%
+		, #fefefe 33%
+		, #ff9900 33%
+		, #ff9900 66%
+		, #146eb4 66%
+		, #146eb4 100%
+	);
+}
+
+.workpanel-marker-vertafore {
+	background: linear-gradient(
+		0deg
+		, #f95203 0%
+		, #f95203 50%
+		, #fefefe 50%
+		, #fefefe 100%
+	);
+
+}
+
+.workpanel-marker-tech {
+	background: linear-gradient(
+		0deg
+		, #FFFFFF 0%
+		, #FFFFFF 50%
+		, #EAAA00 50%
+		, #EAAA00 100%
+	);
+
 }
 
 .workpanels .years {
@@ -54,7 +112,7 @@
     margin-bottom: 95px;
 }
 
-.workpanels .circles {
+.workpanels .entries {
     padding-left: 28px;
     z-index: 0;
 }
@@ -66,7 +124,7 @@
     left: 107px;
     padding: 5px 20px 10px 20px;
     position: relative;
-    top: -64px;
+    top: -60px;
     width: calc(100% - 150px);
 }
 
