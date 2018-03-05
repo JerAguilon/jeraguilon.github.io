@@ -53,3 +53,15 @@ body {
     100% {
     opacity: 1; }
 }
+
+@media(max-width:767px) {
+    .component-wrapper {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    #slide-panel {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+}
