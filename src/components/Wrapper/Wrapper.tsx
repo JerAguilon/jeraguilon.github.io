@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Navbar, Nav, PageHeader, Grid, Col } from 'react-bootstrap';
+import { Navbar, NavbarBrand, Nav, PageHeader, Grid, Col } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom'
 
 import './Wrapper.css';
@@ -16,6 +16,9 @@ export class Wrapper extends React.Component<{backgroundColor: string}, {}> {
                 <Grid>
                     <Navbar fixedTop inverse collapseOnSelect>
                         <Navbar.Header>
+                            <NavbarBrand>
+                                Jeremy Aguilon's Page
+                            </NavbarBrand>
                             <Navbar.Toggle />
                         </Navbar.Header>
                         <Navbar.Collapse>
@@ -36,7 +39,7 @@ export class Wrapper extends React.Component<{backgroundColor: string}, {}> {
                         </Navbar.Collapse>
                     </Navbar>
                     <Col xs={12}>
-                        <PageHeader>Jeremy Aguilon's Page</PageHeader>
+                        <PageHeader className='page-name'>Jeremy Aguilon's Page</PageHeader>
                     </Col>
                     <Col xs={12} sm={8}>
                         <Col xs={12} id="slide-panel">
