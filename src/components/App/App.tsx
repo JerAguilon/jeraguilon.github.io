@@ -1,8 +1,6 @@
 import * as React from "react";
 import { About } from 'components/About'
-import { COMPANY } from 'constants/'
 import { EducationPanel } from 'components/EducationPanel'
-import { PageHeader, Jumbotron, Grid, Row, Col, Button } from 'react-bootstrap';
 import { PortfolioPanel } from 'components/PortfolioPanel'
 import { Route, HashRouter } from 'react-router-dom'
 import { WorkPanel } from 'components/WorkPanel'

@@ -1,5 +1,5 @@
 import * as React from "react";
-import { PageHeader, Grid, Row, Col, Button } from 'react-bootstrap';
+import { PageHeader, Grid, Col } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom'
 
 import './Wrapper.css';
@@ -45,10 +45,10 @@ export class Wrapper extends React.Component<{backgroundColor: string}, {}> {
 
     private clickHandler = () => {
         const element = document.getElementById('slide-panel');
-        element.style.webkitAnimation = 'none';
+        element!.style.webkitAnimation = 'none';
         setTimeout(function() {
-            element.style.webkitAnimation = '';
+            element!.style.webkitAnimation = '';
         }, 5);
-        element.classList.add('slide-out');
+        element!.classList.add('slide-out');
     }
 }

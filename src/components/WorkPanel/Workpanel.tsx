@@ -1,5 +1,4 @@
 import * as React from 'react';
-import Typist from 'react-typist';
 import { COMPANY } from '../../constants'
 
 import './Workpanel.css'

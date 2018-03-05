@@ -1,6 +1,5 @@
 import * as React from 'react';
 import Typist from 'react-typist';
-import { Glyphicon } from 'react-bootstrap'
 import './Portfolio.css'
 
 export interface PortfolioPanelProperties {

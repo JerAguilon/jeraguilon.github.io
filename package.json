@@ -2,13 +2,16 @@
   "name": "portfolio",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.tsx",
+  "homepage": "http://jeraguilon.github.io/portfolio",
   "scripts": {
-    "dev": "webpack --mode development",
-    "build": "webpack --mode production",
-    "start": "webpack-dev-server --mode development --watch-poll",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+      "start": "react-scripts-ts start",
+      "build": "react-scripts-ts build",
+      "test": "react-scripts-ts test --env=jsdom",
+      "eject": "react-scripts-ts eject",
+      "deploy": "gh-pages -d build",
+      "predeploy": "npm run build",
+      "deploy": "gh-pages -b master -d build"
   },
   "homepage": "http://jeraguilon.github.io/portfolio",
   "author": "Jeremy Aguilon",
@@ -24,19 +27,16 @@
     "react-dom": "^16.2.0",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
+    "react-scripts-ts": "2.13.0",
     "react-typist": "^2.0.4",
     "webfontloader": "^1.6.28"
   },
   "devDependencies": {
     "css-loader": "^0.28.10",
     "gh-pages": "^1.1.0",
-    "html-webpack-plugin": "^3.0.4",
     "source-map-loader": "^0.2.3",
     "style-loader": "^0.20.2",
     "ts-loader": "^4.0.1",
-    "typescript": "^2.8.0-dev.20180302",
-    "webpack": "^4.0.1",
-    "webpack-cli": "^2.0.10",
-    "webpack-dev-server": "^3.1.0"
+    "typescript": "^2.8.0-dev.20180302"
   }
 }
