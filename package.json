@@ -6,7 +6,7 @@
   "homepage": "http://jeraguilon.github.io/",
   "scripts": {
     "start": "react-scripts-ts start",
-    "build": "react-scripts-ts build",
+    "build": "react-scripts-ts build && react-snapshot",
     "test": "react-scripts-ts test --env=jsdom",
     "eject": "react-scripts-ts eject",
     "deploy": "gh-pages -b master -d build",
@@ -33,6 +33,7 @@
   "devDependencies": {
     "css-loader": "^0.28.10",
     "gh-pages": "^1.1.0",
+    "react-snapshot": "^1.3.0",
     "source-map-loader": "^0.2.3",
     "style-loader": "^0.20.2",
     "ts-loader": "^4.0.1",
