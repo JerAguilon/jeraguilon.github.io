@@ -17,7 +17,8 @@ export class Wrapper extends React.Component<{backgroundColor: string}, {}> {
                     <Navbar fixedTop inverse collapseOnSelect>
                         <Navbar.Header>
                             <NavbarBrand>
-                                Jeremy Aguilon's Page
+								<div className="pixel-logo"/>
+                                <h3>Jeremy Aguilon's Page</h3>
                             </NavbarBrand>
                             <Navbar.Toggle />
                         </Navbar.Header>
@@ -38,7 +39,8 @@ export class Wrapper extends React.Component<{backgroundColor: string}, {}> {
                             </Nav>
                         </Navbar.Collapse>
                     </Navbar>
-                    <Col xs={12}>
+                    <Col xs={12} className="page-banner">
+                        <div className="pixel-logo"/>
                         <PageHeader className='page-name'>Jeremy Aguilon's Page</PageHeader>
                     </Col>
                     <Col xs={12} sm={8}>
