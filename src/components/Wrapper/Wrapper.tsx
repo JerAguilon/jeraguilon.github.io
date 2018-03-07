@@ -18,7 +18,7 @@ export class Wrapper extends React.Component<{backgroundColor: string}, {}> {
                         <Navbar.Header>
                             <NavbarBrand>
 								<div className="pixel-logo"/>
-                                <h3>Jeremy Aguilon's Page</h3>
+                                <h4>Jeremy Aguilon's Page</h4>
                             </NavbarBrand>
                             <Navbar.Toggle />
                         </Navbar.Header>
@@ -43,7 +43,7 @@ export class Wrapper extends React.Component<{backgroundColor: string}, {}> {
                         <div className="pixel-logo"/>
                         <PageHeader className='page-name'>Jeremy Aguilon's Page</PageHeader>
                     </Col>
-                    <Col xs={12} sm={8}>
+                    <Col xs={12} sm={8} id="content-wrapper">
                         <Col xs={12} id="slide-panel">
                             {children}
                         </Col>
