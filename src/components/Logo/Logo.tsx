@@ -7,6 +7,7 @@ export enum PixelLogoAction {
     DRINKING='drinking',
     SLEEPING='sleeping',
     THINKING='thinking',
+    READING='reading'
 }
 
 export enum PixelLogoSize {
