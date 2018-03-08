@@ -1,6 +1,8 @@
 import * as React from "react";
+
 import { About } from 'components/About'
 import { EducationPanel } from 'components/EducationPanel'
+import { PixelLogoAction } from 'components/Logo'
 import { PortfolioPanel } from 'components/PortfolioPanel'
 import { Route, BrowserRouter } from 'react-router-dom'
 import { WorkPanel } from 'components/WorkPanel'
@@ -8,40 +10,57 @@ import { Wrapper } from 'components/Wrapper'
 
 import './App.css'
 
-enum PageColor {
-    ABOUT='#62c5e2',
-    PROFESSIONAL='#ffb836',
-    WORK='#fd8774',
-    PORTFOLIO='#50dcaf',
+
+enum CurrentPage {
+    ABOUT, PROFESSIONAL, EDUCATION, PORTFOLIO,
 }
 
 export interface AppState {
-    pageColor: PageColor
+    currentPage: CurrentPage
+}
+
+const PAGE_TO_COLOR = {
+    ABOUT: '#62c5e2',
+    PROFESSIONAL: '#ffb836',
+    EDUCATION: '#fd8774',
+    PORTFOLIO: '#50dcaf',
+}
+
+const PAGE_TO_PIXEL_ACTION = {
+    ABOUT: PixelLogoAction.CODING,
+    PROFESSIONAL: PixelLogoAction.SLEEPING,
+    EDUCATION: PixelLogoAction.DRINKING,
+    PORTFOLIO: PixelLogoAction.THINKING,
 }
 
 export class App extends React.Component<{}, AppState> {
     public constructor(props) {
         super(props);
-        this.state = { pageColor: PageColor.ABOUT }
+        this.state = {
+            currentPage: CurrentPage.ABOUT
+        }
     }
 
     public render() {
         return (
             <BrowserRouter basename={process.env.PUBLIC_URL}>
-                <Wrapper backgroundColor={ this.state.pageColor }>
+                <Wrapper
+                    backgroundColor={PAGE_TO_COLOR[CurrentPage[this.state.currentPage]]}
+                    pixelLogoAction={PAGE_TO_PIXEL_ACTION[CurrentPage[this.state.currentPage]]}
+                >
                     <Route exact path ="/" render={(routeProps) => (
-                            <About renderCallback={this.handleTransition(PageColor.ABOUT)}/>
+                            <About renderCallback={this.handleTransition(CurrentPage.ABOUT)}/>
                     )} />
                     <Route exact path="/professional" render={(routeProps) => (
-                            <WorkPanel renderCallback={this.handleTransition(PageColor.PROFESSIONAL)}/>
+                            <WorkPanel renderCallback={this.handleTransition(CurrentPage.PROFESSIONAL)}/>
 
                     )} />
                     <Route exact path="/education" render={(routeProps) => (
-                            <EducationPanel renderCallback={this.handleTransition(PageColor.WORK)}/>
+                            <EducationPanel renderCallback={this.handleTransition(CurrentPage.EDUCATION)}/>
 
                     )} />
                     <Route exact path="/portfolio" render={(routeProps) => (
-                            <PortfolioPanel renderCallback={this.handleTransition(PageColor.PORTFOLIO)}/>
+                            <PortfolioPanel renderCallback={this.handleTransition(CurrentPage.PORTFOLIO)}/>
 
                     )} />
                 </Wrapper>
@@ -49,9 +68,9 @@ export class App extends React.Component<{}, AppState> {
         );
     }
 
-    private handleTransition = (pageColor: PageColor) => {
+    private handleTransition = (currentPage: CurrentPage) => {
         return () => {
-            this.setState({pageColor});
+            this.setState({ currentPage });
         }
     }
 }
