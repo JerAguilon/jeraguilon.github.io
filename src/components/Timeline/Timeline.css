@@ -1,0 +1,133 @@
+.entry {
+    position: relative;
+}
+
+.entry > h3 {
+    position: absolute;
+    left: -24px;
+    top: -11px;
+}
+
+.timeline {
+    z-index: 0;
+    position:relative
+}
+
+.timeline::before {
+    position: absolute;
+    border: 1px black solid;
+    content: "";
+    width: 1px;
+    height: 100%;
+    left: 102px;
+    z-index: 0;
+}
+
+.workpanels .popover {
+    display: block;
+    top: 50px;
+    left: 85px;
+    width: calc(100% - 200px);
+    max-width: 100%;
+}
+
+.workpanels .entry .workpanel-marker {
+    margin-bottom: 20px;
+}
+
+.workpanel-marker {
+    background-color: black;
+    display: block;
+    border-radius: .5rem;
+    width: 40px;
+    height: 40px;
+    margin-left: 55px;
+}
+
+.workpanel-marker-google {
+	background: linear-gradient(
+		0deg
+		, #4285f4 0%
+		, #4285f4 25%
+		, #34a853 25%
+		, #34a853 50%
+		, #fbbc05 50%
+		, #fbbc05 75%
+		, #ea4335 75%
+		, #ea4335 100%
+	);
+}
+
+.workpanel-marker-lyft {
+	background: linear-gradient(
+		0deg
+		, #f3f3f5 0%
+		, #f3f3f5 50%
+		, #ff00bf 50%
+		, #ff00bf 100%
+	);
+}
+
+.workpanel-marker-amazon {
+	background: linear-gradient(
+		0deg
+		, #fefefe 0%
+		, #fefefe 33%
+		, #ff9900 33%
+		, #ff9900 66%
+		, #146eb4 66%
+		, #146eb4 100%
+	);
+}
+
+.workpanel-marker-vertafore {
+	background: linear-gradient(
+		0deg
+		, #f95203 0%
+		, #f95203 50%
+		, #fefefe 50%
+		, #fefefe 100%
+	);
+
+}
+
+.workpanel-marker-tech {
+	background: linear-gradient(
+		0deg
+		, #FFFFFF 0%
+		, #FFFFFF 50%
+		, #EAAA00 50%
+		, #EAAA00 100%
+	);
+
+}
+
+.workpanels .years {
+    width: 55px;
+    display:block;
+    margin-top: -20px;
+}
+
+.workpanels .years .entry:not(:last-child) {
+    margin-bottom: 95px;
+}
+
+.workpanels .entries {
+    padding-left: 28px;
+    z-index: 0;
+}
+
+.workpanels .timeline-description {
+    background-color: #f4f4f4;
+    display: block;
+    border-radius: .5rem;
+    left: 107px;
+    padding: 5px 20px 10px 20px;
+    position: relative;
+    top: -60px;
+    width: calc(100% - 150px);
+}
+
+.workpanels-content {
+    margin-left: 50px;
+}
