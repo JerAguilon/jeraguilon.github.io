@@ -84,6 +84,9 @@ export class Wrapper extends React.Component<WrapperProps, WrapperState> {
                             <NavLink to='/portfolio' onClick={this.clickHandler}>
                                 <h3>Portfolio</h3>
                             </NavLink>
+                            <NavLink to='/blog' onClick={this.clickHandler}>
+                                <h3>Blog</h3>
+                            </NavLink>
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>
@@ -117,6 +120,9 @@ export class Wrapper extends React.Component<WrapperProps, WrapperState> {
                         </NavLink>
                         <NavLink to='/portfolio' onClick={this.clickHandler}>
                             <h1>Portfolio</h1>
+                        </NavLink>
+                        <NavLink to='/blog' onClick={this.clickHandler}>
+                            <h1>Blog</h1>
                         </NavLink>
                     </div>
                 </Col>

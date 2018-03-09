@@ -1,0 +1,9 @@
+.panel {
+    padding: 10px;
+    background-color: #F4F4F4;
+    border-radius: .5rem;
+}
+
+.panel hr {
+    border-color: #355356;
+}

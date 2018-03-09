@@ -1,0 +1,10 @@
+{
+    "articles": [
+        {
+            "title": "Ranking interview questions by cram score",
+            "description": "A filterable component of problems I would prioritize for technical interviews",
+            "date": "TBD",
+            "tags": ["Interviews", "Algorithms"]
+        }
+    ]
+}

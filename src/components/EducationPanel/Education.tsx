@@ -1,5 +1,8 @@
 import * as React from 'react';
-import './Education.css'
+
+import { Panel } from 'components/Panel';
+
+import './Education.css';
 
 export interface EducationPanelProperties {
     renderCallback: () => void;
@@ -10,11 +13,13 @@ export class EducationPanel extends React.Component<EducationPanelProperties, {}
         super(props);
         this.props.renderCallback();
     }
+
     public render() {
         return (
-            <div className="education-panel">
-                <h2>Georgia Institute of Technology <small>Computer Science</small></h2>
-                <hr/>
+            <Panel
+                title="Georgia Institute of Technology"
+                subtitle="Computer Science"
+            >
                 <div className="education-item">
                     <h3>Threads (Concentrations): </h3><h4>Intelligence & Media</h4>
                 </div>
@@ -53,7 +58,7 @@ export class EducationPanel extends React.Component<EducationPanelProperties, {}
                         </li>
                     </ul>
                 </div>
-            </div>
+            </Panel>
         );
     }
 }

@@ -25,7 +25,6 @@ export const PixelLogo: React.StatelessComponent<PixelLogoProps> = (
 ) => {
     const { pixelLogoAction, pixelLogoSize } = props
     const className = `pixel-logo ${pixelLogoSize}-pixel-logo-${pixelLogoAction}`;
-    console.log("CLASSNAME: " + className);
     return (
         <div className={className}/>
     )
