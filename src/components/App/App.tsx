@@ -1,13 +1,14 @@
 import * as React from "react";
 
-import { About } from 'components/About'
-import { BlogPanel } from 'components/BlogPanel'
-import { EducationPanel } from 'components/EducationPanel'
-import { PixelLogoAction } from 'components/Logo'
-import { PortfolioPanel } from 'components/PortfolioPanel'
-import { Route, BrowserRouter } from 'react-router-dom'
-import { WorkPanel } from 'components/WorkPanel'
-import { Wrapper } from 'components/Wrapper'
+import { About } from 'components/About';
+import { BlogPanel } from 'components/BlogPanel';
+import { EducationPanel } from 'components/EducationPanel';
+import { PixelLogoAction } from 'components/Logo';
+import { PortfolioPanel } from 'components/PortfolioPanel';
+import { Route, BrowserRouter } from 'react-router-dom';
+import { WorkPanel } from 'components/WorkPanel';
+import { Wrapper } from 'components/Wrapper';
+import { ArticleRenderer } from 'components/ArticleRenderer';
 
 import './App.css'
 
@@ -70,6 +71,14 @@ export class App extends React.Component<{}, AppState> {
                     <Route exact path="/blog" render={(routeProps) => (
                             <BlogPanel renderCallback={this.handleTransition(CurrentPage.BLOG)}/>
                     )} />
+
+                    <Route exact path="/blog/:articleName" render={(routeProps) => (
+                        <ArticleRenderer
+                            match={routeProps.match}
+                            renderCallback={this.handleTransition(CurrentPage.BLOG)}
+                        />
+                    )}
+                    />
                 </Wrapper>
             </BrowserRouter>
         );

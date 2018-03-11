@@ -25,6 +25,7 @@
     "react": "^16.2.0",
     "react-bootstrap": "^0.32.1",
     "react-dom": "^16.2.0",
+    "react-markdown": "^3.3.0",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
     "react-scripts-ts": "2.13.0",
@@ -34,9 +35,11 @@
     "webfontloader": "^1.6.28"
   },
   "devDependencies": {
+    "@types/webpack-env": "^1.13.5",
     "css-loader": "^0.28.10",
     "gh-pages": "^1.1.0",
     "json-loader": "^0.5.7",
+    "raw-loader": "^0.5.1",
     "react-snapshot": "^1.3.0",
     "source-map-loader": "^0.2.3",
     "style-loader": "^0.20.2",

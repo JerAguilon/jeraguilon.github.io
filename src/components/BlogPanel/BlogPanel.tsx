@@ -18,8 +18,6 @@ export class BlogPanel extends React.Component<BlogProps, {}> {
     }
 
     public render() {
-        console.log("ARTICLES");
-        console.log(articles);
         return (
             <>
             {
@@ -27,6 +25,7 @@ export class BlogPanel extends React.Component<BlogProps, {}> {
                     <Panel
                         key={key}
                         title={article.title}
+                        onClick={this.handleClick(article.filepath)}
                     >
                         {article.description}
                     </Panel>
@@ -34,5 +33,12 @@ export class BlogPanel extends React.Component<BlogProps, {}> {
             }
             </>
         )
+    }
+
+    private handleClick = (filepath: string) => {
+        return () => {
+            console.log(filepath);
+                
+        };
     }
 };

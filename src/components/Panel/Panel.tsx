@@ -5,12 +5,13 @@ import './Panel.css';
 export interface PanelProps {
     title: string;
     subtitle?: string;
+    onClick?: () => void;
 }
 
 
-export const Panel: React.StatelessComponent<PanelProps> = ({ title, subtitle='', children }) => {
+export const Panel: React.StatelessComponent<PanelProps> = ({ title, subtitle='', onClick=() => {}, children }) => {
     return (
-        <div className="panel">
+        <div className="panel" onClick={onClick}>
             <h2>{title} <small>{subtitle}</small></h2>
             <hr/>
             {children}
