@@ -37,9 +37,6 @@ nav {
 }
 
 @media(min-width: 768px) {
-    #slide-panel {
-        margin-top: 60px;
-    }
 
 	.page-name {
 		padding-left: 90px;

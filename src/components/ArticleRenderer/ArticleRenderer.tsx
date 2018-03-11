@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Panel } from 'components/Panel';
+import { CramScore } from 'components/CramScore';
 import { match } from 'react-router'
 import { Markdown } from 'react-showdown';
 
@@ -40,7 +40,7 @@ export class ArticleRenderer extends React.Component<ArticleRendererProps,{}> {
     public render()  {
         const markdown = files.get(this.props.match.params.articleName + '.md');
         return (
-            <Markdown markup={ markdown } components={{ Panel }} />
+            <Markdown markup={ markdown } components={{ CramScore }} />
         );
     }
 }

@@ -1,9 +1,9 @@
 {
     "articles": [
         {
-            "filepath": "markdown/renking_interview_questions.md",
+            "path": "blog/ranking_interview_questions_by_cram_score",
             "title": "Ranking interview questions by cram score",
-            "description": "A filterable component of problems I would prioritize for technical interviews",
+            "description": "An opinionated list of SDE interview questions, organized by priority",
             "date": "TBD",
             "tags": ["Interviews", "Algorithms"]
         }

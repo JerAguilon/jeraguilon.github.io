@@ -1,5 +1,9 @@
 # Ranking Interview Questions by Cram Score
 
+#### _An opinionated list of SDE interview questions, organized by priority_
+
+---
+
 I made this tool because while there are plenty of compilations of questions,
 I find that they don't address head-on what you should be studying. Leetcode,
 for example, likes to rank based on difficulty, which is a less useful metric
@@ -19,3 +23,5 @@ pipelines of highly desirably companies.
 
 I still think there's a ton of value in the more verbose sources out there. But
 if you're lost this is a good place to start.
+
+<CramScore />

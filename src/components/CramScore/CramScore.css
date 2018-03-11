@@ -1,0 +1,44 @@
+.scorecard {
+    background-color: #039e65;
+    color: white;
+    padding: 30px 30px 5px;
+    border-radius: 5px;
+    max-width: 600px;
+    font-family: 'Ubuntu Mono', monospace;
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.scorecard-header {
+    margin: -30px -30px 13px -30px;
+    text-align: center;
+    border-radius: 4px 4px 0px 0px;
+    background-color: #d2d2d2;
+    color: #5f5f5f;
+    position: relative;
+}
+
+.tags {
+    display: inline-block;
+}
+
+.tag {
+    display: inherit;
+    margin-right: 10px;
+}
+
+.tag::before {
+    content: '';
+    border-radius: 50%;
+    height: 14px;
+    width: 14px;
+    background-color: yellow;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+@media(max-width: 991px) {
+    .scorecard {
+        margin-bottom: 15px;
+    }
+}

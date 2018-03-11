@@ -45,7 +45,7 @@ export class Wrapper extends React.Component<WrapperProps, WrapperState> {
             <div className={'component-wrapper'} style={style}>
                 <Grid>
                     {this.getBanner()}
-                    <Col xs={12} sm={8} id="content-wrapper">
+                    <Col xs={12} sm={10} id="content-wrapper">
                         <Col xs={12} id="slide-panel">
                             {children}
                         </Col>
@@ -107,22 +107,22 @@ export class Wrapper extends React.Component<WrapperProps, WrapperState> {
     private getSidebar = () => {
         return !this.isSmall
             ? (
-                <Col xs={12} sm={4}>
+                <Col xs={12} sm={2}>
                     <div className="nav-pane affix">
                         <NavLink exact to='/' onClick={this.clickHandler}>
-                            <h1>About Me</h1>
+                            <h3>About Me</h3>
                         </NavLink>
                         <NavLink to='/professional' onClick={this.clickHandler}>
-                            <h1>Professional Experience</h1>
+                            <h3>Professional Experience</h3>
                         </NavLink>
                         <NavLink to='/education' onClick={this.clickHandler}>
-                            <h1>Education</h1>
+                            <h3>Education</h3>
                         </NavLink>
                         <NavLink to='/portfolio' onClick={this.clickHandler}>
-                            <h1>Portfolio</h1>
+                            <h3>Portfolio</h3>
                         </NavLink>
                         <NavLink to='/blog' onClick={this.clickHandler}>
-                            <h1>Blog</h1>
+                            <h3>Blog</h3>
                         </NavLink>
                     </div>
                 </Col>

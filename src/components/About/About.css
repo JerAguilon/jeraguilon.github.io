@@ -71,6 +71,10 @@
 
 /* lg+ screens */
 @media (min-width: 992px) {
+    .terminal {
+        margin-left: 100px;
+    }
+
     .terminal-contact {
         position: relative;
         left: 150px;
@@ -84,6 +88,6 @@
         position: relative;
         margin-left: 63%;
         width: 70%;
-        margin-top: -31%;
+        margin-top: -13%;
     }
 }
