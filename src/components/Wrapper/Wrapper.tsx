@@ -22,7 +22,7 @@ export interface WrapperState {
 export class Wrapper extends React.Component<WrapperProps, WrapperState> {
     public constructor(props: WrapperProps) {
         super(props);
-        this.state = { width: 0 };
+        this.state = { width: -1 };
         this.updateWidth = this.updateWidth.bind(this);
     }
 
@@ -143,6 +143,7 @@ export class Wrapper extends React.Component<WrapperProps, WrapperState> {
     }
 
     private get isSmall(): boolean {
-        return this.state.width < 768;
+        // edge case: when the component has constructed, the width is -1
+        return this.state.width < 768 && this.state.width > 0;
     }
 }
