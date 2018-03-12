@@ -2,7 +2,7 @@
     "articles": [
         {
             "path": "blog/ranking_interview_questions_by_cram_score",
-            "title": "Ranking interview questions by cram score",
+            "title": "Ranking Interview Questions by Cram Score",
             "description": "An opinionated list of SDE interview questions, organized by priority",
             "date": "Sunday March 11, 2018"
         }
