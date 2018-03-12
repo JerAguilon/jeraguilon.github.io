@@ -30,9 +30,9 @@ challenges I've picked prepare you awfully well for desirable companies.
 
 Rather than organizing by topic or difficulty, I've organized these questions
 based on what I'd study before an interview. Level 1 questions are so common
-that it pays to simply know them intimately. Level 3 questions
-might show up less, but they're excellent for building a "6th sense" when answering
-questions.
+that it (literally) pays to know them. On the other end Level 3 questions
+probably show up less, but they're excellent for building a "6th sense" when answering
+problems.
 
 I still think there's a ton of value in the more verbose sources out there. But
 if you're lost this is a good place to start.
