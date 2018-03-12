@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Helmet from 'react-helmet';
-import _ from 'lodash';
+import _forOwn from 'lodash/forOwn';
 
 import { match } from 'react-router'
 import { Markdown } from 'react-showdown';
@@ -50,7 +50,7 @@ export class ArticleRenderer extends React.Component<ArticleRendererProps,{}> {
             Helmet
         }
 
-        _.forOwn(ArticleComponents[articleName], (value, key) => {
+        _forOwn(ArticleComponents[articleName], (value, key) => {
             components[key] = value;
         });
 

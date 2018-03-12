@@ -1,5 +1,5 @@
 import * as React from 'react';
-import _ from 'lodash';
+import _chunk from 'lodash/chunk';
 import { Col, Glyphicon, Row } from 'react-bootstrap';
 
 import './CramScore.css';
@@ -65,15 +65,15 @@ export class CramScore extends React.Component<{},{}> {
                         Union Find
                     </div>
                 </div>
-                <h2>Level 1</h2>
+                <h2>Cram Level 1</h2>
                 <span><i>Study these even if your interview is tomorrow and it's 12 AM</i></span>
                 <hr/>
                 {this.getLevelNodes(level1)}
-                <h2>Level 2</h2>
+                <h2>Cram Level 2</h2>
                 <span><i>Study these if you have a week to prepare</i></span>
                 <hr/>
                 {this.getLevelNodes(level2)}
-                <h2>Level 3</h2>
+                <h2>Cram Level 3</h2>
                 <span><i>Study these if you want to be generally prepared with a "6th sense" of what to do</i></span>
                 <hr/>
                 {this.getLevelNodes(level3)}
@@ -93,7 +93,7 @@ export class CramScore extends React.Component<{},{}> {
             </Col>
         ))
 
-        return _.chunk(levelNodes, 2).map((pair, key) => (
+        return _chunk(levelNodes, 2).map((pair, key) => (
             <Row key={key}>
                 {pair}
             </Row>

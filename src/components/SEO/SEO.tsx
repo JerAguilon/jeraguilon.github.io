@@ -1,15 +1,15 @@
 import * as React from 'react';
 import { Helmet } from "react-helmet";
-import _ from 'lodash';
+import _find from 'lodash/find';
 
 
 const { meta } = require('./meta.json');
 
 export const SEO = (props) => {
 
-    let content = _.find( meta, { url: props.url } );
+    let content = _find( meta, { url: props.url } );
     if ( ! content ) {
-        content = _.find( meta, { url: 'default' } );
+        content = _find( meta, { url: 'default' } );
     }
 
     return (
