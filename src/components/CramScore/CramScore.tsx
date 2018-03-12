@@ -83,7 +83,7 @@ export class CramScore extends React.Component<{},{}> {
 
     private getLevelNodes(questionList) {
         const levelNodes = questionList.map( (item, key) => (
-            <Col md={6} key={key}>
+            <Col sm={6} key={key}>
                 <ScoreCard
                     title={item.title}
                     tags={item.tags}

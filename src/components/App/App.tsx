@@ -43,6 +43,7 @@ export class App extends React.Component<{}, AppState> {
         this.state = {
             currentPage: CurrentPage.ABOUT
         }
+        this.handleTransition = this.handleTransition.bind(this);
     }
 
     public render() {
