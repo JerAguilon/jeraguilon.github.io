@@ -20,7 +20,7 @@ address head-on what you should be studying.
 but it's a pretty useless metric when you just want to prepare pragmatically.
 Studying for a particular company? That feature is behind a paywall.
 HackerRank's [Cracking the Coding Interview Course](https://www.hackerrank.com/domains/tutorials/cracking-the-coding-interview)
-comes close, but I found that the questions are mostly too rudimentary.
+comes close, but I think the questions are mostly too rudimentary.
 
 
 As somebody who [interns](/professional) quite often, I've solved over 40 coding questions
