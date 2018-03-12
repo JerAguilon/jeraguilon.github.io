@@ -1,7 +1,8 @@
 import * as React from 'react';
-import { Redirect } from 'react-router';
+import { NavLink } from 'react-router-dom';
 
 import { Panel } from 'components/Panel';
+import { SEO } from 'components/SEO';
 
 import './BlogPanel.css';
 
@@ -11,8 +12,6 @@ export interface BlogProps {
 }
 
 export interface BlogState {
-    articleClicked: boolean;
-    articleName: string;
 }
 
 
@@ -31,21 +30,16 @@ export class BlogPanel extends React.Component<BlogProps, BlogState> {
     }
 
     public render() {
-        if (this.state.articleClicked) {
-            return (
-                <Redirect to={this.state.articleName} />
-            );
-        }
 
         return (
             <>
+            <SEO url="blog" />
             {
                 articles.map((article, key) => (
                     <Panel
                         key={key}
-                        title={article.title}
+                        title={<NavLink to={article.path}>{article.title}</NavLink>}
                         subtitle={article.date}
-                        onClick={this.handleClick(article.path)}
                     >
                         <h4><i>{article.description}</i></h4>
                     </Panel>
@@ -53,11 +47,5 @@ export class BlogPanel extends React.Component<BlogProps, BlogState> {
             }
             </>
         )
-    }
-
-    private handleClick = (path: string) => {
-        return () => {
-            this.setState({articleClicked: true, articleName: path})
-        };
     }
 };

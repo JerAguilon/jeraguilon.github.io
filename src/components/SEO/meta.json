@@ -1,0 +1,42 @@
+{
+    "meta": [
+        {
+            "url": "default",
+            "title": "Jeremy Aguilon's Page",
+            "description": "Portfolio and Blog of a Software Developer, Product Manager, and Student",
+            "keywords": "portfolio, blog, software, jeremy aguilon"
+        },
+
+        {
+            "url": "about",
+            "title": "Jeremy Aguilon | About",
+            "description": "Introduction to Jeremy Aguilon",
+            "keywords": "jeremy aguilon, about"
+        },
+
+        {
+            "url": "education",
+            "title": "Jeremy Aguilon | Education",
+            "description": "Education of Jeremy Aguilon",
+            "keywords": "jeremy aguilon, Georgia Tech, Georgia Institute of Technology, Computer Science, Artificial Intelligence"
+        },
+        {
+            "url": "professional",
+            "title": "Jeremy Aguilon | Professional Experience",
+            "description": "Professional Experience of Jeremy Aguilon",
+            "keywords": "Work Experience, Google, Lyft, Amazon, Vertafore, Software Engineering, Computer Science, Jeremy Aguilon"
+        },
+        {
+            "url": "portfolio",
+            "title": "Jeremy Aguilon | Portfolio",
+            "description": "Portfolio of Jeremy Aguilon",
+            "keywords": "Portfolio, GitHub, Jeremy Aguilon"
+        },
+        {
+            "url": "blog",
+            "title": "Jeremy Aguilon | Blog",
+            "description": "Blog of Jeremy Aguilon",
+            "keywords": "Blog, Software Engineering, Jeremy Aguilon"
+        }
+    ]
+}

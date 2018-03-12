@@ -3,7 +3,7 @@ import * as React from 'react';
 import './Panel.css';
 
 export interface PanelProps {
-    title: string;
+    title: string | React.ReactNode;
     subtitle?: string;
     onClick?: () => void;
 }

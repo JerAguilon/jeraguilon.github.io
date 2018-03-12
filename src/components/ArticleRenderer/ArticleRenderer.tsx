@@ -1,7 +1,13 @@
 import * as React from 'react';
-import { CramScore } from 'components/CramScore';
+import Helmet from 'react-helmet';
+import _ from 'lodash';
+
 import { match } from 'react-router'
 import { Markdown } from 'react-showdown';
+
+import ArticleComponents from "./ArticleComponents"
+
+import './ArticleRenderer.css';
 
 const webpackRequireContext = require.context(
   '!raw-loader!../../articles/markdown',
@@ -38,9 +44,20 @@ export class ArticleRenderer extends React.Component<ArticleRendererProps,{}> {
     }
 
     public render()  {
-        const markdown = files.get(this.props.match.params.articleName + '.md');
+        const articleName = this.props.match.params.articleName;
+        const markdown = files.get(articleName + '.md');
+        const components = {
+            Helmet
+        }
+
+        _.forOwn(ArticleComponents[articleName], (value, key) => {
+            components[key] = value;
+        });
+
         return (
-            <Markdown markup={ markdown } components={{ CramScore }} />
+            <div className="article-markdown">
+                <Markdown markup={ markdown } components={ components } />
+            </div>
         );
     }
 }

@@ -1,6 +1,7 @@
 import * as React from "react";
 import './About.css'
 import Typist from 'react-typist'
+import { SEO } from 'components/SEO';
 
 enum TerminalStep {
     ABOUT_START=0,
@@ -59,6 +60,7 @@ export class About extends React.Component<TerminalProps, TerminalState> {
     public render() {
         return (
             <div className={'about'}>
+                <SEO url="about" />
                 <div className={'terminal terminal-about'}>
                     <div className={'terminal-header'}>
                         About Me
