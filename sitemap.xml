@@ -9,23 +9,33 @@
 
 <url>
   <loc>https://jeremyaguilon.me/</loc>
-  <lastmod>2018-03-08T08:29:21+00:00</lastmod>
+  <lastmod>2018-03-12T00:39:18+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://jeremyaguilon.me/professional</loc>
-  <lastmod>2018-03-08T08:29:21+00:00</lastmod>
+  <lastmod>2018-03-12T00:39:18+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://jeremyaguilon.me/education</loc>
-  <lastmod>2018-03-08T08:29:21+00:00</lastmod>
+  <lastmod>2018-03-12T00:39:18+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://jeremyaguilon.me/portfolio</loc>
-  <lastmod>2018-03-08T08:29:21+00:00</lastmod>
+  <lastmod>2018-03-12T00:39:18+00:00</lastmod>
   <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://jeremyaguilon.me/blog</loc>
+  <lastmod>2018-03-12T00:39:18+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://jeremyaguilon.me/blog/ranking_interview_questions_by_cram_score</loc>
+  <lastmod>2018-03-12T00:39:18+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 
 
