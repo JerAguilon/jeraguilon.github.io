@@ -96,13 +96,13 @@
         },
         {
             "external_url": "https://www.geeksforgeeks.org/find-position-element-sorted-array-infinite-numbers",
-            "title": "Searching an infinitely sized list",
+            "title": "Searching an Infinitely Sized List",
             "tags": ["Recursion", "Search"],
             "description": "Given an infinitely sized sorted list (no visible end index), find a particular number"
         },
         {
             "external_url": "https://leetcode.com/problems/decode-ways/description/",
-            "title": "Deocde Ways",
+            "title": "Decode Ways",
             "tags": ["Dynamic Programming", "Recursion"],
             "description": "Given an encoding from letters to numbers, count the number of ways to decode a string of numbers"
         },
