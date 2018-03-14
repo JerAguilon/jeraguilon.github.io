@@ -109,9 +109,9 @@ export class WorkPanel extends React.Component<WorkPanelProperties, {}> {
                                     <h4><b>Vertafore</b> Software Engineering Intern, <small>Summer 2016</small></h4>
                                 </div>
                                 <p>
-                                    In summer 2016, I had the opportunity to intern at Vertafore for the
-                                    purpose of aiding them in developing insurance software to facilitate
-                                    productivity. I helped integrate an array of cloud storage management
+                                    In the summer fo 2016, I worked with Vertafore on ImageRight,
+                                    an insurance software that facilitates agent productivity.
+                                    I helped integrate an array of cloud storage management
                                     solutions that are being implemented across all of the company's
                                     products. I also contributed to the initiative of providing high
                                     quality unit and end-to-end tests across the entire platform.
