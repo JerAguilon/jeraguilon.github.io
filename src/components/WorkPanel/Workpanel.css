@@ -72,6 +72,17 @@
 	);
 }
 
+.workpanel-marker-internblitz {
+	background: linear-gradient(
+		0deg
+		, #FFFFFF 0%
+		, #FFFFFF 50%
+		, #E74C3C 50%
+		, #E74C3C 50%
+	);
+
+}
+
 .workpanel-marker-vertafore {
 	background: linear-gradient(
 		0deg
