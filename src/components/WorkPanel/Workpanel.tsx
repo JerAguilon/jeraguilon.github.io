@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { COMPANY } from '../../constants'
 
 import { SEO } from 'components/SEO';
 
@@ -21,7 +20,7 @@ export class WorkPanel extends React.Component<WorkPanelProperties, {}> {
                 <div className="workpanels">
                     <div className="entries">
                         <div className="job-entry">
-                            <div data-company={COMPANY.GOOGLE2} className="workpanel-marker workpanel-marker-google">
+                            <div className="workpanel-marker workpanel-marker-google">
                             </div>
                             <div className="timeline-entry">
                                 <div className="timeline-entry-title">
@@ -34,7 +33,7 @@ export class WorkPanel extends React.Component<WorkPanelProperties, {}> {
                         </div>
                         <div className="job-entry">
                             <h3>2018</h3>
-                            <div data-company={COMPANY.LYFT} className="workpanel-marker workpanel-marker-lyft">
+                            <div className="workpanel-marker workpanel-marker-lyft">
                             </div>
                             <div className="timeline-entry">
                                 <div className="timeline-entry-title">
@@ -47,7 +46,7 @@ export class WorkPanel extends React.Component<WorkPanelProperties, {}> {
                             </div>
                         </div>
                         <div className="job-entry">
-                            <div data-company={COMPANY.AMAZON} className="workpanel-marker workpanel-marker-amazon">
+                            <div className="workpanel-marker workpanel-marker-amazon">
                             </div>
                             <div className="timeline-entry">
                                 <div className="timeline-entry-title">
@@ -67,7 +66,7 @@ export class WorkPanel extends React.Component<WorkPanelProperties, {}> {
                         </div>
                         <div className="job-entry">
                             <h3>2017</h3>
-                            <div data-company={COMPANY.GOOGLE1} className="workpanel-marker workpanel-marker-google">
+                            <div className="workpanel-marker workpanel-marker-google">
                             </div>
                             <div className="timeline-entry">
                                 <div className="timeline-entry-title">
@@ -84,7 +83,26 @@ export class WorkPanel extends React.Component<WorkPanelProperties, {}> {
                             </div>
                         </div>
                         <div className="job-entry">
-                            <div data-company={COMPANY.VERTAFORE} className="workpanel-marker workpanel-marker-vertafore">
+                            <div className="workpanel-marker workpanel-marker-internblitz">
+                            </div>
+                            <div className="timeline-entry">
+                                <div className="timeline-entry-title">
+                                    <h4><b>InternBlitz</b> Technical Co-founder, <small>Fall 2016-Fall 2017</small></h4>
+                                </div>
+                                <p>
+                                    <a href="https://internblitz.com">InternBlitz</a> is the common application for
+                                    internships. I worked on the core functionality of the platform
+                                    by architecting internship web scrapers, improving the application pipeline,
+                                    launching a user dashboard, and maturing a messaging system prototype--all
+                                    so that people could conduct an end-to-end internship search under one platform.
+                                    InternBlitz was accepted into
+                                    Georgia Tech's <a href="http://startupsummer.gatech.edu/">2017 Startup Launch</a>.
+                                    I balanced my work with my internship at Amazon.
+                                </p>
+                            </div>
+                        </div>
+                        <div className="job-entry">
+                            <div className="workpanel-marker workpanel-marker-vertafore">
                             </div>
                             <h3>2016</h3>
                             <div className="timeline-entry">

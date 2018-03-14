@@ -1,1 +1,0 @@
-export {COMPANY}  from './constants'
