@@ -131,6 +131,11 @@
     width: calc(100% - 150px);
 }
 
+.timeline-entry-title > h4 {
+    font-family: 'Ubuntu Mono', monospace;
+    display: inline;
+}
+
 .workpanels-content {
     margin-left: 50px;
 }

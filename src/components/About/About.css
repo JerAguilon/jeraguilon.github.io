@@ -3,7 +3,6 @@
     color: white;
     padding: 30px;
     border-radius: 5px;
-    max-width: 600px;
     font-family: 'Ubuntu Mono', monospace;
     font-size: 20px;
     margin-bottom: 5px;
@@ -89,5 +88,9 @@
         margin-left: 63%;
         width: 70%;
         margin-top: -13%;
+    }
+
+    .terminal {
+        max-width: 600px;
     }
 }
