@@ -58,7 +58,7 @@
         },
         {
             "external_url": "https://leetcode.com/problems/word-search-ii",
-            "title": "Range Sum Query Mutable",
+            "title": "Word Search II",
             "tags": ["Trees", "Recursion", "Search"],
             "description": "Given a 2-D array of characters and a list of valid words, find the number of words on the board"
         },
