@@ -108,7 +108,7 @@ export class About extends React.Component<TerminalProps, TerminalState> {
         return (
             <div>
                 {SHELL_INPUT}
-                <Typist avgTypingDelay={70}
+                <Typist avgTypingDelay={30}
                         onTypingDone={doneHandler}
                         cursor={{ hideWhenDone: true }}
                         startDelay={500}>

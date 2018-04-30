@@ -19,8 +19,13 @@ export class PortfolioPanel extends React.Component<PortfolioPanelProperties, {}
             <>
                 <SEO url="portfolio"/>
                 <div className="portfolio-panel">
-                    <Typist avgTypingDelay={30}>
+                    <Typist avgTypingDelay={15}>
                         <p>Under construction! Come back soon.*</p>
+                        <br/>
+                        <p>
+                            For now feel free to look at my <a href="https://github.com/jeraguilon">
+                            GitHub Portfolio</a>.
+                        </p>
                         <br/>
                         <p><small>*Soon could mean 10 years from now...</small></p>
                     </Typist>
