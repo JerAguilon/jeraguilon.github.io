@@ -40,8 +40,14 @@ export class WorkPanel extends React.Component<WorkPanelProperties, {}> {
                                     <h4><b>Lyft</b> Software Engineering Intern, <small>Winter 2018</small></h4>
                                 </div>
                                 <p>
-                                    Currently a member on <a href="https://lyft.com/expressdrive" target="_blank">
-                                    Express Drive</a>. More on this soon!
+                                    At Lyft I contributed to <a href="https://lyft.com/expressdrive" target="_blank">
+                                    Express Drive</a> and Fleet Management. On the express drive end, I improved
+                                    product experience through tooling for vehicle geoloction,
+                                    maintenance/collision servicing, and rental reposession. Within Fleet Management,
+                                    I aided the deployment and querying of Elasticsearch indices on Lyft's autonomous
+                                    and rental vehicles. Holistically, I matured my understanding of datastore
+                                    management, frontend design patterns, API building, and architecting brand new
+                                    microservices.
                                 </p>
                             </div>
                         </div>
