@@ -5,6 +5,12 @@
             "title": "Ranking Interview Questions by Cram Score",
             "description": "An opinionated list of SDE interview questions, organized by priority",
             "date": "Sunday March 11, 2018"
+        },
+        {
+            "path": "blog/sales_prediction_a_deep_learning_approach",
+            "title": "Sales Prediction: A Deep Learning Approach",
+            "description": "A Kaggle competition attempt to use deep learning on sales data",
+            "date": "Tuesday May 8, 2018"
         }
     ]
 }

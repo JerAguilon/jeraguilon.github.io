@@ -24,6 +24,7 @@
     "hoek": "^4.2.1",
     "json-loader": "^0.5.7",
     "lodash": "^4.17.5",
+    "normalize-range": "^0.1.2",
     "num2fraction": "^1.2.2",
     "react": "^16.2.0",
     "react-bootstrap": "^0.32.1",
