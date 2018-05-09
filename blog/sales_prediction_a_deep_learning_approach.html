@@ -1,0 +1,325 @@
+<!DOCTYPE html><html class="wf-loading wf-titilliumweb-n3-loading wf-titilliumweb-n4-loading wf-titilliumweb-n7-loading wf-sansserif-n4-loading wf-ubuntumono-n4-loading"><head><base target="_blank"><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><meta name="google-site-verification" content="59gOPGDyLFWB0mxDLN48v6FzQiZfPcVYlUjoVH2AFs0"><title>Jeremy Aguilon | Sales Prediction: A Deep Learning Approach</title><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400,700%7Csans-serif%7CUbuntu+Mono" media="all"><link href="/static/css/main.22cbd794.css" rel="stylesheet"><meta name="description" content="A Kaggle competition attempt to use deep learning on sales data" data-react-helmet="true"><meta name="keywords" content="software engineering, jeremy aguilon, sales, machine learning, AI, fastai" data-react-helmet="true"></head><body><div id="content"><div class="component-wrapper" style="background-color:#62c5e2" data-reactroot=""><div class="container"><div class="page-banner col-md-12"><div class="pixel-logo md-pixel-logo-coding"></div><div class="page-name page-header"><h1>Jeremy Aguilon's Page</h1></div></div><div id="content-wrapper" class="col-sm-10 col-xs-12"><div id="slide-panel" class="col-xs-12"><div class="article-markdown"><div><p></p>
+<h1 id="salespredictionadeeplearningapproach">Sales Prediction: A Deep Learning Approach</h1>
+<h4 id="_akagglecompetitionattempttousedeeplearningonsalesdata_"><em>A Kaggle competition attempt to use deep learning on sales data</em></h4>
+<h5 id="5818">5/8/18</h5>
+<hr>
+<blockquote>
+  <p>First, a <a href="https://github.com/JerAguilon/Kaggle/blob/master/competitive-data-science-predict-future-sales/predict_future_sales.ipynb">GitHub link</a>
+  for those who prefer reading code. I used <a href="https://github.com/fastai/fastai">fastAI's library</a>, which wraps
+  PyTorch quite nicely for this problem domain.</p>
+</blockquote>
+<p>Given that I'm between internships, I've dedicated this lull in work towards self-learning.
+Among others, Jeremy Howard's <a href="https://fast.ai">fast.ai</a> deep learning lectures have been an absolute
+pleasure. One topic of many that captivated me was <a href="http://www.fast.ai/2018/04/29/categorical-embeddings/">using deep learning for 
+tabular data</a> through embeddings. While I was aware of 
+<a href="https://en.wikipedia.org/wiki/Gradient_boosting">gradient boosting</a>
+for these problems, Jeremy (Howard, not me) suggests that deep architectures can do the
+job just as well. Before we begin, here are  some definitions.</p>
+<hr>
+<p><img src="/static/media/kaggle_taxi.73c324d4.png"></p>
+<p><small><i>The award winning architecture of 
+<a href="https://www.kaggle.com/c/nyc-taxi-trip-duration">Kaggle's NYC Taxi Duration Competition</a></i></small></p>
+<hr>
+<p><strong>An embedding</strong> is a way of representing categorical variables numerically. Categorical variables
+could include non-numeric concepts like season or even low-cardinality numbers such as month.
+Each category is mapped to an ID, which is associated with a vector. This isn't so different than a
+<a href="https://en.wikipedia.org/wiki/One-hot"><strong>one-hot encoding</strong></a>. These vectors are fed through
+the neural network alongside all the numerical variables. The weights in these
+vectors are updated as the model learns. The implication is that as the neural
+net trains, elements with similar traits will have close vectors in Euclidean space.</p>
+<p><strong>Tabular data</strong> is data that you would expect in CSV format. In particular, we're focusing
+on <strong>time-series</strong> data, which involves data points taken chronologically. For these problems,
+we typically have a goal of predicting the outcome of a future date.</p>
+<h3 id="creatingatabulardatamodelpredictingsales">Creating a Tabular Data Model: Predicting Sales</h3>
+<p>A straightforward example of learning with tabular data is sales prediction from past
+months' data. Luckily, there are tons of Kaggle competitions on this, so I arbitrarily picked
+<a href="https://www.kaggle.com/c/competitive-data-science-predict-future-sales">Predict Future Sales</a>.
+It's also a worthy candidate because almost everyone else is using a gradient boosting
+or similar decision tree approach. </p>
+<p>The goal is to predict the sales of each item that a Russian store
+chain offers for the month after the test data ends. To ensure a worthy comparison between
+gradient boosting and my approach, I used 
+<a href="https://www.kaggle.com/kcbighuge/xgboost-with-item-categories-mapped">this</a> kernel's 
+as a baseline. It provides a clear benchmark: a root mean square error (RMSE) of <code>1.0428</code>.</p>
+<p>Data engineering isn't the emphasis for this writeup. In short, we transform files like this…</p>
+<hr>
+<p>item_categories.csv</p>
+<table class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th>item_category_name</th>
+      <th>item_category_id</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>PC - Гарнитуры/Наушники</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Аксессуары - PS2</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Аксессуары - PS3</td>
+      <td>2</td>
+    </tr>
+  </tbody>
+</table>
+<p>items.csv</p>
+<table class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th>item_name</th>
+      <th>item_id</th>
+      <th>item_category_id</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>! ВО ВЛАСТИ НАВАЖДЕНИЯ (ПЛАСТ.)         D</td>
+      <td>0</td>
+      <td>40</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>!ABBYY FineReader 12 Professional Edition Full...</td>
+      <td>1</td>
+      <td>76</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>***В ЛУЧАХ СЛАВЫ   (UNV)                    D</td>
+      <td>2</td>
+      <td>40</td>
+    </tr>
+  </tbody>
+</table>
+<p>shops.csv</p>
+<table class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th>shop_name</th>
+      <th>shop_id</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>!Якутск Орджоникидзе, 56 фран</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>!Якутск ТЦ "Центральный" фран</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Адыгея ТЦ "Мега"</td>
+      <td>2</td>
+    </tr>
+  </tbody>
+</table>
+<p>sales_test.csv</p>
+<table class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th>date</th>
+      <th>date_block_num</th>
+      <th>shop_id</th>
+      <th>item_id</th>
+      <th>item_price</th>
+      <th>item_cnt_day</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>02.01.2013</td>
+      <td>0</td>
+      <td>59</td>
+      <td>22154</td>
+      <td>999.00</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>03.01.2013</td>
+      <td>0</td>
+      <td>25</td>
+      <td>2552</td>
+      <td>899.00</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>05.01.2013</td>
+      <td>0</td>
+      <td>25</td>
+      <td>2552</td>
+      <td>899.00</td>
+      <td>-1.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>test.csv</p>
+<table class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th>ID</th>
+      <th>shop_id</th>
+      <th>item_id</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>5</td>
+      <td>5037</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>5</td>
+      <td>5320</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>5</td>
+      <td>5233</td>
+    </tr>
+  </tbody>
+</table>
+<hr>
+<p>…Into data that looks like:</p>
+<table class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th>item_id</th>
+      <th>shop_id</th>
+      <th>date_block_num</th>
+      <th>month</th>
+      <th>year</th>
+      <th>target</th>
+      <th>target_lag_1</th>
+      <th>target_lag_2</th>
+      <th>target_lag_3</th>
+      <th>target_lag_12</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>5037</td>
+      <td>5</td>
+      <td>34</td>
+      <td>10</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>3.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>5320</td>
+      <td>5</td>
+      <td>34</td>
+      <td>10</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>5233</td>
+      <td>5</td>
+      <td>34</td>
+      <td>10</td>
+      <td>2</td>
+      <td>0</td>
+      <td>1.0</td>
+      <td>3.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>5232</td>
+      <td>5</td>
+      <td>34</td>
+      <td>10</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5268</td>
+      <td>5</td>
+      <td>34</td>
+      <td>10</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+<hr>
+<p>The general approach is to introduce <em>lag</em> features. The <code>target</code> was how much was actually
+sold in the given <code>date_block_num</code>. And the lags correspond to the <code>target</code> 1, 2, 3, and 12 months
+ago for a given <code>(item_id, shop_id, date_block_num)</code> index. This allows the network
+to learn how current and past months affect future trends.</p>
+<p>Now here's the fun part. Our dataset has a mixture of continuous variables—which feed
+cleanly into what we expect in a neural net—and categorical variable—which go through
+the embedding matrices. This data gets fed through 2 hidden linear layers of size 1000 and 500.
+Finally a sigmoid is applied on the last single-node layer. Architecturally, this is very
+similar to the winning taxi ride solution above.</p>
+<p>To reduce some overfitting problems, I introduced a substantial amount of dropout and L2 regularization. Optimizing
+based on the root mean square <em>log</em> error (RMSLE) instead of the expected RMSE seemed to stabilize the loss
+function more easily.</p>
+<hr>
+<p><img src="/static/media/validationset.2e005661.png"></p>
+<p><small><i>Training the model for 3 epochs</i></small></p>
+<hr>
+<p>I ran this for 3 epochs, and… it worked! The RMSE on the validation set was <code>.9638</code>, and
+the RMSE on the public leaderboard was <code>.9652</code>, despite some troubles with overfitting.
+Not only did I outperform the original kernel's
+score of <code>1.0428</code>, I placed inside the top 10% of the competition using features that
+generated only top 25% percent results using gradient boosting.
+<em>And</em> I didn't spend any time engineering more features.</p>
+<h3 id="shouldwealwaysusedeeplearning">Should We Always Use Deep Learning?</h3>
+<p>Although I outperformed the kernel I borrowed, there are a few tree-boosting models
+that outperformed mine. So what was the cause? One <a href="https://www.kaggle.com/anqitu/feature-engineer-and-model-ensemble-top-10">recently available kernel</a>
+did a lot more feature engineering than I did. Which I suppose is one of the takeaways.
+While deep learning increased my performance for the limited set of features I used, I spent
+multiple hours tuning hyperparameters and retraining. XGBoost gave fast feedback and
+was comparatively easier to configure.</p>
+<p>In the end, the training data is just as relevant to success as the model.
+There were only 212400 rows of data to train on, so adding features would have
+propelled my model even further.</p>
+<p>Is it worth the effort? In production: why not if it really helps? In a Kaggle competition: maybe if
+the problem is incredibly cool and doesn't have an award of "Kudos."</p></div></div></div></div><div class="col-sm-2 col-xs-12"><div class="nav-pane affix"><a aria-current="false" href="/"><h3>About Me</h3></a><a aria-current="false" href="/professional"><h3>Professional Experience</h3></a><a aria-current="false" href="/education"><h3>Education</h3></a><a aria-current="false" href="/portfolio"><h3>Portfolio</h3></a><a class="active" aria-current="true" href="/blog"><h3>Blog</h3></a></div></div></div></div></div><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-112031350-1"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-112031350-1")</script><script src="./node_modules/react/umd/react.development.js" type="text/jsx"></script><script src="./node_modules/react-dom/umd/react-dom.development.js" type="text/jsx"></script><script src="./dist/bundle.js" type="text/jsx"></script><span aria-hidden="true" style="display: block; position: absolute; top: -9999px; left: -9999px; font-size: 300px; width: auto; height: auto; line-height: normal; margin: 0px; padding: 0px; font-variant: normal; white-space: nowrap; font-family: 'Titillium Web',serif; font-style: normal; font-weight: 300;">BESbswy</span><span aria-hidden="true" style="display: block; position: absolute; top: -9999px; left: -9999px; font-size: 300px; width: auto; height: auto; line-height: normal; margin: 0px; padding: 0px; font-variant: normal; white-space: nowrap; font-family: 'Titillium Web',sans-serif; font-style: normal; font-weight: 300;">BESbswy</span><span aria-hidden="true" style="display: block; position: absolute; top: -9999px; left: -9999px; font-size: 300px; width: auto; height: auto; line-height: normal; margin: 0px; padding: 0px; font-variant: normal; white-space: nowrap; font-family: serif; font-style: normal; font-weight: 300;">BESbswy</span><span aria-hidden="true" style="display: block; position: absolute; top: -9999px; left: -9999px; font-size: 300px; width: auto; height: auto; line-height: normal; margin: 0px; padding: 0px; font-variant: normal; white-space: nowrap; font-family: sans-serif; font-style: normal; font-weight: 300;">BESbswy</span><span aria-hidden="true" style="display: block; position: absolute; top: -9999px; left: -9999px; font-size: 300px; width: auto; height: auto; line-height: normal; margin: 0px; padding: 0px; font-variant: normal; white-space: nowrap; font-family: 'Titillium Web',serif; font-style: normal; font-weight: 400;">BESbswy</span><span aria-hidden="true" style="display: block; position: absolute; top: -9999px; left: -9999px; font-size: 300px; width: auto; height: auto; line-height: normal; margin: 0px; padding: 0px; font-variant: normal; white-space: nowrap; font-family: 'Titillium Web',sans-serif; font-style: normal; font-weight: 400;">BESbswy</span><span aria-hidden="true" style="display: block; position: absolute; top: -9999px; left: -9999px; font-size: 300px; width: auto; height: auto; line-height: normal; margin: 0px; padding: 0px; font-variant: normal; white-space: nowrap; font-family: serif; font-style: normal; font-weight: 400;">BESbswy</span><span aria-hidden="true" style="display: block; position: absolute; top: -9999px; left: -9999px; font-size: 300px; width: auto; height: auto; line-height: normal; margin: 0px; padding: 0px; font-variant: normal; white-space: nowrap; font-family: sans-serif; font-style: normal; font-weight: 400;">BESbswy</span><span aria-hidden="true" style="display: block; position: absolute; top: -9999px; left: -9999px; font-size: 300px; width: auto; height: auto; line-height: normal; margin: 0px; padding: 0px; font-variant: normal; white-space: nowrap; font-family: 'Titillium Web',serif; font-style: normal; font-weight: 700;">BESbswy</span><span aria-hidden="true" style="display: block; position: absolute; top: -9999px; left: -9999px; font-size: 300px; width: auto; height: auto; line-height: normal; margin: 0px; padding: 0px; font-variant: normal; white-space: nowrap; font-family: 'Titillium Web',sans-serif; font-style: normal; font-weight: 700;">BESbswy</span><span aria-hidden="true" style="display: block; position: absolute; top: -9999px; left: -9999px; font-size: 300px; width: auto; height: auto; line-height: normal; margin: 0px; padding: 0px; font-variant: normal; white-space: nowrap; font-family: serif; font-style: normal; font-weight: 700;">BESbswy</span><span aria-hidden="true" style="display: block; position: absolute; top: -9999px; left: -9999px; font-size: 300px; width: auto; height: auto; line-height: normal; margin: 0px; padding: 0px; font-variant: normal; white-space: nowrap; font-family: sans-serif; font-style: normal; font-weight: 700;">BESbswy</span><span aria-hidden="true" style="display: block; position: absolute; top: -9999px; left: -9999px; font-size: 300px; width: auto; height: auto; line-height: normal; margin: 0px; padding: 0px; font-variant: normal; white-space: nowrap; font-family: sans-serif,serif; font-style: normal; font-weight: 400;">BESbswy</span><span aria-hidden="true" style="display: block; position: absolute; top: -9999px; left: -9999px; font-size: 300px; width: auto; height: auto; line-height: normal; margin: 0px; padding: 0px; font-variant: normal; white-space: nowrap; font-family: sans-serif,sans-serif; font-style: normal; font-weight: 400;">BESbswy</span><span aria-hidden="true" style="display: block; position: absolute; top: -9999px; left: -9999px; font-size: 300px; width: auto; height: auto; line-height: normal; margin: 0px; padding: 0px; font-variant: normal; white-space: nowrap; font-family: serif; font-style: normal; font-weight: 400;">BESbswy</span><span aria-hidden="true" style="display: block; position: absolute; top: -9999px; left: -9999px; font-size: 300px; width: auto; height: auto; line-height: normal; margin: 0px; padding: 0px; font-variant: normal; white-space: nowrap; font-family: sans-serif; font-style: normal; font-weight: 400;">BESbswy</span><span aria-hidden="true" style="display: block; position: absolute; top: -9999px; left: -9999px; font-size: 300px; width: auto; height: auto; line-height: normal; margin: 0px; padding: 0px; font-variant: normal; white-space: nowrap; font-family: 'Ubuntu Mono',serif; font-style: normal; font-weight: 400;">BESbswy</span><span aria-hidden="true" style="display: block; position: absolute; top: -9999px; left: -9999px; font-size: 300px; width: auto; height: auto; line-height: normal; margin: 0px; padding: 0px; font-variant: normal; white-space: nowrap; font-family: 'Ubuntu Mono',sans-serif; font-style: normal; font-weight: 400;">BESbswy</span><span aria-hidden="true" style="display: block; position: absolute; top: -9999px; left: -9999px; font-size: 300px; width: auto; height: auto; line-height: normal; margin: 0px; padding: 0px; font-variant: normal; white-space: nowrap; font-family: serif; font-style: normal; font-weight: 400;">BESbswy</span><span aria-hidden="true" style="display: block; position: absolute; top: -9999px; left: -9999px; font-size: 300px; width: auto; height: auto; line-height: normal; margin: 0px; padding: 0px; font-variant: normal; white-space: nowrap; font-family: sans-serif; font-style: normal; font-weight: 400;">BESbswy</span><script type="text/javascript" src="/static/js/main.1952c6bb.js"></script></body></html>

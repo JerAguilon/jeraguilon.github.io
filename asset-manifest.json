@@ -1,6 +1,8 @@
 {
-  "main.css": "static/css/main.c3a85f1e.css",
-  "main.css.map": "static/css/main.c3a85f1e.css.map",
-  "main.js": "static/js/main.e1e2d266.js",
-  "main.js.map": "static/js/main.e1e2d266.js.map"
+  "main.css": "static/css/main.22cbd794.css",
+  "main.css.map": "static/css/main.22cbd794.css.map",
+  "main.js": "static/js/main.1952c6bb.js",
+  "main.js.map": "static/js/main.1952c6bb.js.map",
+  "static/media/kaggle_taxi.png": "static/media/kaggle_taxi.73c324d4.png",
+  "static/media/validationset.png": "static/media/validationset.2e005661.png"
 }
