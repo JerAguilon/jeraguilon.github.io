@@ -151,7 +151,7 @@ shops.csv
   </tbody>
 </table>
 
-sales_test.csv
+sales_train.csv
 <table class="dataframe">
   <thead>
     <tr>
@@ -229,7 +229,7 @@ test.csv
 
 ---
 
-...Into data that looks like:
+...Into data that looks like this (many columns omitted for brevity):
 
 <table class="dataframe">
   <thead>
