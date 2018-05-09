@@ -47,8 +47,8 @@ we typically have a goal of predicting the outcome of a future date.
 
 ### Creating a Tabular Data Model: Predicting Sales
 
-A straightforward example of learning with tabular data is sales prediction from past
-months' data. Luckily, there are tons of Kaggle competitions on this, so I arbitrarily picked
+A straightforward example of learning with tabular data is sales prediction from past trends.
+Luckily, there are tons of Kaggle competitions on this, so I arbitrarily picked
 [Predict Future Sales](https://www.kaggle.com/c/competitive-data-science-predict-future-sales).
 It's also a worthy candidate because almost everyone else is using a gradient boosting
 or similar decision tree approach. 
