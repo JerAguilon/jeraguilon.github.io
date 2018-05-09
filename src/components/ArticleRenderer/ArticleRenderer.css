@@ -5,3 +5,19 @@
 img {
  max-width: 100%;
 }
+
+table {
+    overflow-x: auto;
+    width: 100%;
+    margin-top: 8px;
+    margin-bottom: 7px;
+    display: block;
+}
+
+table * {
+    border: 1px solid #6d6d6d;
+}
+
+table th, table tr, table td {
+    padding: 3px;
+}
