@@ -47,8 +47,8 @@ we typically have a goal of predicting the outcome of a future date.
 
 ### Creating a Tabular Data Model: Predicting Sales
 
-A straightforward example of learning with tabular data is sales prediction from past
-months' data. Luckily, there are tons of Kaggle competitions on this, so I arbitrarily picked
+A straightforward example of learning with tabular data is sales prediction from past trends.
+Luckily, there are tons of Kaggle competitions on this, so I arbitrarily picked
 [Predict Future Sales](https://www.kaggle.com/c/competitive-data-science-predict-future-sales).
 It's also a worthy candidate because almost everyone else is using a gradient boosting
 or similar decision tree approach. 
@@ -321,7 +321,7 @@ test.csv
 
 The general approach is to introduce _lag_ features. The `target` was how much was actually
 sold in the given `date_block_num`. And the lags correspond to the `target` 1, 2, 3, and 12 months
-ago for a given `(item_id, shop_id, date_block_num)` index. This allows the network
+ago for a given `(item_id, shop_id, date_block_num)` index. This allows the model
 to learn how current and past months affect future trends.
 
 
@@ -361,7 +361,7 @@ was comparatively easier to configure.
 
 In the end, the training data is just as relevant to success as the model.
 There were only 212400 rows of data to train on, so adding features would have
-propelled my model even further.
+propelled my model even further and perhaps eradicated the slight overfit.
 
 Is it worth the effort? In production: why not if it really helps? In a Kaggle competition: maybe if
 the problem is incredibly cool and doesn't have an award of "Kudos."
