@@ -51,7 +51,11 @@ export class ArticleRenderer extends React.Component<ArticleRendererProps,{}> {
         }
 
         _forOwn(ArticleComponents[articleName], (value, key) => {
-            components[key] = value;
+            if (value.toString().endsWith('.png')) {
+                components[key] = () => (<img src={value} />); 
+            } else {
+                components[key] = value;
+            }
         });
 
         return (

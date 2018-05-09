@@ -35,10 +35,10 @@ export class BlogPanel extends React.Component<BlogProps, BlogState> {
             <>
             <SEO url="blog" />
             {
-                articles.map((article, key) => (
+                articles.slice(0).reverse().map((article, key) => (
                     <Panel
                         key={key}
-                        title={<NavLink to={article.path}>{article.title}</NavLink>}
+                        title={<NavLink to={article.path}><p>{article.title}</p></NavLink>}
                         subtitle={article.date}
                     >
                         <h4><i>{article.description}</i></h4>

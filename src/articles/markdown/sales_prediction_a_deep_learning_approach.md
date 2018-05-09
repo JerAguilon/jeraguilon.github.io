@@ -11,7 +11,7 @@
 
 ---
 
-First, a [_GitHub link_](https://github.com/JerAguilon/Kaggle/blob/master/competitive-data-science-predict-future-sales/predict_future_sales.ipynb) for those who prefer reading code.
+> First, a [GitHub link](https://github.com/JerAguilon/Kaggle/blob/master/competitive-data-science-predict-future-sales/predict_future_sales.ipynb) for those who prefer reading code.
 
 Given that I'm between internships, I've dedicated this lull in work to self learning.
 Among others, Jeremy Howard's [fast.ai](https://fast.ai) deep learning lectures have been an absolute
@@ -19,34 +19,73 @@ pleasure. One topic of many that captivated me was [using deep learning for
 tabular data](http://www.fast.ai/2018/04/29/categorical-embeddings/) through embeddings. While I was aware of 
 [gradient boosting](https://en.wikipedia.org/wiki/Gradient_boosting)
 for these problems, Jeremy (Howard, not me) suggests that deep architectures can do the
-job just as well.
+job just as well. Before we begin, here are  some definitions.
+
+**An embedding** is a way of representing categorical variables numerically. Categorical variables
+could include non-numeric concepts like season or even low-cardinality numbers such as month.
+Unlike [one-hot encoding](https://en.wikipedia.org/wiki/One-hot), we associate
+each category with a vector rather than a single number. The implicatoin is that as the neural
+net trains, elements with similar traits will have close vectors in euclidean space.
+
+**Tabular data** is data that you would expect in CSV format. In particular, we're focusing
+on **time-series** data. [TODO]
+
+
+
+### Creating a Tabular Data Model: Predicting Sales
 
 A straightforward example of learning with tabular data is sales prediction from past
 months' data. Luckily, there are tons of Kaggle competitions on this, so I arbitarily picked
 [Predict Future Sales](https://www.kaggle.com/c/competitive-data-science-predict-future-sales).
 It's also a worthy candidate because almost everyone else is using a gradient boosting
-approach. My success criteria was to match their performances without
-doing any extra feature engineering.
+approach. 
 
 The goal of this competition is to predict the sales of each item that a Russian store
-chain offers for the month after the test data ends. The data looks like:
+chain offers for the month after the test data ends. To ensure a worthy comparison between
+gradient boosting and my approach, I used 
+[this](https://www.kaggle.com/kcbighuge/xgboost-with-item-categories-mapped) kernel's 
+data engineering approach. It turns data that looks like this:
+
+Into data that looks like:
 
 [TODO]
 
-Clearly, merging this data is necessary. Using some rudimentary feature engineering,
-We can combine these datasets and `item_cnt_day` fields
+The geneneral approach is to introduce _lag_ features. The `target` was how much was actually
+sold in the given `date_block_num`. And the lags correspond to the `target` 1, 2, 3, and 12 months
+ago for a given `(item_id, shop_id, date_block_num)` index.
 
-Now here's the fun part. The fastai library provides an easy-to-use wrapper for
-PyTorch. Overall, the architecture looks like this:
+The kernel I used also sets a clear benchmark: a root mean square error of `1.0428`.
 
-[TODO]
+Now here's the fun part. Our dataset has a mixture of continuous variables--which feed
+cleanly into what we expect in a neura net--and categorical variables--which go through
+the embedding matrices. This data gets fed through 2 hidden layers. To reduce some overfitting
+problems I had, I introduced a substantial amount of dropout and L2 regularizatoin.
 
-I ran this for 3 epochs, and... it worked! My RMSE score on the public leaderboard ended up being .96521,
-placing me well among all the folks using boosting trees.
+---
 
-I suspect that had I tuned my hyperparameters to reduce overfitting or shifted
-efforts to my own novel feature engineering, I could improve this score
-quite a bit. But I set a goal of validating this methodology, and I got what I wanted.
+<ValidationImage/>
 
-For a more technical insight, I found it fascinating peering into what the embeddings are doing. For example,
-consider this principle component analysis on 3000 random samples from the dataset.
+<small><i>Training the model for 3 epochs</i></small>
+
+---
+
+I ran this for 3 epochs, and... it worked! My RMSE on the validation set was `.9638`, and
+RMSE on the public leaderboard was `.9652`, despite some troubles with overfitting.
+Not only did I outperform the original kernel's
+score of `1.0428`, I placed inside the top 10% of the competition using features that
+generated top 25% percent results using gradient boosting.
+_And_ I really didn't spend any time doing my own feature engineering.
+
+### Should We Always Use Deep Learning?
+
+Although I outperformed the kernel I borrowed, there are a few tree boosting models
+that outperformed mine. So what was the cause? One [recently available kernel](https://www.kaggle.com/anqitu/feature-engineer-and-model-ensemble-top-10)
+did a lot more feature engineering than I did. Which I suppose is one of the takeaways.
+While deep learning is a neat trick that appeared to increase my performance, I spent
+multiple hours training and tuning hyperparameters.  XGBoost gave fast feedback and
+was comparatively easier to configure.
+
+In the end, the data you feed to your architecture is just as crucial to the success
+of a model. There were only 212400 rows of data to train on, so adding features would have
+propelled my model even further. Is it worth the effort? In production--why not if it really helps?
+In a Kaggle competition--maybe if the problem is incredibly cool.
