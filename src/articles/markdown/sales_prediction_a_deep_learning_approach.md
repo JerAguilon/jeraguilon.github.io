@@ -27,7 +27,7 @@ job just as well. Before we begin, here are  some definitions.
 
 <KaggleTaxi />
 
-<small><i>The award winning architecture of 
+<small><i>The winning architecture of 
 [Kaggle's NYC Taxi Duration Competition](https://www.kaggle.com/c/nyc-taxi-trip-duration)</i></small>
 
 ---
@@ -56,7 +56,7 @@ or similar decision tree approach.
 The goal is to predict the sales of each item that a Russian store
 chain offers for the month after the test data ends. To ensure a worthy comparison between
 gradient boosting and my approach, I used 
-[this](https://www.kaggle.com/kcbighuge/xgboost-with-item-categories-mapped) kernel's 
+[this](https://www.kaggle.com/kcbighuge/xgboost-with-item-categories-mapped) kernel
 as a baseline. It provides a clear benchmark: a root mean square error (RMSE) of `1.0428`.
 
 Data engineering isn't the emphasis for this writeup. In short, we transform files like this...
@@ -326,7 +326,7 @@ to learn how current and past months affect future trends.
 
 
 Now here's the fun part. Our dataset has a mixture of continuous variables—which feed
-cleanly into what we expect in a neural net—and categorical variable—which go through
+cleanly into what we expect in a neural net—and categorical variables—which go through
 the embedding matrices. This data gets fed through 2 hidden linear layers of size 1000 and 500.
 Finally a sigmoid is applied on the last single-node layer. Architecturally, this is very
 similar to the winning taxi ride solution above.
