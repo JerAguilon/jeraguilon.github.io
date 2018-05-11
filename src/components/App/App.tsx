@@ -41,9 +41,22 @@ export class App extends React.Component<{}, AppState> {
     public constructor(props) {
         super(props);
         this.state = {
-            currentPage: CurrentPage.ABOUT
+            currentPage: this.getCurrentPage(),
         }
         this.handleTransition = this.handleTransition.bind(this);
+    }
+    
+    private getCurrentPage() {
+        // hacky way to get the pathname until a better way is investigated
+        if (window.location.pathname === '/about') {
+            return CurrentPage.ABOUT;    
+        } else if (window.location.pathname === '/professional') {
+            return CurrentPage.PROFESSIONAL;
+        } else if (window.location.pathname === '/portfolio') {
+            return CurrentPage.PORTFOLIO;
+        } else {
+            return CurrentPage.BLOG;
+        }
     }
 
     public render() {
