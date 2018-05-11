@@ -21,3 +21,7 @@ table * {
 table th, table tr, table td {
     padding: 3px;
 }
+
+.tech-interview-iframe {
+    width: 90%;
+}

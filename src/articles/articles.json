@@ -11,6 +11,12 @@
             "title": "Sales Prediction: A Deep Learning Approach",
             "description": "A Kaggle competition attempt to use deep learning on sales data",
             "date": "Tuesday May 8, 2018"
+        },
+        {
+            "path": "blog/visualizing_four_key_interview_algorithms",
+            "title": "Visualizing Four Key Technical Interview Algorithms",
+            "description": "An interactive way to learn four extremely crucial interview algorithms",
+            "date": "Friday May 11, 2018"
         }
     ]
 }
