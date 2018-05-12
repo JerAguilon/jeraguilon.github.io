@@ -17,13 +17,15 @@ export interface WrapperProps {
 
 export interface WrapperState {
     width: number;
+    navExpanded: boolean;
 }
 
 export class Wrapper extends React.Component<WrapperProps, WrapperState> {
     public constructor(props: WrapperProps) {
         super(props);
-        this.state = { width: -1 };
+        this.state = { width: -1, navExpanded: true };
         this.updateWidth = this.updateWidth.bind(this);
+        this.setNavExpanded = this.setNavExpanded.bind(this);
     }
 
     public componentDidMount() {
@@ -59,7 +61,7 @@ export class Wrapper extends React.Component<WrapperProps, WrapperState> {
     private getBanner = () => {
         return this.isSmall
             ? (
-                <Navbar fixedTop inverse collapseOnSelect>
+                <Navbar fixedTop inverse onToggle={this.setNavExpanded} expanded={this.state.navExpanded} >
                     <Navbar.Header>
                         <NavbarBrand>
                             <PixelLogo
@@ -136,6 +138,7 @@ export class Wrapper extends React.Component<WrapperProps, WrapperState> {
             element!.style.webkitAnimation = '';
         }, 5);
         element!.classList.add('slide-out');
+        this.setState({ navExpanded: false });
     }
 
     private updateWidth() {
@@ -145,5 +148,10 @@ export class Wrapper extends React.Component<WrapperProps, WrapperState> {
     private get isSmall(): boolean {
         // edge case: when the component has constructed, the width is -1
         return this.state.width < 768 && this.state.width > 0;
+    }
+
+    private setNavExpanded(expanded) {
+        this.setState({ navExpanded: expanded}); 
+        this.forceUpdate();
     }
 }
