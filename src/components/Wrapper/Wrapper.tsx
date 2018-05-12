@@ -23,7 +23,7 @@ export interface WrapperState {
 export class Wrapper extends React.Component<WrapperProps, WrapperState> {
     public constructor(props: WrapperProps) {
         super(props);
-        this.state = { width: -1, navExpanded: true };
+        this.state = { width: -1, navExpanded: false };
         this.updateWidth = this.updateWidth.bind(this);
         this.setNavExpanded = this.setNavExpanded.bind(this);
     }
