@@ -14,10 +14,15 @@
 > Liked this? I also wrote about how I'd prioritize 
   [LeetCode and HackerRank questions](/blog/ranking_interview_questions_by_cram_score).
 
-A few months back I presented to a campus org about how I've become a more effective
-coding interview candidate. While there's an overwhelming number of questions out there,
-I've found that just a small handful of algorithms and data structures cover most of them.
-I'm listing four simple visualizations that have been pretty important for my own successes.
+Technical interviews are hard. There's a countless number of coding questions one can be asked.
+However, I often see people brute force their way into knowing many questions by heart,
+not realizing that most questions are actually asking the same things over and over, just like
+classic behavioral questions. 
+
+Instead of offering many disparate questions, I presented 
+visualizations of four algorithms to a campus org. I claim these algorithms cover _80%
+of interview questions_. I also list  famous well-known questions that fall into these 
+categories. I've decided to publicly list my work.
 
 Obviously, skimming a slideshow isn't enough to become great at interviewing,
 so I encourage the ambitious or more experienced to look through my favorite resources
