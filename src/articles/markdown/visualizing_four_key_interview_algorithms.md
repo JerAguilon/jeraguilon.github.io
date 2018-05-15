@@ -4,13 +4,6 @@
     <meta name="keywords" content="software engineering, jeremy aguilon, technical interviews, coding, interviews, algorithms, data structures" />
 </Helmet>
 
-# Visualizing Four Key Interview Algorithms
-
-#### _An interactive way to learn crucial interview algorithms and data structures_
-##### 5/11/18
-
----
-
 > Liked this? I also wrote about how I'd prioritize 
   [LeetCode and HackerRank questions](/blog/ranking_interview_questions_by_cram_score).
 

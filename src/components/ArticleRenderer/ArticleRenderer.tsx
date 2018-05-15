@@ -26,6 +26,18 @@ const files = webpackRequireContext.keys().reduce((map, fileName) => {
   return map.set(fileName, markdown);
 }, new Map())
 
+const { articles } = require('../../articles/articles.json');
+const articlesMetadata = articles.reduce( (obj, item) => {
+    const splitPath =  item.path.split('/')
+    const key = splitPath[splitPath.length - 1]
+    obj[key] = { 
+        title: item.title,
+        description: item.description,
+        date: item.date,
+        keywords: item.keywords,
+    };
+    return obj
+}, {});
 
 export interface ArticleMatcher {
     articleName: string;
@@ -36,7 +48,6 @@ export interface ArticleRendererProps {
     renderCallback: () => void;
 }
 
-
 export class ArticleRenderer extends React.Component<ArticleRendererProps,{}> {
     public constructor(props) {
         super(props);
@@ -45,9 +56,9 @@ export class ArticleRenderer extends React.Component<ArticleRendererProps,{}> {
 
     public render()  {
         const articleName = this.props.match.params.articleName;
+        const articleMetadata = articlesMetadata[articleName];
         const markdown = files.get(articleName + '.md');
         const components = {
-            Helmet
         }
 
         _forOwn(ArticleComponents[articleName], (value, key) => {
@@ -60,6 +71,16 @@ export class ArticleRenderer extends React.Component<ArticleRendererProps,{}> {
 
         return (
             <div className="article-markdown">
+                <Helmet>
+                    <title>Jeremy Aguilon | {articleMetadata.title}</title>
+                    <meta name="description" content={articleMetadata.description} />
+                    <meta name="keywords" content={articleMetadata.keywords} />
+                </Helmet>
+
+                <h1>{ articleMetadata.title }</h1>
+                <h4><i>{ articleMetadata.description}</i></h4>
+                <h5>{ articleMetadata.date}</h5>
+                <hr />
                 <Markdown markup={ markdown } components={ components } />
             </div>
         );

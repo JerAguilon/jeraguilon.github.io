@@ -1,16 +1,3 @@
-<Helmet>
-    <title>Jeremy Aguilon | Sales Prediction: A Deep Learning Approach</title>
-    <meta name="description" content="A Kaggle competition attempt to use deep learning on sales data" />
-    <meta name="keywords" content="software engineering, jeremy aguilon, sales, machine learning, AI, fastai" />
-</Helmet>
-
-# Sales Prediction: A Deep Learning Approach
-
-#### _A Kaggle competition attempt to use deep learning on sales data_
-##### 5/8/18
-
----
-
 > First, a [GitHub link](https://github.com/JerAguilon/Kaggle/blob/master/competitive-data-science-predict-future-sales/predict_future_sales.ipynb)
 for those who prefer reading code. I used [fastAI's library](https://github.com/fastai/fastai), which wraps
 PyTorch quite nicely for this problem domain.

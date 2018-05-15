@@ -4,19 +4,22 @@
             "path": "blog/ranking_interview_questions_by_cram_score",
             "title": "Ranking Interview Questions by Cram Score",
             "description": "An opinionated list of SDE interview questions, organized by priority",
-            "date": "Sunday March 11, 2018"
+            "date": "Sunday March 11, 2018",
+            "keywords": "software engineering, technical interviews, coding, algorithms, leetcode, hackerrank, interviews, jeremy aguilon"
         },
         {
             "path": "blog/sales_prediction_a_deep_learning_approach",
             "title": "Sales Prediction: A Deep Learning Approach",
             "description": "A Kaggle competition attempt to use deep learning on sales data",
-            "date": "Tuesday May 8, 2018"
+            "date": "Tuesday May 8, 2018",
+            "keywords": "software engineering, jeremy aguilon, sales, machine learning, AI, fastai, gradient boosting, deep learning"
         },
         {
             "path": "blog/visualizing_four_key_interview_algorithms",
             "title": "Visualizing Four Key Technical Interview Algorithms",
             "description": "An interactive way to learn four extremely crucial interview algorithms",
-            "date": "Friday May 11, 2018"
+            "date": "Friday May 11, 2018",
+            "keywords": "software engineering, jeremy aguilon, technical interviews, coding, interviews, algorithms, data structures"
         }
     ]
 }

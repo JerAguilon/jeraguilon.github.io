@@ -1,17 +1,3 @@
-<Helmet>
-    <title>Jeremy Aguilon | Ranking Interview Questions by Cram Score</title>
-    <meta name="description" content="An opinionated list on SDE interview questions, organized by priority" />
-    <meta name="keywords" content="software engineering, interviews, jeremy aguilon" />
-</Helmet>
-
-# Ranking Interview Questions by Cram Score
-
-#### _An opinionated list of SDE interview questions, organized by priority_
-
-##### 3/11/18
-
----
-
 Like many aspiring software devs, I've prepped for interviews using Leetcode and
 HackerRank. While there is no shortage of questions, I find that they don't
 address head-on what you should be studying. 
