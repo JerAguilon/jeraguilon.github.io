@@ -45,6 +45,7 @@ export class BlogPanel extends React.Component<BlogProps, BlogState> {
                     </Panel>
                 ))
             }
+			<h3>* My opinions are my own</h3>
             </>
         )
     }
