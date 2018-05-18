@@ -33,6 +33,13 @@ export class EducationPanel extends React.Component<EducationPanelProperties, {}
                         <h3>Relevant Coursework: </h3>
                         <ul>
                             <li>
+                                <h4>Self Learning</h4>
+                                <ul>
+                                    <li><a href="https://www.coursera.org/learn/machine-learning/">Coursera Machine Learning</a></li>
+                                    <li><a href="http://course.fast.ai">Fast.ai Deep Learning for Coders</a></li>
+                                </ul>
+                            </li>
+                            <li>
                                 <h4>Software & Design</h4>
                                 <ul>
                                     <li>Objects & Design (CS 1331)</li>
