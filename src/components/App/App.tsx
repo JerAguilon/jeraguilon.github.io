@@ -48,10 +48,13 @@ export class App extends React.Component<{}, AppState> {
     
     private getCurrentPage() {
         // hacky way to get the pathname until a better way is investigated
+        // TODO: inject the router to get the path
         if (window.location.pathname === '/') {
             return CurrentPage.ABOUT;    
         } else if (window.location.pathname === '/professional') {
             return CurrentPage.PROFESSIONAL;
+        } else if (window.location.pathname === '/education') {
+            return CurrentPage.EDUCATION;
         } else if (window.location.pathname === '/portfolio') {
             return CurrentPage.PORTFOLIO;
         } else {
