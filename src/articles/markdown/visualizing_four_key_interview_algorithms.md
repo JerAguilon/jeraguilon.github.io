@@ -6,9 +6,9 @@ However, I often see people brute force their way into knowing many questions by
 not realizing that most questions are actually asking the same things over and over. In reality,
 most coding interview questions refer to just a few categories, just like behavioral questions.
 
-Instead of offering many disparate questions, I presented 
+Instead of offering many (seemingly) disparate questions, I presented 
 visualizations of four algorithms to a campus org. I claim these algorithms cover _80%
-of interview questions_. I also list famous well-known questions that fall into these 
+of interview questions_. I also list well-known questions that fall into these 
 categories. I've decided to publicly list my work.
 
 Obviously, skimming a slideshow isn't enough to become great at interviewing,
