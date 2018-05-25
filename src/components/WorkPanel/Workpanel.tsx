@@ -27,7 +27,7 @@ export class WorkPanel extends React.Component<WorkPanelProperties, {}> {
                                     <h4><b>Google</b> Associate Product Management Intern, <small>Summer 2018</small></h4>
                                 </div>
                                 <p>
-                                    Currently an intern on Google Assistant, bringing Assistant functionality natively
+                                    Currently an intern on Google Assistant, bringing Assistant functionality remotely
                                     to vehicles. Writeup on this summer's experience coming soon!
                                 </p>
                             </div>
