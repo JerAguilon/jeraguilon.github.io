@@ -72,7 +72,7 @@ export class ArticleRenderer extends React.Component<ArticleRendererProps,{}> {
         return (
             <div className="article-markdown">
                 <Helmet>
-                    <title>Jeremy Aguilon | {articleMetadata.title}</title>
+                    <title>{articleMetadata.title} | Jeremy Aguilon</title>
                     <meta name="description" content={articleMetadata.description} />
                     <meta name="keywords" content={articleMetadata.keywords} />
                 </Helmet>
