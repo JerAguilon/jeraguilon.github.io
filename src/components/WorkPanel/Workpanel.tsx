@@ -30,7 +30,7 @@ export class WorkPanel extends React.Component<WorkPanelProperties, {}> {
                                     As an APM intern, I worked on the Assistant on automotive surfaces team.
                                     My project primarily focused on defining a new feature that will improve the
                                     daily experience of drivers. I explored use cases with other PMs, worked
-                                    through design decisions with UX, and spearheaded implementatoin with engineering
+                                    through design decisions with UX, and collaborated with engineering
                                     stakeholders.
                                 </p>
                             </div>
