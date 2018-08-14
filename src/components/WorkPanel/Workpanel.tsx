@@ -46,7 +46,7 @@ export class WorkPanel extends React.Component<WorkPanelProperties, {}> {
                                 <p>
                                     At Lyft I contributed to <a href="https://lyft.com/expressdrive" target="_blank">
                                     Express Drive</a> and Fleet Management. On the express drive end, I improved
-                                    product experience through tooling for vehicle geoloction,
+                                    product experience through tooling for vehicle geolocation,
                                     maintenance/collision servicing, and rental reposession. Within Fleet Management,
                                     I aided the deployment and querying of Elasticsearch indices on Lyft's autonomous
                                     and rental vehicles. Holistically, I matured my understanding of datastore
