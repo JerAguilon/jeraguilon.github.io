@@ -32,8 +32,8 @@ const ABOUT_NODE = (
         <p>
             Chances are you're here to learn about my professional side. I've interned as a software
             engineer at <b>Google</b>, <b>Amazon</b>, <b>Lyft</b>, and <b>Vertafore</b>. I also
-            served as a technical co-founder of <b>InternBlitz</b> for a year. This summer I'll be
-            an APM at Google.
+            served as a technical co-founder of <b>InternBlitz</b> for a year.  Most recently, I was a
+            product manager intern at <b>Google</b>.
         </p>
     </div>
 );

@@ -24,7 +24,7 @@ export class WorkPanel extends React.Component<WorkPanelProperties, {}> {
                             </div>
                             <div className="timeline-entry">
                                 <div className="timeline-entry-title">
-                                    <h4><b>Google</b> Associate Product Management Intern, <small>Summer 2018</small></h4>
+                                    <h4><b>Google</b> Associate Product Manager Intern, <small>Summer 2018</small></h4>
                                 </div>
                                 <p>
                                     As an APM intern, I worked on the Assistant on automotive surfaces team.
@@ -82,7 +82,7 @@ export class WorkPanel extends React.Component<WorkPanelProperties, {}> {
                                     <h4><b>Google</b> Software Engineering Intern, <small>Winter 2017</small></h4>
                                 </div>
                                 <p>
-                                    As a member of cloud monitoring team, I improved usability of the analytics pipelines
+                                    As a member of cloud monitoring, I improved usability of the analytics pipelines
                                     through a new pipeline monitoring service. By storing
                                     pipeline statuses in a Spanner database, I made complex tasks such as diagnosing the
                                     root cause of a cascading pipeline automatic. My entrance into this program was quite
