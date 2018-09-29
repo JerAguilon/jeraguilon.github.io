@@ -13,6 +13,7 @@ import './Wrapper.css';
 export interface WrapperProps {
     backgroundColor: string;
     pixelLogoAction: PixelLogoAction;
+    shouldAffixSidePane: boolean;
 }
 
 export interface WrapperState {
@@ -110,7 +111,7 @@ export class Wrapper extends React.Component<WrapperProps, WrapperState> {
         return !this.isSmall
             ? (
                 <Col xs={12} sm={2}>
-                    <div className="nav-pane affix">
+                    <div className={"nav-pane " + (this.props.shouldAffixSidePane ? "affix" : "")}>
                         <NavLink exact to='/' onClick={this.clickHandler}>
                             <h3>About Me</h3>
                         </NavLink>

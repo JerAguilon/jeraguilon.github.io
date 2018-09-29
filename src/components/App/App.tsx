@@ -68,6 +68,7 @@ export class App extends React.Component<{}, AppState> {
                 <Wrapper
                     backgroundColor={PAGE_TO_COLOR[CurrentPage[this.state.currentPage]]}
                     pixelLogoAction={PAGE_TO_PIXEL_ACTION[CurrentPage[this.state.currentPage]]}
+                    shouldAffixSidePane={this.state.currentPage != CurrentPage.ABOUT}
                 >
                     <Route exact path ="/" render={(routeProps) => (
                             <About renderCallback={this.handleTransition(CurrentPage.ABOUT)}/>

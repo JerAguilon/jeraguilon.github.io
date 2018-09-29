@@ -8,6 +8,10 @@
     min-height: 100%;
 }
 
+.nav-pane {
+    display: grid;
+}
+
 .nav-pane a {
     color: black !important;
 }
