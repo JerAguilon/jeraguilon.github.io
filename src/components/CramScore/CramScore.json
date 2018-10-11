@@ -107,12 +107,6 @@
             "description": "Given an encoding from letters to numbers, count the number of ways to decode a string of numbers"
         },
         {
-            "external_url": "https://leetcode.com/problems/non-overlapping-intervals",
-            "title": "Non-overlapping Intervals",
-            "tags": ["Greedy", "Sorting"],
-            "description": "Given a collection of intervals, find the number of intervals you need to remove to make the rest of the intervals non-overlapping"
-        },
-        {
             "external_url": "https://leetcode.com/problems/jump-game-ii/description/",
             "title": "Jump Game II",
             "tags": ["Greedy"],
