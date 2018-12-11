@@ -57,13 +57,16 @@ export class EducationPanel extends React.Component<EducationPanelProperties, {}
                                     <li>Applied Combinatorics (MATH 3012)</li>
                                     <li>Applied Statistics (ISYE 3770)</li>
                                     <li>Design & Analysis of Algorithms (CS 3510)</li>
+                                    <li>Automata & Complexity (CS 4510)</li>
                                 </ul>
                             </li>
                             <li>
                                 <h4>Threads</h4>
                                 <ul>
-                                    <li>Introduction to Graphics (CS 3451)</li>
                                     <li>Introduction to AI (CS 3600)</li>
+                                    <li>Robotics & Perception (CS 3630)</li>
+                                    <li>Introduction to Graphics (CS 3451)</li>
+                                    <li>Computer Audio (CS 4590)</li>
                                 </ul>
                             </li>
                         </ul>
