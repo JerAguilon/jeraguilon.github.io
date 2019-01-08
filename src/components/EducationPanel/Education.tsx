@@ -61,12 +61,20 @@ export class EducationPanel extends React.Component<EducationPanelProperties, {}
                                 </ul>
                             </li>
                             <li>
-                                <h4>Threads</h4>
+                                <h4>Artificial intelligence</h4>
                                 <ul>
                                     <li>Introduction to AI (CS 3600)</li>
                                     <li>Robotics & Perception (CS 3630)</li>
+                                    <li>Robot Intelligence & Path Planning (CS 4649)</li>
+                                    <li>Deep Learning (CS 4803)</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h4>Artificial intelligence</h4>
+                                <ul>
                                     <li>Introduction to Graphics (CS 3451)</li>
                                     <li>Computer Audio (CS 4590)</li>
+                                    <li>Introduction to Information Visualization (CS 4460)</li>
                                 </ul>
                             </li>
                         </ul>
