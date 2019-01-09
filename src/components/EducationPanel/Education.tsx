@@ -61,7 +61,7 @@ export class EducationPanel extends React.Component<EducationPanelProperties, {}
                                 </ul>
                             </li>
                             <li>
-                                <h4>Artificial intelligence</h4>
+                                <h4>Artificial Intelligence</h4>
                                 <ul>
                                     <li>Introduction to AI (CS 3600)</li>
                                     <li>Robotics & Perception (CS 3630)</li>
@@ -70,7 +70,7 @@ export class EducationPanel extends React.Component<EducationPanelProperties, {}
                                 </ul>
                             </li>
                             <li>
-                                <h4>Artificial intelligence</h4>
+                                <h4>Media</h4>
                                 <ul>
                                     <li>Introduction to Graphics (CS 3451)</li>
                                     <li>Computer Audio (CS 4590)</li>
