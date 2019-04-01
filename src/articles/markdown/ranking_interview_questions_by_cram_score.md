@@ -1,3 +1,9 @@
+> Want personal coaching on how to ace the interviews that got me
+  job offers at Google, Facebook, Two Sigma, and more? Shoot me an
+  email at [jeremyaguilon1@gmail.com](mailto:jeremyaguilon1@gmail.com)
+  to connect. I offer both mock interviews and general coaching with
+  discounts for students.
+
 Like many aspiring software devs, I've prepped for interviews using Leetcode and
 HackerRank. While there is no shortage of questions, I find that they don't
 address head-on what you should be studying. 
