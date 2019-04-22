@@ -1,16 +1,15 @@
 const slidingWindow = 
 `def slidingWindow(string, char_set):
     # Step 1 and 2
-    left = 0
-    right = 0
-    best_score = float('inf')
+    left, right, best_score = 0, 0, float('inf')
+
     # Step 3a:  Generally, for sliding window, you often need a set or hashmap to track
     #           the characters/values you have in your substring/subarray
     # Step 3b: This is an auxiliary value that lets us cleanly look up the characters
     #          in char_set that we have found
     letter_map = {} # maps from character to number of occurences in the substring
     characters_encountered = 0 # when this is equal to len(char_set), we have a
-                              # candidate substring
+                               # candidate substring
 
     # Step 4
     while right < len(string):
