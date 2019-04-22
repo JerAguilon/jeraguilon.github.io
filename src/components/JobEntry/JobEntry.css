@@ -1,0 +1,117 @@
+.job-entry {
+    position: relative;
+}
+
+.job-entry > h3 {
+    position: absolute;
+    left: -24px;
+    top: -11px;
+}
+
+.job-entry .workpanel-marker {
+    margin-bottom: 20px;
+}
+
+.workpanel-marker {
+    background-color: black;
+    display: block;
+    border-radius: .2rem;
+    width: 40px;
+    height: 40px;
+    margin-left: 55px;
+}
+
+.workpanel-marker-facebook {
+	background: linear-gradient(
+		0deg
+		, white 0%
+		, white 50%
+		, #3b5998 50%
+		, #3b5998 100%
+	);
+}
+
+.workpanel-marker-google {
+	background: linear-gradient(
+		0deg
+		, #4285f4 0%
+		, #4285f4 25%
+		, #34a853 25%
+		, #34a853 50%
+		, #fbbc05 50%
+		, #fbbc05 75%
+		, #ea4335 75%
+		, #ea4335 100%
+	);
+}
+
+.workpanel-marker-lyft {
+	background: linear-gradient(
+		0deg
+		, #f3f3f5 0%
+		, #f3f3f5 50%
+		, #ff00bf 50%
+		, #ff00bf 100%
+	);
+}
+
+.workpanel-marker-amazon {
+	background: linear-gradient(
+		0deg
+		, #fefefe 0%
+		, #fefefe 33%
+		, #ff9900 33%
+		, #ff9900 66%
+		, #131A22 66%
+		, #131A22 100%
+	);
+}
+
+.workpanel-marker-internblitz {
+	background: linear-gradient(
+		0deg
+		, #FFFFFF 0%
+		, #FFFFFF 50%
+		, #E74C3C 50%
+		, #E74C3C 50%
+	);
+
+}
+
+.workpanel-marker-vertafore {
+	background: linear-gradient(
+		0deg
+		, #f95203 0%
+		, #f95203 50%
+		, #fefefe 50%
+		, #fefefe 100%
+	);
+
+}
+
+.workpanel-marker-tech {
+	background: linear-gradient(
+		0deg
+		, #FFFFFF 0%
+		, #FFFFFF 50%
+		, #EAAA00 50%
+		, #EAAA00 100%
+	);
+
+}
+
+.workpanels .timeline-entry {
+    background-color: #f4f4f4;
+    display: block;
+    border-radius: .2rem;
+    left: 107px;
+    padding: 10px;
+    position: relative;
+    top: -60px;
+    width: calc(100% - 150px);
+}
+
+.timeline-entry-title > h4 {
+    font-family: 'Ubuntu Mono', monospace;
+    display: inline;
+}
