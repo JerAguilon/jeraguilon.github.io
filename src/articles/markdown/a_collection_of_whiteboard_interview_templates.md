@@ -58,6 +58,11 @@ in an array of size n. He starts in cell 0 and can hop f cells forwards or b
 cells backwards. He is allowed to jump up to max_jumps times.
 How many ways can he reach the last cell?`
 
+First, why do we even need DP? By definition of a tree, if you do a recursive traversal,
+you'll never recursively call on a node you have visited before. However, some recursive
+solutions _do_ allow this to happen. If you could save the solution the first time you
+hit a "node," you would save a lot of computational time.
+
 The people I coach are often intimiated by this prompt, but I'm here to show you that
 if you've got the hang of recursion, you can actually write a DP solution using
 almost the exact same template as above! People often demo DP using a multi-dimensional array,
