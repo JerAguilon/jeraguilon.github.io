@@ -1,43 +1,43 @@
 const slidingWindow = 
-`def slidingWindow(string, charSet):
+`def slidingWindow(string, char_set):
     # Step 1 and 2
     left = 0
     right = 0
-    bestScore = float('inf')
-
+    best_score = float('inf')
     # Step 3a:  Generally, for sliding window, you often need a set or hashmap to track
     #           the characters/values you have in your substring/subarray
-    # Step 3b: This is an auxiliary value that lets us look up the sum
-    #           of all the values in the hashmap quickly without iterating over it.
-    letterMap = {}
-    charactersEncountered = 0;
+    # Step 3b: This is an auxiliary value that lets us cleanly look up the characters
+    #          in char_set that we have found
+    letter_map = {} # maps from character to number of occurences in the substring
+    characters_encountered = 0 # when this is equal to len(char_set), we have a
+                              # candidate substring
 
     # Step 4
     while right < len(string):
         curr_right = string[right]
 
         # Step 5
-        if curr_right in charSet:
-            letterMap[curr_right] =  letterMap.get(curr_right, 0) + 1
-            if letterMap[curr_right] == 1:
-                charactersEncountered += 1
+        if curr_right in char_set:
+            letter_map[curr_right] =  letter_map.get(curr_right, 0) + 1
+            if letter_map[curr_right] == 1:
+                characters_encountered += 1
         right += 1
 
         # Step 6: If you have a new candidate substring (in this case we found all
         #    our letters, begin incrementing left until it is *invalid*
-        if (charactersEncountered == len(charSet)):
-            while (charactersEncountered == len(charSet)):
+        if (characters_encountered == len(char_set)):
+            while characters_encountered == len(char_set):
                 curr_left = string[left]
-                if curr_left in charSet:
-                    letterMap[curr_left] -= 1
-                    if letterMap[curr_left] == 0:
-                        charactersEncountered -= 1
-                    left += 1
+                if curr_left in char_set:
+                    letter_map[curr_left] -= 1
+                    if letter_map[curr_left] == 0:
+                        characters_encountered -= 1
+                left += 1
             # Step 7: Finally! Update the best score if we have a new best.
             #    This new candidate substring is bounded by right - left + 1. Avoid
             #    off-by-one's by drawing an example out.
-            bestScore = min(bestScore, right - left + 1)
-    return bestScore`;
+            best_score = min(best_score, right - left + 1)
+    return best_score`;
 
 const treeRecursion =
 `# step 1
@@ -65,7 +65,6 @@ const dynamicProgramming =
 `# step 1
 def num_ways(arr, current_index, f, b, jumps_left, cache):
     int n = len(arr)
-
     # Step 2. In an interview, I always comment this to be explicit:
     # Base cases:
     if current_index == n - 1: # we're at the end!
@@ -90,7 +89,7 @@ def num_ways(arr, current_index, f, b, jumps_left, cache):
     return solution
 
 def num_ways(arr, f, b, max_jumps):
-    return num_ways_helper(arr, f, b, {})`;
+    return num_ways_helper(arr, f, b, max_jumps, {})`;
 
 
 export default { slidingWindow, treeRecursion, dynamicProgramming };

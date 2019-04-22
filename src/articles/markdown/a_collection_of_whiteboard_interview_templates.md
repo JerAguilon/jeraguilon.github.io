@@ -63,7 +63,7 @@ you'll never recursively call on a node you have visited before. However, some r
 solutions _do_ allow this to happen. If you could save the solution the first time you
 hit a "node," you would save a lot of computational time.
 
-The people I coach are often intimiated by this prompt, but I'm here to show you that
+The people I coach are often intimidated by this prompt, but I'm here to show you that
 if you've got the hang of recursion, you can actually write a DP solution using
 almost the exact same template as above! People often demo DP using a multi-dimensional array,
 but for many it's simpler to use a recursive technique called _memoization_, where you
