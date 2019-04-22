@@ -1,14 +1,5 @@
-/** Terrible ES5 hack :( Needed due to building issues
- * since ES6 strings aren't supported using my build config.
- *
- * Source: https://eli.thegreenplace.net/2013/11/09/javascript-es-5-hack-for-clean-multi-line-strings
- */
-const MultiString = function(f) {
-  return f.toString().split('\n').slice(1, -1).join('\n');
-}
-
-const slidingWindow = MultiString(function() {/**
-def slidingWindow(string, charSet):
+const slidingWindow = 
+`def slidingWindow(string, charSet):
     # Step 1 and 2
     left = 0
     right = 0
@@ -46,11 +37,10 @@ def slidingWindow(string, charSet):
             #    This new candidate substring is bounded by right - left + 1. Avoid
             #    off-by-one's by drawing an example out.
             bestScore = min(bestScore, right - left + 1)
-    return bestScore
-**/});
+    return bestScore`;
 
-const treeRecursion = MultiString(function() {/**
-# step 1
+const treeRecursion =
+`# step 1
 def inplace_sum_helper(root):
     # Step 2. In an interview, I always comment this to be explicit:
     # Base cases:
@@ -68,12 +58,11 @@ def inplace_sum_helper(root):
     return tmp + left_solution + right_solution
 
 def inplace_sum(root):
-    return inplace_sum_helper(root)
-**/});
+    return inplace_sum_helper(root)`;
 
 
-const dynamicProgramming = MultiString(function() {/**
-# step 1
+const dynamicProgramming = 
+`# step 1
 def num_ways(arr, current_index, f, b, jumps_left, cache):
     int n = len(arr)
 
@@ -101,8 +90,7 @@ def num_ways(arr, current_index, f, b, jumps_left, cache):
     return solution
 
 def num_ways(arr, f, b, max_jumps):
-    return num_ways_helper(arr, f, b, {})
-**/});
+    return num_ways_helper(arr, f, b, {})`;
 
 
 export default { slidingWindow, treeRecursion, dynamicProgramming };

@@ -3,6 +3,8 @@ import * as React from 'react';
 import './CodeSnippets.css';
 import '../../css/prism.css';
 
+import sourceFile from './snippets';
+
 import Prism from 'prismjs';
 
 
@@ -16,10 +18,6 @@ export interface BlogProps {
 export interface BlogState {
 }
 
-
-import sourceFile from '../../articles/codeSnippets/snippets.js';
-
-
 export class CodeSnippets extends React.Component<BlogProps, BlogState> {
 
     public constructor(props) {
@@ -30,6 +28,7 @@ export class CodeSnippets extends React.Component<BlogProps, BlogState> {
     }
 
     public render() {
+        console.log(sourceFile);
         return (<>
             <pre>
                 <code className="language-python">

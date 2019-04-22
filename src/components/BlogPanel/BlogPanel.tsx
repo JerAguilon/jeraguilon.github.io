@@ -37,7 +37,16 @@ export class BlogPanel extends React.Component<BlogProps, BlogState> {
             {
                 articles.slice(0).reverse().map((article, key) => {
                     if (article.title === "A Collection of Whiteboard Interview Templates") {
-                        return <div key={key}></div>;
+                        return (
+                        <div key={key} style={{'display': 'none'}}>
+                            <Panel
+                                title={<NavLink to={article.path}><p>{article.title}</p></NavLink>}
+                                subtitle={article.date}
+                            >
+                                <h4><i>{article.description}</i></h4>
+                            </Panel>
+                        </div>
+                        );
                     }
 
                     return (
