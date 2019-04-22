@@ -77,7 +77,7 @@ def num_ways(arr, current_index, f, b, jumps_left, cache):
 
     # Step 2b. Really the only addition to our recursive recipe
     if (current_index, jumps_left) in cache:
-        return cache[current_index]
+        return cache[(current_index, jumps_left)]
 
     # Step 3. Once again, I always comment this:
     # Recursive calls:
