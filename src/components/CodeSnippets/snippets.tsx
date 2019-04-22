@@ -29,8 +29,8 @@ const slidingWindow =
             while (charactersEncountered == len(charSet)):
                 curr_left = string[left]
                 if curr_left in charSet:
-                    letterMap[string[left]] -= 1
-                    if letterMap[string[left]] == 0:
+                    letterMap[curr_left] -= 1
+                    if letterMap[curr_left] == 0:
                         charactersEncountered -= 1
                     left += 1
             # Step 7: Finally! Update the best score if we have a new best.
