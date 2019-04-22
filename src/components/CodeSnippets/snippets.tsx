@@ -63,8 +63,9 @@ def inplace_sum(root):
 
 const dynamicProgramming = 
 `# step 1
-def num_ways(arr, current_index, f, b, jumps_left, cache):
-    int n = len(arr)
+def num_ways_helper(arr, current_index, jumps_left, f, b, cache):
+    n = len(arr)
+
     # Step 2. In an interview, I always comment this to be explicit:
     # Base cases:
     if current_index == n - 1: # we're at the end!
@@ -80,8 +81,8 @@ def num_ways(arr, current_index, f, b, jumps_left, cache):
 
     # Step 3. Once again, I always comment this:
     # Recursive calls:
-    back_solution = num_ways_helper(arr, current_index - b, f, b, jumps_left - 1, cache)
-    forward_solution = num_ways_helper(arr, current_index + f, f, b, jumps_left - 1, cache)
+    back_solution = num_ways_helper(arr, current_index - b, jumps_left - 1, f, b, cache)
+    forward_solution = num_ways_helper(arr, current_index + f, jumps_left - 1, f, b, cache)
 
     # Step 4. Remember to cache things for the future
     solution = back_solution + forward_solution
@@ -89,7 +90,6 @@ def num_ways(arr, current_index, f, b, jumps_left, cache):
     return solution
 
 def num_ways(arr, f, b, max_jumps):
-    return num_ways_helper(arr, f, b, max_jumps, {})`;
-
+    return num_ways_helper(arr, 0, max_jumps, f, b, {})`
 
 export default { slidingWindow, treeRecursion, dynamicProgramming };
