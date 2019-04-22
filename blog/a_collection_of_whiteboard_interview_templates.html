@@ -1,0 +1,179 @@
+<!DOCTYPE html><html class="wf-loading wf-titilliumweb-n3-loading wf-titilliumweb-n4-loading wf-titilliumweb-n7-loading wf-sansserif-n4-loading wf-ubuntumono-n4-loading"><head><base target="_blank"><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><meta name="google-site-verification" content="59gOPGDyLFWB0mxDLN48v6FzQiZfPcVYlUjoVH2AFs0"><title>A Collection of Whiteboard Interview Templates | Jeremy Aguilon</title><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400,700%7Csans-serif%7CUbuntu+Mono" media="all"><link href="/static/css/main.08fc95cd.css" rel="stylesheet"><meta name="description" content="Freeze up in whiteboard or phone interviews? Use these templates to at least get the skeleton down." data-react-helmet="true"><meta name="keywords" content="software engineering, technical interviews, coding, algorithms, leetcode, hackerrank, interviews, jeremy aguilon" data-react-helmet="true"></head><body><div id="content"><div class="component-wrapper" style="background-color:#fdfdfd" data-reactroot=""><div class="container"><div class="page-banner col-md-12"><div class="pixel-logo md-pixel-logo-reading"></div><div class="page-name page-header"><h1>Jeremy Aguilon's Page</h1></div></div><div id="content-wrapper" class="col-sm-10 col-xs-12"><div id="slide-panel" class="col-xs-12"><div class="article-markdown"><h1>A Collection of Whiteboard Interview Templates</h1><h4><i>Freeze up in whiteboard or phone interviews? Use these templates to at least get the skeleton down.</i></h4><h5>Monday April 22, 2019</h5><hr><div><blockquote>
+  <p>Want personal coaching on how to ace the interviews that got me
+    job offers at Google, Facebook, Two Sigma, and more? Shoot me an
+    email at <a href="mailto:jeremyaguilon1@gmail.com">jeremyaguilon1@gmail.com</a>
+    to connect. I offer both mock interviews and general coaching with
+    discounts for students.</p>
+</blockquote>
+<p>Like I sad in a <a href="/blog/visualizing_four_key_interview_algorithms"><em>Visualizing Four Key Interview Algorithms</em></a>, most technical interviews
+really belong in a small bucket of categories.</p>
+<p>Lately I've taken the time to coach a few engineers on acing whiteboard interviews, and I noticed that
+while they understand these algorithms quite well, implementing on a white board is (a) intimidating
+and (b) difficult to prepare for.</p>
+<p>And so, in my effort to "open-source" interviewing techniques, I'm here to share my code
+templates for a few common categories: tree recursion, dynamic programming,
+and sliding windows. While I discourage memorizing most things, knowing these templates
+will smoothen out your interviewing because you won't need to worry about the skeleton
+structure anymore. You can just think about the hard bits!</p>
+<p>Although I contextualize the algorithms with an example prompt, I encourage you to
+think about how you can apply these templates onto other interview questions.</p>
+<h1 id="basictreerecursion">Basic Tree Recursion</h1>
+<p>Consider the following interview question:
+<code>Given the root of a binary tree that stores ints, convert the tree in-place
+ such that each nodes  stores the sum of all the elements in its left and right subtree.</code></p>
+<p>Here's my recipe:</p>
+<ol>
+<li>Create a helper function for your recursion. Why not use the main function?
+In some cases, you may want to add extra parameters in the recursive stack.
+Always making a helper will save you this headache.</li>
+<li>The biggest tip I tell people I coach is to solve for the <em>easiest</em> possible cases.
+Quite often, this is simply a null node! You can always add extra base cases if needed.</li>
+<li>"Imagine" you have a magic function that you can pass the left and right subtree to.
+It will (as in, it better!) return the exact values you need to solve for the current node.
+Most magical of all, this is the exact function you're writing right now.<ul>
+<li><em>Extra hint: In this case, it should return the sum of all elements of the subtree you pass to it.</em></li></ul></li>
+<li>Do the relevant operation for the current node.</li>
+<li>Return something useful for the parent node.</li>
+</ol>
+<p>Lots of people have trouble trusting this process, but the key is really in the base case.
+If you wrote code that consistently reaches the base case and you return out a useful value
+for the parent node, you can fully trust recursion.</p>
+<p>In Python:</p>
+<p></p><pre class=" language-python"><code class=" language-python"><span class="token comment"># step 1
+</span><span class="token keyword">def</span> inplace_sum_helper<span class="token punctuation">(</span>root<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># Step 2. In an interview, I always comment this to be explicit:
+</span>    <span class="token comment"># Base cases:
+</span>    <span class="token keyword">if</span> root <span class="token keyword">is</span> None<span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token number">0</span>
+    <span class="token comment"># Step 3. Once again, I always comment this:
+</span>    <span class="token comment"># Recursive calls:
+</span>    left_solution <span class="token operator">=</span> inplace_sum_helper<span class="token punctuation">(</span>root<span class="token punctuation">.</span>left<span class="token punctuation">)</span>
+    right_solution <span class="token operator">=</span> inplace_sum_helper<span class="token punctuation">(</span>root<span class="token punctuation">.</span>right<span class="token punctuation">)</span>
+
+    <span class="token comment"># Step 4. Do something with these values!
+</span>    tmp <span class="token operator">=</span> root<span class="token punctuation">.</span>val <span class="token comment"># we need this later :)
+</span>    root<span class="token punctuation">.</span>val <span class="token operator">=</span> left_solution <span class="token operator">+</span> right_solution
+    <span class="token comment"># Step 5
+</span>    <span class="token keyword">return</span> tmp <span class="token operator">+</span> left_solution <span class="token operator">+</span> right_solution
+
+<span class="token keyword">def</span> inplace_sum<span class="token punctuation">(</span>root<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> inplace_sum_helper<span class="token punctuation">(</span>root<span class="token punctuation">)</span></code></pre><p></p>
+<p>Super short and simple. In fact, most tree recursion is simply a DFS with a few extra lines
+catered towards your problem.</p>
+<h1 id="dynamicprogramming">Dynamic Programming</h1>
+<p>Consider the following interview question: <code>Jack is hopping backwards and forwards
+in an array of size n. He starts in cell 0 and can hop f cells forwards or b
+cells backwards. He is allowed to jump up to max_jumps times.
+How many ways can he reach the last cell?</code></p>
+<p>The people I coach are often intimiated by this prompt, but I'm here to show you that
+if you've got the hang of recursion, you can actually write a DP solution using
+almost the exact same template as above! People often demo DP using a multi-dimensional array,
+but for many it's simpler to use a recursive technique called <em>memoization</em>, where you
+cache spots Jack has been before.</p>
+<p>Here's my template. Hopefully this sounds familiar to above:</p>
+<ol>
+<li>Create a helper function for your recursion. It should take all the arguments in the main method
+plus a dictionary/map. This is memoization.</li>
+<li>Once again, solve for the easiest cases. What if jack is at the end? What if he is out of moves?
+What if he fell off the array?<ul>
+<li><strong>The only difference in DP</strong>: What if Jack was already here? What if at some point,
+you solved for Jack being in this cell <code>i</code> with <code>n</code> moves left? Assuming that we have
+our memoized cache, we can just return the solution very quickly.</li></ul></li>
+<li>Call the magic function on two branches: Jack jumping backwards and Jack jumping forwards. Also,
+decrement the number of moves he has left.</li>
+<li>Solve based on the recursive return values (and store in the cache!!!) and return.</li>
+</ol>
+<p>In Python:</p>
+<p></p><pre class=" language-python"><code class=" language-python"><span class="token comment"># step 1
+</span><span class="token keyword">def</span> num_ways<span class="token punctuation">(</span>arr<span class="token punctuation">,</span> current_index<span class="token punctuation">,</span> <span class="token number">f</span><span class="token punctuation">,</span> <span class="token number">b</span><span class="token punctuation">,</span> jumps_left<span class="token punctuation">,</span> cache<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    int n <span class="token operator">=</span> len<span class="token punctuation">(</span>arr<span class="token punctuation">)</span>
+
+    <span class="token comment"># Step 2. In an interview, I always comment this to be explicit:
+</span>    <span class="token comment"># Base cases:
+</span>    <span class="token keyword">if</span> current_index <span class="token operator">==</span> n <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">:</span> <span class="token comment"># we're at the end!
+</span>        <span class="token keyword">return</span> <span class="token number">1</span>
+    <span class="token keyword">if</span> current_index &lt; <span class="token number">0</span> <span class="token operator">or</span> current_index &gt;<span class="token operator">=</span> n<span class="token punctuation">:</span> <span class="token comment"># Jack fell off the array :(
+</span>        <span class="token keyword">return</span> <span class="token number">0</span>
+    <span class="token keyword">if</span> jumps_left <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span> <span class="token comment"># Jack is out of moves :(
+</span>        <span class="token keyword">return</span> <span class="token number">0</span>
+
+    <span class="token comment"># Step 2b. Really the only addition to our recursive recipe
+</span>    <span class="token keyword">if</span> <span class="token punctuation">(</span>current_index<span class="token punctuation">,</span> jumps_left<span class="token punctuation">)</span> <span class="token keyword">in</span> cache<span class="token punctuation">:</span>
+        <span class="token keyword">return</span> cache<span class="token punctuation">[</span>current_index<span class="token punctuation">]</span>
+
+    <span class="token comment"># Step 3. Once again, I always comment this:
+</span>    <span class="token comment"># Recursive calls:
+</span>    back_solution <span class="token operator">=</span> num_ways_helper<span class="token punctuation">(</span>arr<span class="token punctuation">,</span> current_index <span class="token operator">-</span> <span class="token number">b</span><span class="token punctuation">,</span> <span class="token number">f</span><span class="token punctuation">,</span> <span class="token number">b</span><span class="token punctuation">,</span> jumps_left <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">,</span> cache<span class="token punctuation">)</span>
+    forward_solution <span class="token operator">=</span> num_ways_helper<span class="token punctuation">(</span>arr<span class="token punctuation">,</span> current_index <span class="token operator">+</span> <span class="token number">f</span><span class="token punctuation">,</span> <span class="token number">f</span><span class="token punctuation">,</span> <span class="token number">b</span><span class="token punctuation">,</span> jumps_left <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">,</span> cache<span class="token punctuation">)</span>
+
+    <span class="token comment"># Step 4. Remember to cache things for the future
+</span>    solution <span class="token operator">=</span> back_solution <span class="token operator">+</span> forward_solution
+    cache<span class="token punctuation">[</span> <span class="token punctuation">(</span>current_index<span class="token punctuation">,</span> jumps_left<span class="token punctuation">)</span> <span class="token punctuation">]</span> <span class="token operator">=</span> solution
+    <span class="token keyword">return</span> solution
+
+<span class="token keyword">def</span> num_ways<span class="token punctuation">(</span>arr<span class="token punctuation">,</span> <span class="token number">f</span><span class="token punctuation">,</span> <span class="token number">b</span><span class="token punctuation">,</span> max_jumps<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> num_ways_helper<span class="token punctuation">(</span>arr<span class="token punctuation">,</span> <span class="token number">f</span><span class="token punctuation">,</span> <span class="token number">b</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre><p></p>
+<p>Why do I prefer teaching DP recursively? I find that this framework is way more consistent
+since it is simply a recursive solution made more efficient by a hash map and a couple
+lines to read/write into it.</p>
+<h1 id="slidingwindow">Sliding Window</h1>
+<p>Consider the following interview question:
+<code>Given a string and a set of characters, return the **smallest** substring that
+contains all of the characters in the set.</code></p>
+<p>To solve this, you once again need to recognize this as a sliding window problem!
+The signs are complex to write in words, so view
+my <a href="/blog/visualizing_four_key_interview_algorithms">visualizations</a> to learn how.</p>
+<p>Now that you recognize this problem, we need to know how to solve it. Here's the 
+high-level recipe:</p>
+<ol>
+<li>Create two pointers, a left (slow) and a right (fast)</li>
+<li>Create a "best score found so far." If you're minimizing, make this a big value. If you're maximizing, make it a small value.</li>
+<li>Create your supporting data structures to track when you've found a valid substring.</li>
+<li>Create a <code>while right &lt; len(input_string)</code><ol start="5">
+<li>Update your supporting data structure and increment <code>right</code></li>
+<li>If your data structure tells you that you have a new candidate substring,
+increment left until your string is invalid.</li>
+<li>We now have a minimized substring that fulfills our condition! Update your
+best score if you now have a smaller string than those found previously.</li></ol></li>
+</ol>
+<p>This is by far the trickiest one to remember. But if you read over this guide <em>and</em> solve
+a few problems yourself, you'll find that it becomes quite easy to re-implement. The implementation is below in Python.</p>
+<p></p><pre class=" language-python"><code class=" language-python"><span class="token keyword">def</span> slidingWindow<span class="token punctuation">(</span>string<span class="token punctuation">,</span> charSet<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># Step 1 and 2
+</span>    left <span class="token operator">=</span> <span class="token number">0</span>
+    right <span class="token operator">=</span> <span class="token number">0</span>
+    bestScore <span class="token operator">=</span> float<span class="token punctuation">(</span><span class="token string">'inf'</span><span class="token punctuation">)</span>
+
+    <span class="token comment"># Step 3a:  Generally, for sliding window, you often need a set or hashmap to track
+</span>    <span class="token comment">#           the characters/values you have in your substring/subarray
+</span>    <span class="token comment"># Step 3b: This is an auxiliary value that lets us look up the sum
+</span>    <span class="token comment">#           of all the values in the hashmap quickly without iterating over it.
+</span>    letterMap <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+    charactersEncountered <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+    <span class="token comment"># Step 4
+</span>    <span class="token keyword">while</span> right &lt; len<span class="token punctuation">(</span>string<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        curr_right <span class="token operator">=</span> string<span class="token punctuation">[</span>right<span class="token punctuation">]</span>
+
+        <span class="token comment"># Step 5
+</span>        <span class="token keyword">if</span> curr_right <span class="token keyword">in</span> charSet<span class="token punctuation">:</span>
+            letterMap<span class="token punctuation">[</span>curr_right<span class="token punctuation">]</span> <span class="token operator">=</span>  letterMap<span class="token punctuation">.</span>get<span class="token punctuation">(</span>curr_right<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span>
+            <span class="token keyword">if</span> letterMap<span class="token punctuation">[</span>curr_right<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span>
+                charactersEncountered <span class="token operator">+</span><span class="token operator">=</span> <span class="token number">1</span>
+        right <span class="token operator">+</span><span class="token operator">=</span> <span class="token number">1</span>
+
+        <span class="token comment"># Step 6: If you have a new candidate substring (in this case we found all
+</span>        <span class="token comment">#    our letters, begin incrementing left until it is *invalid*
+</span>        <span class="token keyword">if</span> <span class="token punctuation">(</span>charactersEncountered <span class="token operator">==</span> len<span class="token punctuation">(</span>charSet<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">while</span> <span class="token punctuation">(</span>charactersEncountered <span class="token operator">==</span> len<span class="token punctuation">(</span>charSet<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                curr_left <span class="token operator">=</span> string<span class="token punctuation">[</span>left<span class="token punctuation">]</span>
+                <span class="token keyword">if</span> curr_left <span class="token keyword">in</span> charSet<span class="token punctuation">:</span>
+                    letterMap<span class="token punctuation">[</span>string<span class="token punctuation">[</span>left<span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">-</span><span class="token operator">=</span> <span class="token number">1</span>
+                    <span class="token keyword">if</span> letterMap<span class="token punctuation">[</span>string<span class="token punctuation">[</span>left<span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+                        charactersEncountered <span class="token operator">-</span><span class="token operator">=</span> <span class="token number">1</span>
+                    left <span class="token operator">+</span><span class="token operator">=</span> <span class="token number">1</span>
+            <span class="token comment"># Step 7: Finally! Update the best score if we have a new best.
+</span>            <span class="token comment">#    This new candidate substring is bounded by right - left + 1. Avoid
+</span>            <span class="token comment">#    off-by-one's by drawing an example out.
+</span>            bestScore <span class="token operator">=</span> min<span class="token punctuation">(</span>bestScore<span class="token punctuation">,</span> right <span class="token operator">-</span> left <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> bestScore</code></pre><p></p></div></div></div></div><div class="col-sm-2 col-xs-12"><div class="nav-pane affix"><a aria-current="false" href="/"><h3>About Me</h3></a><a aria-current="false" href="/professional"><h3>Professional Experience</h3></a><a aria-current="false" href="/education"><h3>Education</h3></a><a aria-current="false" href="/portfolio"><h3>Portfolio</h3></a><a class="active" aria-current="true" href="/blog"><h3>Blog</h3></a></div></div></div></div></div><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-112031350-1"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-112031350-1")</script><script src="./node_modules/react/umd/react.development.js" type="text/jsx"></script><script src="./node_modules/react-dom/umd/react-dom.development.js" type="text/jsx"></script><script src="./dist/bundle.js" type="text/jsx"></script><span aria-hidden="true" style="display: block; position: absolute; top: -9999px; left: -9999px; font-size: 300px; width: auto; height: auto; line-height: normal; margin: 0px; padding: 0px; font-variant: normal; white-space: nowrap; font-family: 'Titillium Web',serif; font-style: normal; font-weight: 300;">BESbswy</span><span aria-hidden="true" style="display: block; position: absolute; top: -9999px; left: -9999px; font-size: 300px; width: auto; height: auto; line-height: normal; margin: 0px; padding: 0px; font-variant: normal; white-space: nowrap; font-family: 'Titillium Web',sans-serif; font-style: normal; font-weight: 300;">BESbswy</span><span aria-hidden="true" style="display: block; position: absolute; top: -9999px; left: -9999px; font-size: 300px; width: auto; height: auto; line-height: normal; margin: 0px; padding: 0px; font-variant: normal; white-space: nowrap; font-family: serif; font-style: normal; font-weight: 300;">BESbswy</span><span aria-hidden="true" style="display: block; position: absolute; top: -9999px; left: -9999px; font-size: 300px; width: auto; height: auto; line-height: normal; margin: 0px; padding: 0px; font-variant: normal; white-space: nowrap; font-family: sans-serif; font-style: normal; font-weight: 300;">BESbswy</span><span aria-hidden="true" style="display: block; position: absolute; top: -9999px; left: -9999px; font-size: 300px; width: auto; height: auto; line-height: normal; margin: 0px; padding: 0px; font-variant: normal; white-space: nowrap; font-family: 'Titillium Web',serif; font-style: normal; font-weight: 400;">BESbswy</span><span aria-hidden="true" style="display: block; position: absolute; top: -9999px; left: -9999px; font-size: 300px; width: auto; height: auto; line-height: normal; margin: 0px; padding: 0px; font-variant: normal; white-space: nowrap; font-family: 'Titillium Web',sans-serif; font-style: normal; font-weight: 400;">BESbswy</span><span aria-hidden="true" style="display: block; position: absolute; top: -9999px; left: -9999px; font-size: 300px; width: auto; height: auto; line-height: normal; margin: 0px; padding: 0px; font-variant: normal; white-space: nowrap; font-family: serif; font-style: normal; font-weight: 400;">BESbswy</span><span aria-hidden="true" style="display: block; position: absolute; top: -9999px; left: -9999px; font-size: 300px; width: auto; height: auto; line-height: normal; margin: 0px; padding: 0px; font-variant: normal; white-space: nowrap; font-family: sans-serif; font-style: normal; font-weight: 400;">BESbswy</span><span aria-hidden="true" style="display: block; position: absolute; top: -9999px; left: -9999px; font-size: 300px; width: auto; height: auto; line-height: normal; margin: 0px; padding: 0px; font-variant: normal; white-space: nowrap; font-family: 'Titillium Web',serif; font-style: normal; font-weight: 700;">BESbswy</span><span aria-hidden="true" style="display: block; position: absolute; top: -9999px; left: -9999px; font-size: 300px; width: auto; height: auto; line-height: normal; margin: 0px; padding: 0px; font-variant: normal; white-space: nowrap; font-family: 'Titillium Web',sans-serif; font-style: normal; font-weight: 700;">BESbswy</span><span aria-hidden="true" style="display: block; position: absolute; top: -9999px; left: -9999px; font-size: 300px; width: auto; height: auto; line-height: normal; margin: 0px; padding: 0px; font-variant: normal; white-space: nowrap; font-family: serif; font-style: normal; font-weight: 700;">BESbswy</span><span aria-hidden="true" style="display: block; position: absolute; top: -9999px; left: -9999px; font-size: 300px; width: auto; height: auto; line-height: normal; margin: 0px; padding: 0px; font-variant: normal; white-space: nowrap; font-family: sans-serif; font-style: normal; font-weight: 700;">BESbswy</span><span aria-hidden="true" style="display: block; position: absolute; top: -9999px; left: -9999px; font-size: 300px; width: auto; height: auto; line-height: normal; margin: 0px; padding: 0px; font-variant: normal; white-space: nowrap; font-family: sans-serif,serif; font-style: normal; font-weight: 400;">BESbswy</span><span aria-hidden="true" style="display: block; position: absolute; top: -9999px; left: -9999px; font-size: 300px; width: auto; height: auto; line-height: normal; margin: 0px; padding: 0px; font-variant: normal; white-space: nowrap; font-family: sans-serif,sans-serif; font-style: normal; font-weight: 400;">BESbswy</span><span aria-hidden="true" style="display: block; position: absolute; top: -9999px; left: -9999px; font-size: 300px; width: auto; height: auto; line-height: normal; margin: 0px; padding: 0px; font-variant: normal; white-space: nowrap; font-family: serif; font-style: normal; font-weight: 400;">BESbswy</span><span aria-hidden="true" style="display: block; position: absolute; top: -9999px; left: -9999px; font-size: 300px; width: auto; height: auto; line-height: normal; margin: 0px; padding: 0px; font-variant: normal; white-space: nowrap; font-family: sans-serif; font-style: normal; font-weight: 400;">BESbswy</span><span aria-hidden="true" style="display: block; position: absolute; top: -9999px; left: -9999px; font-size: 300px; width: auto; height: auto; line-height: normal; margin: 0px; padding: 0px; font-variant: normal; white-space: nowrap; font-family: 'Ubuntu Mono',serif; font-style: normal; font-weight: 400;">BESbswy</span><span aria-hidden="true" style="display: block; position: absolute; top: -9999px; left: -9999px; font-size: 300px; width: auto; height: auto; line-height: normal; margin: 0px; padding: 0px; font-variant: normal; white-space: nowrap; font-family: 'Ubuntu Mono',sans-serif; font-style: normal; font-weight: 400;">BESbswy</span><span aria-hidden="true" style="display: block; position: absolute; top: -9999px; left: -9999px; font-size: 300px; width: auto; height: auto; line-height: normal; margin: 0px; padding: 0px; font-variant: normal; white-space: nowrap; font-family: serif; font-style: normal; font-weight: 400;">BESbswy</span><span aria-hidden="true" style="display: block; position: absolute; top: -9999px; left: -9999px; font-size: 300px; width: auto; height: auto; line-height: normal; margin: 0px; padding: 0px; font-variant: normal; white-space: nowrap; font-family: sans-serif; font-style: normal; font-weight: 400;">BESbswy</span><script type="text/javascript" src="/static/js/main.6c3569be.js"></script></body></html>
