@@ -20,6 +20,13 @@
             "description": "An interactive way to learn four extremely crucial interview algorithms",
             "date": "Friday May 11, 2018",
             "keywords": "software engineering, jeremy aguilon, technical interviews, coding, interviews, algorithms, data structures"
+        },
+        {
+            "path": "blog/a_collection_of_whiteboard_interview_templates",
+            "title": "A Collection of Whiteboard Interview Templates",
+            "description": "Freeze up in whiteboard or phone interviews? Use these templates to at least get the skeleton down.",
+            "date": "Monday April 22, 2019",
+            "keywords": "software engineering, technical interviews, coding, algorithms, leetcode, hackerrank, interviews, jeremy aguilon"
         }
     ]
 }
