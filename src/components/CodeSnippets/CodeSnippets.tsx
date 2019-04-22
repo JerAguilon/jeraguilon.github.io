@@ -28,7 +28,6 @@ export class CodeSnippets extends React.Component<BlogProps, BlogState> {
     }
 
     public render() {
-        console.log(sourceFile);
         return (<>
             <pre>
                 <code className="language-python">
