@@ -1,4 +1,7 @@
 export default {
+    a_collection_of_whiteboard_interview_templates: {
+        "CodeSnippets": require('components/CodeSnippets/CodeSnippets.tsx').CodeSnippets,
+    },
     ranking_interview_questions_by_cram_score: {
         "CramScore": require('components/CramScore/CramScore.tsx').CramScore,
     },
