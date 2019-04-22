@@ -10,7 +10,6 @@ const slidingWindow =
     letter_map = {} # maps from character to number of occurences in the substring
     characters_encountered = 0 # when this is equal to len(char_set), we have a
                                # candidate substring
-
     # Step 4
     while right < len(string):
         curr_right = string[right]
