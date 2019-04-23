@@ -114,7 +114,7 @@ high-level recipe:
      7. We now have a minimized substring that fulfills our condition! Update your
         best score if you now have a smaller string than those found previously.
 
-<CodeSnippets algorithm="slidingWindow"/>
-
 This is by far the trickiest one to remember. But if you read over this guide _and_ solve
-a few problems yourself, you'll find that it becomes quite easy to re-implement. The implementation is below in Python.
+a few problems yourself, you'll find that it becomes quite easy to re-implement. Once again in Python:
+
+<CodeSnippets algorithm="slidingWindow"/>
