@@ -93,7 +93,7 @@ lines to read/write into it.
 # Sliding Window
 
 Consider the following interview question:
-`Given a string and a set of characters, return the **smallest** substring that
+`Given a string and a set of characters, return length of the **smallest** substring that
 contains all of the characters in the set.`
 
 To solve this, you once again need to recognize this as a sliding window problem!
