@@ -25,6 +25,7 @@ think about how you can apply these templates onto other interview questions.
 Consider the following interview question:
 `Given the root of a binary tree that stores ints, convert the tree in-place
  such that each nodes  stores the sum of all the elements in its left and right subtree.`
+ ([GeeksforGeeks link](https://www.geeksforgeeks.org/convert-a-given-tree-to-sum-tree/))
 
 Here's my recipe:
 
@@ -93,8 +94,8 @@ lines to read/write into it.
 # Sliding Window
 
 Consider the following interview question:
-`Given a string and a set of characters, return length of the **smallest** substring that
-contains all of the characters in the set.`
+`Given a string and a set of characters, return the length of the **smallest** substring that
+contains all of the characters in the set.` ([GeeksforGeeks link](https://www.geeksforgeeks.org/find-the-smallest-window-in-a-string-containing-all-characters-of-another-string/))
 
 To solve this, you once again need to recognize this as a sliding window problem!
 The signs are complex to write in words, so view
@@ -113,7 +114,7 @@ high-level recipe:
      7. We now have a minimized substring that fulfills our condition! Update your
         best score if you now have a smaller string than those found previously.
 
+<CodeSnippets algorithm="slidingWindow"/>
+
 This is by far the trickiest one to remember. But if you read over this guide _and_ solve
 a few problems yourself, you'll find that it becomes quite easy to re-implement. The implementation is below in Python.
-
-<CodeSnippets algorithm="slidingWindow"/>
