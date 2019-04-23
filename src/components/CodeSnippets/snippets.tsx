@@ -1,5 +1,5 @@
 const slidingWindow = 
-`def slidingWindow(string, char_set):
+`def sliding_window(string, char_set):
     # Step 1 and 2
     left, right, best_score = 0, 0, float('inf')
 

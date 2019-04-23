@@ -4,16 +4,16 @@
   to connect. I offer both mock interviews and general coaching with
   discounts for students.
 
-Like I sad in a [_Visualizing Four Key Interview Algorithms_](/blog/visualizing_four_key_interview_algorithms), most technical interviews
-really belong in a small bucket of categories.
+Like I sad in a [_Visualizing Four Key Interview Algorithms_](/blog/visualizing_four_key_interview_algorithms),
+most technical interviews really belong in a small bucket of algorithms. Lately, I've taken the time to
+coach a few engineers. Despite their knowledge of these algorithms, they often find that implementing on a white 
+board is (a) intimidating and (b) difficult to prepare for. Only when they finally pick up a recipe
+on how to generally implement these algorithms do they shine.
 
-Lately I've taken the time to coach a few engineers on acing whiteboard interviews, and I noticed that
-while they understand these algorithms quite well, implementing on a white board is (a) intimidating
-and (b) difficult to prepare for.
-
-And so, in my effort to "open-source" interviewing techniques, I'm here to share my code
-templates for a few common categories: tree recursion, dynamic programming,
-and sliding windows. While I discourage memorizing most things, knowing these templates
+And so, in my effort to "open-source" interviewing techniques, I'm here to share my mental recipes 
+and code templates for a few common categories: tree recursion, dynamic programming,
+and sliding windows. Hopefully these are even more accessible and easy to reflect on
+than the slideshow. While I discourage memorizing most things, knowing these recipes
 will smoothen out your interviewing because you won't need to worry about the skeleton
 structure anymore. You can just think about the hard bits!
 
@@ -56,7 +56,7 @@ catered towards your problem.
 Consider the following interview question: `Jack is hopping backwards and forwards
 in an array of size n. He starts in cell 0 and can hop f cells forwards or b
 cells backwards. He is allowed to jump up to max_jumps times.
-How many ways can he reach the last cell?`
+How many ways can he reach the last cell and finish the game?`
 
 First, why do we even need DP? By definition of a tree, if you do a recursive traversal,
 you'll never recursively call on a node you have visited before. However, some recursive
