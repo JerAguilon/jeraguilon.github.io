@@ -5,7 +5,7 @@ import _forOwn from 'lodash/forOwn';
 import { match } from 'react-router'
 import { Markdown } from 'react-showdown';
 
-import ArticleComponents from "./ArticleComponents"
+import ArticleComponents from "./ArticleComponents";
 
 import './ArticleRenderer.css';
 
@@ -70,19 +70,22 @@ export class ArticleRenderer extends React.Component<ArticleRendererProps,{}> {
         });
 
         return (
-            <div className="article-markdown">
-                <Helmet>
-                    <title>{articleMetadata.title} | Jeremy Aguilon</title>
-                    <meta name="description" content={articleMetadata.description} />
-                    <meta name="keywords" content={articleMetadata.keywords} />
-                </Helmet>
+            <>
+                <div className="article-markdown">
+                    <Helmet>
+                        <title>{articleMetadata.title} | Jeremy Aguilon</title>
+                        <meta name="description" content={articleMetadata.description} />
+                        <meta name="keywords" content={articleMetadata.keywords} />
+                    </Helmet>
 
-                <h1>{ articleMetadata.title }</h1>
-                <h4><i>{ articleMetadata.description}</i></h4>
-                <h5>{ articleMetadata.date}</h5>
-                <hr />
-                <Markdown markup={ markdown } components={ components } />
-            </div>
+                    <h1>{ articleMetadata.title }</h1>
+                    <h4><i>{ articleMetadata.description}</i></h4>
+                    <h5>{ articleMetadata.date}</h5>
+                    <hr />
+                    <Markdown markup={ markdown } components={ components } />
+                </div>
+                <hr/>
+            </>
         );
     }
 }
