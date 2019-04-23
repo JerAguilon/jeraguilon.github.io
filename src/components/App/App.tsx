@@ -11,6 +11,7 @@ import { Wrapper } from 'components/Wrapper';
 import { ArticleRenderer } from 'components/ArticleRenderer';
 
 import './App.css'
+import favicon from './favicon';
 
 
 enum CurrentPage {
@@ -106,5 +107,15 @@ export class App extends React.Component<{}, AppState> {
         return () => {
             this.setState({ currentPage });
         }
+    }
+
+    componentDidMount() {
+        var docHead = document.getElementsByTagName('head')[0];
+        var newLink = document.createElement('link');
+        newLink.rel = 'shortcut icon';
+        newLink.type = 'image/x-icon';
+        newLink.href = 'data:image/png;base64,'+favicon;
+        docHead.appendChild(newLink);
+
     }
 }
