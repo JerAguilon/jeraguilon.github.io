@@ -29,6 +29,10 @@ problems.
 I still think there's a ton of value in the more verbose sources out there. But
 if you're lost this is a good place to start.
 
+Also, If you're having trouble solving these, I highly recommend you look at
+my [algorithm guide](/blog/a_collection_of_whiteboard_interview_templates), which
+contains interactive code that can solve many of these questions.
+
 ____
 
 <SubscribeForm />
