@@ -5,6 +5,8 @@
     font-family: 'Ubuntu Mono', monospace;
     font-size: 14px;
     margin-bottom: 30px;
+    border: #aaa solid;
+    border-width: 0px 1px 1px 0px;
 }
 
 .scorecard-header {
