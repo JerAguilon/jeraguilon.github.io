@@ -1,61 +1,60 @@
 .component-wrapper {
-    -webkit-transition: all 1.0s ease;
-    -moz-transition: all 1.0s ease;
-    -o-transition: all 1.0s ease;
-    -ms-transition: all 0.5s ease;
-    transition: all 1.0s ease;
-    padding: 20px;
-    min-height: 100%;
+  -webkit-transition: all 1.0s ease;
+  -moz-transition: all 1.0s ease;
+  -o-transition: all 1.0s ease;
+  -ms-transition: all 0.5s ease;
+  transition: all 1.0s ease;
+  padding: 20px;
+  min-height: 100%;
 }
 
 .nav-pane {
-    display: grid;
-    width: 100px;
+  display: grid;
+  width: 100px;
 }
 
 .nav-pane a {
-    color: black !important;
+  color: black !important;
 }
 
 .nav-pane a[aria-current="true"] {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .navbar-nav a {
-    text-align:right;
-    display: inherit;
-    color: #333333;
-    margin-right: 15px;
+  text-align: right;
+  display: inherit;
+  color: #333333;
+  margin-right: 15px;
 }
 
 .navbar-brand {
-    color: #fff !important;
+  color: #fff !important;
 }
 
 .navbar-toggle {
-    border-color: #fff;
+  border-color: #fff;
 }
 
 nav {
-    background-color: #adadad !important;
-    border-color: #737373 !important;
+  background-color: #adadad !important;
+  border-color: #737373 !important;
 }
 
 @media(min-width: 768px) {
-
-	.page-name {
-		padding-left: 90px;
-		padding-bottom:0;
-		margin: 32px 0px 20px;
-	}
+  .page-name {
+    padding-left: 90px;
+    padding-bottom: 0;
+    margin: 32px 0px 20px;
+  }
 }
 
 @media(max-width: 767px) {
-	.navbar-brand > h4 {
-		margin-left: 70px;
-	}
-	#content-wrapper {
-		padding-right: 0px;
-		padding-left: 0px;
-	}
+  .navbar-brand>h4 {
+    margin-left: 70px;
+  }
+  #content-wrapper {
+    padding-right: 0px;
+    padding-left: 0px;
+  }
 }

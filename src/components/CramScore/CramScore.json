@@ -1,124 +1,175 @@
 {
-    "level1": [
-        {
-            "external_url": "https://leetcode.com/problems/number-of-islands/",
-            "title": "Number of Islands",
-            "tags": ["Recursion", "Search", "Union-Find"],
-            "description": "Given a 2-D Array, count the number of islands in it, where land is connected in the NSEW direction"
-        },
-        {
-            "external_url": "https://leetcode.com/problems/coin-change/",
-            "title": "Coin Change Problem",
-            "tags": ["Recursion", "Dynamic Programming"],
-            "description": "Given a target of N cents and a collection of coins, how many ways can you form N cents?"
-        },
-        {
-            "external_url": "https://leetcode.com/problems/minimum-window-substring/",
-            "title": "Minimum Window Substring",
-            "tags": ["Sliding Window"],
-            "description": "Given a string and a collection of characters, find the shortest substring that contains all the characters"
-        },
-        {
-            "external_url": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/",
-            "title": "Buying and Selling Stock",
-            "tags": ["Greedy"],
-            "description": "Given a list of starting and ending days for a stock, maximize your profit"
-        },
-        {
-            "external_url": "https://leetcode.com/problems/range-sum-query-immutable/",
-            "title": "Range Sum Query",
-            "tags": ["Dynamic Programming"],
-            "description": "Efficiently compute the sum of the numbers between two indexes of an array"
-        },
-        {
-            "external_url": "https://leetcode.com/problems/merge-intervals/",
-            "title": "Merge Intervals",
-            "tags": ["Sorting"],
-            "description": "Given a list of intervals with a start and end value, merge the intervals"
-        },
-        {
-            "external_url": "https://leetcode.com/problems/maximum-subarray",
-            "title": "Maximum Subarray",
-            "tags": ["Sliding window"],
-            "description": "Given an array, find the subarray with the maximum sum"
-        }
-    ],
-    "level2": [
-        {
-            "external_url": "https://leetcode.com/problems/range-sum-query-mutable",
-            "title": "Range Sum Query Mutable",
-            "tags": ["Trees", "Recursion"],
-            "description": "Given a mutable array of integers, find the sum of elements between i and j"
-        },
-        {
-            "external_url": "https://www.hackerrank.com/challenges/ctci-merge-sort/problem",
-            "title": "Counting Inversions",
-            "tags": ["Sorting", "Recursion"],
-            "description": "Count the number of inversions in a unsorted array"
-        },
-        {
-            "external_url": "https://leetcode.com/problems/word-search-ii",
-            "title": "Word Search II",
-            "tags": ["Trees", "Recursion", "Search"],
-            "description": "Given a 2-D array of characters and a list of valid words, find the number of words on the board"
-        },
-        {
-            "external_url": "https://leetcode.com/problems/task-scheduler/",
-            "title": "Task Scheduler",
-            "tags": ["Greedy", "Priority Queue"],
-            "description": "Given an array of tasks an a cooldown period, given an efficient ordering"
-        },
-        {
-            "external_url": "https://leetcode.com/problems/non-overlapping-intervals",
-            "title": "Non-overlapping Intervals",
-            "tags": ["Greedy", "Sorting"],
-            "description": "Given a collection of intervals, find the number of intervals you need to remove to make the rest of the intervals non-overlapping"
-        },
-        {
-            "external_url": "https://leetcode.com/problems/verify-preorder-serialization-of-a-binary-tree",
-            "title": "Preorder Serialization Verification of a Binary Tree",
-            "tags": ["Trees", "Recursion"],
-            "description": "Given a particular kind of preorder serialization of a binary tree, verify that it's valid"
-        }
-    ],
-    "level3": [
-        {
-            "external_url": "https://leetcode.com/problems/find-the-duplicate-number/",
-            "title": "Find the Duplicate Number",
-            "tags": ["Search"],
-            "description": "Find the duplicate number in an array AND use O(1) space"
-        },
-        {
-            "external_url": "https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal",
-            "title": "Construct a Binary Tree from Preorder and Inorder Serialization",
-            "tags": ["Recursion", "Search", "Trees"],
-            "description": "Given the preorder and inorder serialization of a binary tree, construct a tree data structure"
-        },
-        {
-            "external_url": "https://www.geeksforgeeks.org/find-position-element-sorted-array-infinite-numbers",
-            "title": "Searching an Infinitely Sized List",
-            "tags": ["Recursion", "Search"],
-            "description": "Given an infinitely sized sorted list (no visible end index), find a particular number"
-        },
-        {
-            "external_url": "https://leetcode.com/problems/decode-ways/description/",
-            "title": "Decode Ways",
-            "tags": ["Dynamic Programming", "Recursion"],
-            "description": "Given an encoding from letters to numbers, count the number of ways to decode a string of numbers"
-        },
-        {
-            "external_url": "https://leetcode.com/problems/jump-game-ii/description/",
-            "title": "Jump Game II",
-            "tags": ["Greedy"],
-            "description": "Given a non-negative integer array where each index represents the maxmimum you can iterate forward, minimize the number of jumps to reach the end of the array"
-        },
-        {
-            "external_url": "https://leetcode.com/problems/edit-distance/description/",
-            "title": "Find the Edit Distance Between Two Words",
-            "tags": ["Dynamic Programming", "Recursion"],
-            "description": "Given two words, find the minimum number of edits to mutate one word into the other"
-        }
-
-
-    ]
+  "level1": [
+    {
+      "external_url": "https://leetcode.com/problems/number-of-islands/",
+      "title": "Number of Islands",
+      "tags": [
+        "Recursion",
+        "Search",
+        "Union-Find"
+      ],
+      "description": "Given a 2-D Array, count the number of islands in it, where land is connected in the NSEW direction"
+    },
+    {
+      "external_url": "https://leetcode.com/problems/coin-change/",
+      "title": "Coin Change Problem",
+      "tags": [
+        "Recursion",
+        "Dynamic Programming"
+      ],
+      "description": "Given a target of N cents and a collection of coins, how many ways can you form N cents?"
+    },
+    {
+      "external_url": "https://leetcode.com/problems/minimum-window-substring/",
+      "title": "Minimum Window Substring",
+      "tags": [
+        "Sliding Window"
+      ],
+      "description": "Given a string and a collection of characters, find the shortest substring that contains all the characters"
+    },
+    {
+      "external_url": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/",
+      "title": "Buying and Selling Stock",
+      "tags": [
+        "Greedy"
+      ],
+      "description": "Given a list of starting and ending days for a stock, maximize your profit"
+    },
+    {
+      "external_url": "https://leetcode.com/problems/range-sum-query-immutable/",
+      "title": "Range Sum Query",
+      "tags": [
+        "Dynamic Programming"
+      ],
+      "description": "Efficiently compute the sum of the numbers between two indexes of an array"
+    },
+    {
+      "external_url": "https://leetcode.com/problems/merge-intervals/",
+      "title": "Merge Intervals",
+      "tags": [
+        "Sorting"
+      ],
+      "description": "Given a list of intervals with a start and end value, merge the intervals"
+    },
+    {
+      "external_url": "https://leetcode.com/problems/maximum-subarray",
+      "title": "Maximum Subarray",
+      "tags": [
+        "Sliding window"
+      ],
+      "description": "Given an array, find the subarray with the maximum sum"
+    }
+  ],
+  "level2": [
+    {
+      "external_url": "https://leetcode.com/problems/range-sum-query-mutable",
+      "title": "Range Sum Query Mutable",
+      "tags": [
+        "Trees",
+        "Recursion"
+      ],
+      "description": "Given a mutable array of integers, find the sum of elements between i and j"
+    },
+    {
+      "external_url": "https://www.hackerrank.com/challenges/ctci-merge-sort/problem",
+      "title": "Counting Inversions",
+      "tags": [
+        "Sorting",
+        "Recursion"
+      ],
+      "description": "Count the number of inversions in a unsorted array"
+    },
+    {
+      "external_url": "https://leetcode.com/problems/word-search-ii",
+      "title": "Word Search II",
+      "tags": [
+        "Trees",
+        "Recursion",
+        "Search"
+      ],
+      "description": "Given a 2-D array of characters and a list of valid words, find the number of words on the board"
+    },
+    {
+      "external_url": "https://leetcode.com/problems/task-scheduler/",
+      "title": "Task Scheduler",
+      "tags": [
+        "Greedy",
+        "Priority Queue"
+      ],
+      "description": "Given an array of tasks an a cooldown period, given an efficient ordering"
+    },
+    {
+      "external_url": "https://leetcode.com/problems/non-overlapping-intervals",
+      "title": "Non-overlapping Intervals",
+      "tags": [
+        "Greedy",
+        "Sorting"
+      ],
+      "description": "Given a collection of intervals, find the number of intervals you need to remove to make the rest of the intervals non-overlapping"
+    },
+    {
+      "external_url": "https://leetcode.com/problems/verify-preorder-serialization-of-a-binary-tree",
+      "title": "Preorder Serialization Verification of a Binary Tree",
+      "tags": [
+        "Trees",
+        "Recursion"
+      ],
+      "description": "Given a particular kind of preorder serialization of a binary tree, verify that it's valid"
+    }
+  ],
+  "level3": [
+    {
+      "external_url": "https://leetcode.com/problems/find-the-duplicate-number/",
+      "title": "Find the Duplicate Number",
+      "tags": [
+        "Search"
+      ],
+      "description": "Find the duplicate number in an array AND use O(1) space"
+    },
+    {
+      "external_url": "https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal",
+      "title": "Construct a Binary Tree from Preorder and Inorder Serialization",
+      "tags": [
+        "Recursion",
+        "Search",
+        "Trees"
+      ],
+      "description": "Given the preorder and inorder serialization of a binary tree, construct a tree data structure"
+    },
+    {
+      "external_url": "https://www.geeksforgeeks.org/find-position-element-sorted-array-infinite-numbers",
+      "title": "Searching an Infinitely Sized List",
+      "tags": [
+        "Recursion",
+        "Search"
+      ],
+      "description": "Given an infinitely sized sorted list (no visible end index), find a particular number"
+    },
+    {
+      "external_url": "https://leetcode.com/problems/decode-ways/description/",
+      "title": "Decode Ways",
+      "tags": [
+        "Dynamic Programming",
+        "Recursion"
+      ],
+      "description": "Given an encoding from letters to numbers, count the number of ways to decode a string of numbers"
+    },
+    {
+      "external_url": "https://leetcode.com/problems/jump-game-ii/description/",
+      "title": "Jump Game II",
+      "tags": [
+        "Greedy"
+      ],
+      "description": "Given a non-negative integer array where each index represents the maxmimum you can iterate forward, minimize the number of jumps to reach the end of the array"
+    },
+    {
+      "external_url": "https://leetcode.com/problems/edit-distance/description/",
+      "title": "Find the Edit Distance Between Two Words",
+      "tags": [
+        "Dynamic Programming",
+        "Recursion"
+      ],
+      "description": "Given two words, find the minimum number of edits to mutate one word into the other"
+    }
+  ]
 }

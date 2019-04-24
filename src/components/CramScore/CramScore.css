@@ -1,90 +1,90 @@
 .scorecard {
-    background-color: #e0e0e0;
-    padding: 30px 30px 5px;
-    border-radius: 5px;
-    font-family: 'Ubuntu Mono', monospace;
-    font-size: 14px;
-    margin-bottom: 30px;
-    border: #aaa solid;
-    border-width: 0px 1px 1px 0px;
+  background-color: #e0e0e0;
+  padding: 30px 30px 5px;
+  border-radius: 5px;
+  font-family: 'Ubuntu Mono', monospace;
+  font-size: 14px;
+  margin-bottom: 30px;
+  border: #aaa solid;
+  border-width: 0px 1px 1px 0px;
 }
 
 .scorecard-header {
-    margin: -30px -30px 13px -30px;
-    text-align: center;
-    border-radius: 4px 4px 0px 0px;
-    background-color: #7585ff;
-    font-size: 20px;
-    color: #5f5f5f;
-    position: relative;
+  margin: -30px -30px 13px -30px;
+  text-align: center;
+  border-radius: 4px 4px 0px 0px;
+  background-color: #7585ff;
+  font-size: 20px;
+  color: #5f5f5f;
+  position: relative;
 }
 
-.scorecard-header > a {
-    color: #ffffff;
+.scorecard-header>a {
+  color: #ffffff;
 }
 
 .tag-key * {
-    display: block !important;
+  display: block !important;
 }
 
 .tags {
-    display: block;
-    margin-top:15px;
+  display: block;
+  margin-top: 15px;
 }
 
 .tag {
-    display: inline-block;
-    margin-right: 10px;
-    font-size: 14px;
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 14px;
 }
 
 .tag::before {
-    content: '';
-    border-radius: 50%;
-    height: 14px;
-    width: 14px;
-    display: inline-block;
-    margin-right: 5px;
+  content: '';
+  border-radius: 50%;
+  height: 14px;
+  width: 14px;
+  display: inline-block;
+  margin-right: 5px;
 }
 
 .tag-recursion::before {
-    background-color: red;
+  background-color: red;
 }
 
 .tag-search::before {
-    background-color: orange;
+  background-color: orange;
 }
 
 .tag-union-find::before {
-    background-color: yellow;
+  background-color: yellow;
 }
 
 .tag-dynamic-programming::before {
-    background-color: green;
+  background-color: green;
 }
 
 .tag-sliding-window::before {
-    background-color: blue;
+  background-color: blue;
 }
 
 .tag-greedy::before {
-    background-color: purple;
+  background-color: purple;
 }
 
 .tag-trees::before {
-    background-color: pink;
+  background-color: pink;
 }
 
 .tag-priority-queue::before {
-    background-color: #10ffbf;
+  background-color: #10ffbf;
 }
 
 .tag-sorting::before {
-    background-color: #ffdaa9;
+  background-color: #ffdaa9;
 }
 
 @media(max-width: 991px) {
-    .scorecard {
-        margin-bottom: 15px;
-    }
+  .scorecard {
+    margin-bottom: 15px;
+  }
 }

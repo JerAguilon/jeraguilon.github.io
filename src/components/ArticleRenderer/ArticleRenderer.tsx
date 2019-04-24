@@ -19,7 +19,7 @@ const webpackRequireContext = require.context(
 const files = webpackRequireContext.keys().reduce((map, fileName) => {
   const markdown = webpackRequireContext(fileName)
   // remove the leading './'
-  if (fileName.startsWith('./')){
+  if (fileName.startsWith('./')) {
     fileName = fileName.substr(2)
   }
 
@@ -27,65 +27,65 @@ const files = webpackRequireContext.keys().reduce((map, fileName) => {
 }, new Map())
 
 const { articles } = require('../../articles/articles.json');
-const articlesMetadata = articles.reduce( (obj, item) => {
-    const splitPath =  item.path.split('/')
-    const key = splitPath[splitPath.length - 1]
-    obj[key] = { 
-        title: item.title,
-        description: item.description,
-        date: item.date,
-        keywords: item.keywords,
-    };
-    return obj
+const articlesMetadata = articles.reduce((obj, item) => {
+  const splitPath = item.path.split('/')
+  const key = splitPath[splitPath.length - 1]
+  obj[key] = {
+    title: item.title,
+    description: item.description,
+    date: item.date,
+    keywords: item.keywords,
+  };
+  return obj
 }, {});
 
 export interface ArticleMatcher {
-    articleName: string;
+  articleName: string;
 }
 
 export interface ArticleRendererProps {
-    match: match<ArticleMatcher>;
-    renderCallback: () => void;
+  match: match<ArticleMatcher>;
+  renderCallback: () => void;
 }
 
-export class ArticleRenderer extends React.Component<ArticleRendererProps,{}> {
-    public constructor(props) {
-        super(props);
-        this.props.renderCallback()
+export class ArticleRenderer extends React.Component<ArticleRendererProps, {}> {
+  public constructor(props) {
+    super(props);
+    this.props.renderCallback()
+  }
+
+  public render() {
+    const articleName = this.props.match.params.articleName;
+    const articleMetadata = articlesMetadata[articleName];
+    const markdown = files.get(articleName + '.md');
+    const components = {
     }
 
-    public render()  {
-        const articleName = this.props.match.params.articleName;
-        const articleMetadata = articlesMetadata[articleName];
-        const markdown = files.get(articleName + '.md');
-        const components = {
-        }
+    _forOwn(ArticleComponents[articleName], (value, key) => {
+      if (value.toString().match(/.(jpg|jpeg|gif|png)$/i)) {
+        components[key] = () => (<img src={value} />);
+      } else {
+        components[key] = value;
+      }
+    });
 
-        _forOwn(ArticleComponents[articleName], (value, key) => {
-            if (value.toString().match(/.(jpg|jpeg|gif|png)$/i)) {
-                components[key] = () => (<img src={value} />); 
-            } else {
-                components[key] = value;
-            }
-        });
+    return (
+      <>
+        <div className="article-markdown">
+          <Helmet>
+            <title>{articleMetadata.title} | Jeremy Aguilon</title>
+            <meta name="description" content={articleMetadata.description} />
+            <meta name="keywords" content={articleMetadata.keywords} />
+          </Helmet>
 
-        return (
-            <>
-                <div className="article-markdown">
-                    <Helmet>
-                        <title>{articleMetadata.title} | Jeremy Aguilon</title>
-                        <meta name="description" content={articleMetadata.description} />
-                        <meta name="keywords" content={articleMetadata.keywords} />
-                    </Helmet>
-
-                    <h1>{ articleMetadata.title }</h1>
-                    <h4><i>{ articleMetadata.description}</i></h4>
-                    <h5>{ articleMetadata.date}</h5>
-                    <hr />
-                    <Markdown markup={ markdown } components={ components } />
-                </div>
-                <hr/>
-            </>
-        );
-    }
+          <h1>{articleMetadata.title}</h1>
+          <h4><i>{articleMetadata.description}</i></h4>
+          <h5>{articleMetadata.date}</h5>
+          <hr />
+          <Markdown markup={markdown} components={components} />
+        </div>
+        <hr />
+      </>
+    );
+  }
 }

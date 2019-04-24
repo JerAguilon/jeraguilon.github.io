@@ -1,33 +1,33 @@
 .workpanels {
-    z-index: 0;
-    position:relative
+  z-index: 0;
+  position: relative
 }
 
 .workpanels::before {
-    position: absolute;
-    border: 1px black solid;
-    content: "";
-    width: 1px;
-    height: 100%;
-    left: 102px;
-    z-index: 0;
+  position: absolute;
+  border: 1px black solid;
+  content: "";
+  width: 1px;
+  height: 100%;
+  left: 102px;
+  z-index: 0;
 }
 
 .workpanels .years {
-    width: 55px;
-    display:block;
-    margin-top: -20px;
+  width: 55px;
+  display: block;
+  margin-top: -20px;
 }
 
 .workpanels .years .entry:not(:last-child) {
-    margin-bottom: 95px;
+  margin-bottom: 95px;
 }
 
 .workpanels .entries {
-    padding-left: 28px;
-    z-index: 0;
+  padding-left: 28px;
+  z-index: 0;
 }
 
 .workpanels-content {
-    margin-left: 50px;
+  margin-left: 50px;
 }
