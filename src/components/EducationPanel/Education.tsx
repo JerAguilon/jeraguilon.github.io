@@ -27,7 +27,7 @@ export class EducationPanel extends React.Component<EducationPanelProperties, {}
             <h3>Threads (Concentrations): </h3><h4>Intelligence & Media</h4>
           </div>
           <div className="education-item">
-            <h3>GPA: </h3><h4>3.95</h4>
+            <h3>GPA: </h3><h4>3.96</h4>
           </div>
           <div className="education-item">
             <h3>Relevant Coursework: </h3>
