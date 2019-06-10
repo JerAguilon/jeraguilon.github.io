@@ -113,12 +113,12 @@ high-level recipe:
 1. Create two pointers, a left (slow) and a right (fast)
 2. Create a "best score found so far." If you're minimizing, make this a big value. If you're maximizing, make it a small value.
 3. Create your supporting data structures to track when you've found a valid substring.
-4. Create a `while right < len(input_string)`
-     5. Update your supporting data structure and increment `right`
-     6. If your data structure tells you that you have a new candidate substring,
-        increment left until your string is invalid.
-     7. We now have a minimized substring that fulfills our condition! Update your
-        best score if you now have a smaller string than those found previously.
+4. Create a `while right < len(input_string)`. Note that you may need extra conditionals to handle edge cases for when
+   `right` is at the end, but you stil have a candidate substring to process. See the code below for this.
+     5. **If you do not have a candidate substring**: increment `right` and update your data structure.
+     6. **If you do have a candidate substring**: increment `left` to chop of unecessary letters while 
+        updating your data structure.
+     7. Update your best score if you now have a smaller string than those found previously.
 
 This is by far the trickiest one to remember. But if you read over this guide _and_ solve
 a few problems yourself, you'll find that it becomes quite easy to re-implement. Once again in Python:
