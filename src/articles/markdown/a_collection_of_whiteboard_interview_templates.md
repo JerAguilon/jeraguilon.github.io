@@ -1,10 +1,4 @@
-> Want personal coaching on how to ace the interviews that got me
-  job offers at Google, Facebook, Two Sigma, and more? Shoot me an
-  email at [jeremyaguilon1@gmail.com](mailto:jeremyaguilon1@gmail.com)
-  to connect. I offer both mock interviews and general coaching with
-  discounts for students.
-
-Like I sad in a [_Visualizing Four Key Interview Algorithms_](/blog/visualizing_four_key_interview_algorithms),
+Like I said in a [_Visualizing Four Key Interview Algorithms_](/blog/visualizing_four_key_interview_algorithms),
 most technical interviews really belong in a small bucket of algorithms. Lately, I've taken the time to
 coach a few engineers. Despite their knowledge of these algorithms, they often find that implementing on a white 
 board is (a) intimidating and (b) difficult to prepare for. Only when they finally pick up a recipe

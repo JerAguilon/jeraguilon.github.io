@@ -1,12 +1,6 @@
 > Liked this? I also wrote about how I'd prioritize 
   [LeetCode and HackerRank questions](/blog/ranking_interview_questions_by_cram_score).
 
-> Want personal coaching on how to ace the interviews that got me
-  job offers at Google, Facebook, Two Sigma, and more? Shoot me an
-  email at [jeremyaguilon1@gmail.com](mailto:jeremyaguilon1@gmail.com)
-  to connect. I offer both mock interviews and general coaching with
-  discounts for students.
-
 Technical interviews are hard. There's a countless number of coding questions one can be asked.
 However, I often see people brute force their way into knowing many questions by heart,
 not realizing that most questions are actually asking the same things over and over. In reality,
