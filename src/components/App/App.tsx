@@ -23,10 +23,10 @@ export interface AppState {
 }
 
 const PAGE_TO_COLOR = {
-  ABOUT: '#62c5e2',
+  ABOUT: '#b7d2e0',
   PROFESSIONAL: '#f9de77',
-  EDUCATION: '#fd8774',
-  PORTFOLIO: '#50dcaf',
+  EDUCATION: '#f1c2bb',
+  PORTFOLIO: '#a8d6c7',
   BLOG: '#fdfdfd',
 }
 
