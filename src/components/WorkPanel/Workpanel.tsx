@@ -22,8 +22,8 @@ export class WorkPanel extends React.Component<WorkPanelProperties, {}> {
           <div className="entries">
             <JobEntry company="Facebook" role="Software Engineer" time="2019">
               <p>
-                Incoming FTE at Faceook. More on this soon!
-                            </p>
+                I work in the Content Understanding space. More on this soon!
+              </p>
             </JobEntry>
             <JobEntry company="Google" role="Associate Product Manager Intern" time="Summer 2018">
               <p>
