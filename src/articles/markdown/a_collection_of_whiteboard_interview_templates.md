@@ -131,7 +131,7 @@ it. Here is my implementation, with two optimizations:
 put the tree with shorter height under the tree with bigger
 height
 * Path compression: when we call `find(node)`, we make `node`
-point straight to the root returning out
+point straight to the root we are returning
 
 With these optimizations, we can see O(logn) for union and find
 operations.
