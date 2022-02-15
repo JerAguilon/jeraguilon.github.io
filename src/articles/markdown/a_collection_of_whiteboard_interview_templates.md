@@ -118,3 +118,24 @@ This is by far the trickiest one to remember. But if you read over this guide _a
 a few problems yourself, you'll find that it becomes quite easy to re-implement. Once again in Python:
 
 <CodeSnippets algorithm="slidingWindow"/>
+
+# A Generic Union-Find/Disjoint Sets Class
+
+[Union Find](https://www.geeksforgeeks.org/union-find/) is a
+neat algorithm that can be used for cycle detection and minimum
+spanning tree algorithms. This can be a tricky one to implement
+on the spot, so it pays to get comfortable with the workings of
+it. Here is my implementation, with two optimizations:
+
+* Union by rank: when we need to join two disjoint sets, we
+put the tree with shorter height under the tree with bigger
+height
+* Path compression: when we call `find(node)`, we make `node`
+point straight to the root returning out
+
+With these optimizations, we can see O(logn) for union and find
+operations.
+
+To demonstrate the API, here is a solution to [Min Cost to Connect All Points](https://leetcode.com/problems/min-cost-to-connect-all-points/).
+
+<CodeSnippets algorithm="unionFind"/>

@@ -14,12 +14,14 @@ const algorithmMap = {
   'treeRecursion': 'python3/a64efa49ff',
   'slidingWindow': 'python/4d787b7e19',
   'dynamicProgramming': 'python/40ef94c17f',
+  'unionFind': 'python3/0a4e6b1e66'
 }
 
 const heightMap = {
   'treeRecursion': 370,
   'slidingWindow': 650,
   'dynamicProgramming': 520,
+  'unionFind': 600,
 }
 
 export class CodeSnippets extends React.Component<BlogProps, BlogState> {
