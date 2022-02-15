@@ -14,7 +14,7 @@ const algorithmMap = {
   'treeRecursion': 'python3/a64efa49ff',
   'slidingWindow': 'python/4d787b7e19',
   'dynamicProgramming': 'python/40ef94c17f',
-  'unionFind': 'python3/0fd12cddc6'
+  'unionFind': 'python3/78b02cb5f2'
 }
 
 const heightMap = {
