@@ -136,6 +136,13 @@ point straight to the root we are returning
 With these optimizations, we can see O(logn) for union and find
 operations.
 
-To demonstrate the API, here is a solution to [Min Cost to Connect All Points](https://leetcode.com/problems/min-cost-to-connect-all-points/).
+To demonstrate the API, here is a solution to [Min Cost to Connect All Points](https://leetcode.com/problems/min-cost-to-connect-all-points/). We can solve this question
+with Kruskal's minimum spanning tree algorithm in O(ElogV)
+time.
 
 <CodeSnippets algorithm="unionFind"/>
+
+As an aside, Prim's algorithm with Fibonacci heaps may be 
+the faster solution for this particular problem since the 
+graph is dense (has many edges). Kruskal's is best for sparse
+graphs. Still works though!
