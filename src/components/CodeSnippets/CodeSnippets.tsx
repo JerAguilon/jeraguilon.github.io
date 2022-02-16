@@ -15,7 +15,7 @@ const algorithmMap = {
   'slidingWindow': 'python/4d787b7e19',
   'dynamicProgramming': 'python/40ef94c17f',
   'unionFind': 'python3/78b02cb5f2',
-  'primsAlgorithm': 'python3/fdc79df563',
+  'primsAlgorithm': 'python3/1869a6293e',
 }
 
 const heightMap = {
