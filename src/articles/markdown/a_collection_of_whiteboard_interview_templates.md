@@ -142,7 +142,15 @@ time.
 
 <CodeSnippets algorithm="unionFind"/>
 
-As an aside, Prim's algorithm with Fibonacci heaps may be 
-the faster solution for this particular problem since the 
-graph is dense (has many edges). Kruskal's is best for sparse
-graphs. Still works though!
+# Alternative MST Solution: Prims
+
+One property of the leetcode problem above is that the
+graph is dense. Alternatively, we can use Prim's algorithm
+using a priority queue/heap, which tends to perform better
+for dense graphs. This implementation runs in O(ElogV).
+
+<CodeSnippets algorithm="primsAlgorithm"/>
+
+It's nice to note that using a Fibonacci heap, you can
+achieve O(VlogV). I've never been asked to implement
+this in an interview, however.

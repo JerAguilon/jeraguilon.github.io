@@ -14,7 +14,8 @@ const algorithmMap = {
   'treeRecursion': 'python3/bd2ed5319d',
   'slidingWindow': 'python/4d787b7e19',
   'dynamicProgramming': 'python/40ef94c17f',
-  'unionFind': 'python3/78b02cb5f2'
+  'unionFind': 'python3/78b02cb5f2',
+  'primsAlgorithm': 'python3/fdc79df563',
 }
 
 const heightMap = {
@@ -22,6 +23,7 @@ const heightMap = {
   'slidingWindow': 650,
   'dynamicProgramming': 520,
   'unionFind': 600,
+  'primsAlgorithm': 520,
 }
 
 export class CodeSnippets extends React.Component<BlogProps, BlogState> {
