@@ -142,7 +142,7 @@ time.
 
 <CodeSnippets algorithm="unionFind"/>
 
-# Alternative MST Solution: Prims
+# Alternative MST Solution: Prim's Algorithm
 
 One property of the leetcode problem above is that the
 graph is dense. Alternatively, we can use Prim's algorithm
