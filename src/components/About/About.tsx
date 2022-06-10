@@ -26,12 +26,13 @@ const CALL_CONTACT = 'cat contact.txt'
 const ABOUT_NODE = (
   <div>
     <p>
-      Hey! Welcome to my abode on the internet. I'm a student,
-      software developer, and product manager from Georgia Tech.
+      Hello! Welcome to my abode on the internet.
     </p>
     <p>
-      Chances are you're here to learn about my professional side. I'm currently a software engineer
-      at Facebook. I've formerly worked at Lyft, Amazon, and Google.
+      Chances are you're here to learn about my professional side. 
+      I'm a software engineer by profession with experience in an
+      intersection of data, backend, and machine learning.
+      I've formerly worked at Facebook, Lyft, Google, and Amazon.
     </p>
   </div>
 );

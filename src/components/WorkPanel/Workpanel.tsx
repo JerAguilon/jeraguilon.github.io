@@ -20,9 +20,29 @@ export class WorkPanel extends React.Component<WorkPanelProperties, {}> {
         <SEO url="professional" />
         <div className="workpanels">
           <div className="entries">
-            <JobEntry company="Facebook" role="Software Engineer" time="2019">
+            <JobEntry company="Facebook" role="Software Engineer" time="2019-2022">
               <p>
-                I work in the Content Understanding space. More on this soon!
+                I spent my tenure at Facebook working on Monetization Integrity. In short,
+                we decided whether an entity on IG/FB is monetizable or not using a mix of
+                machine learning, heuristics, and human reviewers. My projects included:
+                <ul>
+                  <li>
+                    Staging a high-profile upgrade of our core monetization policies
+                    to align with industry standards
+                  </li>
+                  <li>
+                    Pioneering machine learning models that forecast
+                    how risky a page is for violating our monetization policies
+                  </li>
+                  <li>
+                    Working closely with peer engineers, data scientists, product,
+                    and policy to understand and close gaps in our topline metrics
+                  </li>
+                  <li>
+                    Planning, collaborating, and executing on large infrastructure 
+                    overhauls of our ML-based decision serving workflows.
+                  </li>
+                </ul>
               </p>
             </JobEntry>
             <JobEntry company="Google" role="Associate Product Manager Intern" time="Summer 2018">
