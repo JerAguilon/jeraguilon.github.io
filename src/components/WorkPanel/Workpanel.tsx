@@ -20,6 +20,10 @@ export class WorkPanel extends React.Component<WorkPanelProperties, {}> {
         <SEO url="professional" />
         <div className="workpanels">
           <div className="entries">
+            <JobEntry company="Hudson River Trading" role="Algo Engineer" time="2022">
+              <p>
+              </p>
+            </JobEntry>
             <JobEntry company="Facebook" role="Software Engineer" time="2019-2022">
               <p>
                 I spent my tenure at Facebook working on Monetization Integrity. In short,
@@ -33,11 +37,11 @@ export class WorkPanel extends React.Component<WorkPanelProperties, {}> {
                   </li>
                   <li>
                     Pioneering machine learning models that forecast
-                    how risky a page is for violating our monetization policies
+                    how risky a page is to violate our monetization policies
                   </li>
                   <li>
-                    Working closely with peer engineers, data scientists, product,
-                    and policy to understand and close gaps in our topline metrics
+                    Working closely with peer engineers, data scientists, product managers,
+                    and policy leads to understand and close gaps in our topline metrics
                   </li>
                   <li>
                     Planning, collaborating, and executing on large infrastructure 

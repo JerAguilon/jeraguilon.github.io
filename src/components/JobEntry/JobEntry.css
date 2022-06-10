@@ -21,6 +21,10 @@
   margin-left: 55px;
 }
 
+.workpanel-marker-hudsonrivertrading {
+  background: linear-gradient( 0deg, #f7f7f7 0%, #f7f7f7 50%, #f79517 50%, #f79517 100%);
+}
+
 .workpanel-marker-facebook {
   background: linear-gradient( 0deg, white 0%, white 50%, #3b5998 50%, #3b5998 100%);
 }

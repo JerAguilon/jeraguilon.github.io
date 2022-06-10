@@ -30,9 +30,19 @@ const ABOUT_NODE = (
     </p>
     <p>
       Chances are you're here to learn about my professional side. 
-      I'm a software engineer by profession with experience in an
-      intersection of data, backend, and machine learning.
-      I've formerly worked at Facebook, Lyft, Google, and Amazon.
+      <ul>
+        <li>
+          I'm a software engineer by profession with experience
+          in an intersection of backend, data, and machine learning.
+        </li>
+        <li>
+          I currently work as an Algo Engineer at Hudson River Trading
+        </li>
+        <li>
+          I formerly worked at Facebook, and did internships at
+          Google, Lyft, and Amazon.
+        </li>
+      </ul>
     </p>
   </div>
 );
@@ -118,6 +128,8 @@ export class About extends React.Component<TerminalProps, TerminalState> {
   }
 
   private proceedNext = (step: TerminalStep) => {
-    return () => this.setState({ step: TerminalStep[TerminalStep[(step + 1)]] });
+    return () => {
+      this.setState({ step: TerminalStep[TerminalStep[(step + 1)]] });
+    };
   }
 }

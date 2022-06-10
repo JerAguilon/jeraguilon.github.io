@@ -18,7 +18,7 @@ export class JobEntry extends React.Component<JobEntryProperties, {}> {
     return (
       <>
         <div className="job-entry">
-          <div className={"workpanel-marker workpanel-marker-" + this.props.company.toLowerCase()}>
+          <div className={"workpanel-marker workpanel-marker-" + this.props.company.toLowerCase().split(' ').join('')}>
           </div>
           <div className="timeline-entry">
             <div className="timeline-entry-title">
