@@ -28,7 +28,8 @@ export class WorkPanel extends React.Component<WorkPanelProperties, {}> {
                 <ul>
                   <li>
                     Staging a high-profile upgrade of our core monetization policies
-                    to align with industry standards
+                    to align with <a href="https://www.facebook.com/business/news/update-to-our-safety-commitments"> industry standards
+                    </a>.
                   </li>
                   <li>
                     Pioneering machine learning models that forecast
