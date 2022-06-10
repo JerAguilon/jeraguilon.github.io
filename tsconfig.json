@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "keyofStringsOnly": true,
     "baseUrl": "src",
     "outDir": "build/dist",
     "module": "esnext",
