@@ -36,7 +36,7 @@ const ABOUT_NODE = (
       in an intersection of backend, data, and machine learning.
     </p>
     <p>
-      &nbsp;&nbsp;&nbsp;* I currently work as an Algo Engineer at Hudson River Trading
+      &nbsp;&nbsp;&nbsp;* I currently work as an Algo Engineer at Hudson River Trading.
     </p>
     <p>
       &nbsp;&nbsp;&nbsp;* I formerly worked at Facebook and did internships at
