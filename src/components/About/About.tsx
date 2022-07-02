@@ -29,20 +29,18 @@ const ABOUT_NODE = (
       Hello! Welcome to my abode on the internet.
     </p>
     <p>
-      Chances are you're here to learn about my professional side. 
-      <ul>
-        <li>
-          I'm a software engineer by profession with experience
-          in an intersection of backend, data, and machine learning.
-        </li>
-        <li>
-          I currently work as an Algo Engineer at Hudson River Trading
-        </li>
-        <li>
-          I formerly worked at Facebook, and did internships at
-          Google, Lyft, and Amazon.
-        </li>
-      </ul>
+      If you're here learn about my professional work:
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;* I'm a software engineer with experience
+      in an intersection of backend, data, and machine learning.
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;* I currently work as an Algo Engineer at Hudson River Trading
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;* I formerly worked at Facebook and did internships at
+      Google, Lyft, and Amazon.
     </p>
   </div>
 );
