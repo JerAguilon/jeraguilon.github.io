@@ -1,11 +1,10 @@
 > Liked this? I also wrote about how I'd prioritize [LeetCode and HackerRank
 > questions](/blog/ranking_interview_questions_by_cram_score).  
 
-> **Note**: If you're interested in interview coaching, I've successfully
-> mentored 4+ folks into FAANG jobs and unicorn startups through personalized
-> coaching. Feel free to reach out at
-> [jeremyaguilon1@gmail.com](mailto:jeremyaguilon1@gmail.com) if you are
-> interested.
+> **Note**: I really enjoy mentoring. I've successfully gotten 4+ folks into
+> FAANG jobs and unicorn startups through personalized coaching. Feel free to
+> reach out at [jeremyaguilon1@gmail.com](mailto:jeremyaguilon1@gmail.com) if
+> you are interested.
 
 Technical interviews are hard. There's a countless number of coding questions one can be asked.
 However, I often see people brute force their way into knowing many questions by heart,
