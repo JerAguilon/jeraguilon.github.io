@@ -47,7 +47,7 @@ const ABOUT_NODE = (
 
 const CONTACT_NODE = (
   <div>
-    <p><b>Resume: </b><a href="https://drive.google.com/file/d/0B0RWcPuNhR8ZT212QTIxTnBGSkk/view?usp=sharing">View</a></p>
+    <p><b>Resume: </b><a href="https://drive.google.com/file/d/0B0RWcPuNhR8ZT212QTIxTnBGSkk/view?usp=sharing&resourcekey=0-ZgwZXhKYXvjewlRpP8JuzA">View</a></p>
     <p><b>Email: </b><a href="mailto:jeremyaguilon@gmail.com">jeremyaguilon1@gmail.com</a></p>
     <p><b>LinkedIn: </b><a href="https://linkedin.com/in/jeraguilon" target="_blank">JerAguilon</a></p>
     <p><b>GitHub: </b><a href="https://github.com/jeraguilon" target="_blank">JerAguilon</a></p>
