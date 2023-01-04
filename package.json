@@ -33,7 +33,7 @@
     "react-markdown": "^3.3.0",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
-    "react-scripts-ts": "2.13.0",
+    "react-scripts-ts": "4.0.8",
     "react-showdown": "^1.6.0",
     "react-typist": "^2.0.4",
     "typescript": "^2.8.0-insiders.20180127",
@@ -51,6 +51,6 @@
     "style-loader": "^0.20.2",
     "ts-loader": "^3.5.0",
     "typescript": "^2.8.0-insiders.20180127",
-    "webpack": "^3.1.0"
+    "webpack": "^5.75.0"
   }
 }
