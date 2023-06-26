@@ -1,8 +1,3 @@
-> **Note**: I really enjoy mentoring. I've successfully gotten 4+ folks into
-> FAANG jobs and unicorn startups through personalized coaching. Feel free to
-> reach out at [jeremyaguilon1@gmail.com](mailto:jeremyaguilon1@gmail.com) if
-> you are interested.
-
 Like I said in a [_Visualizing Four Key Interview
 Algorithms_](/blog/visualizing_four_key_interview_algorithms), most technical
 interviews really belong in a small bucket of algorithms. Lately, I've taken the
