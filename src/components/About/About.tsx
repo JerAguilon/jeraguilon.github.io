@@ -47,8 +47,7 @@ const ABOUT_NODE = (
 
 const CONTACT_NODE = (
   <div>
-    <p><b>Resume: </b><a href="https://drive.google.com/file/d/0B0RWcPuNhR8ZT212QTIxTnBGSkk/view?usp=sharing&resourcekey=0-ZgwZXhKYXvjewlRpP8JuzA">View</a></p>
-    <p><b>Email: </b><a href="mailto:jeremyaguilon@gmail.com">jeremyaguilon1@gmail.com</a></p>
+    <p><b>Email: </b>jeremyaguilon1[at]gmail.com</p>
     <p><b>LinkedIn: </b><a href="https://linkedin.com/in/jeraguilon" target="_blank">JerAguilon</a></p>
     <p><b>GitHub: </b><a href="https://github.com/jeraguilon" target="_blank">JerAguilon</a></p>
   </div>
@@ -72,7 +71,7 @@ export class About extends React.Component<TerminalProps, TerminalState> {
         <div className={'terminal terminal-about'}>
           <div className={'terminal-header'}>
             About Me
-                        <div className={'terminal-buttons'}>
+            <div className={'terminal-buttons'}>
               <div className={'terminal-button terminal-button-min'} />
               <div className={'terminal-button terminal-button-max'} />
               <div className={'terminal-button terminal-button-close'} />
