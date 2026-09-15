@@ -6,7 +6,7 @@
   "homepage": "http://jeraguilon.github.io/",
   "scripts": {
     "start": "react-scripts-ts start",
-    "build": "react-scripts-ts build && react-snapshot",
+    "build": "react-scripts-ts build && react-snapshot && cp build/index.html build/404.html",
     "test": "react-scripts-ts test --env=jsdom",
     "eject": "react-scripts-ts eject",
     "deploy": "gh-pages -b master -d build",
