@@ -1,0 +1,5 @@
+{
+  "source": "build",
+  "destination": "build",
+  "include": ["/", "/professional", "/education", "/portfolio", "/blog", "/golf"]
+}
