@@ -1,0 +1,614 @@
+.distance-practice {
+  padding: 1rem;
+  max-width: 500px;
+  margin: 0 auto;
+  font-family: inherit;
+}
+
+.distance-section {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.distance-section h3 {
+  margin: 0 0 1rem 0;
+  color: #2c3e50;
+  font-size: 1.1rem;
+}
+
+/* Settings Section */
+.settings-section {
+  background-color: #f8f9fa;
+}
+
+.range-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.input-group label {
+  font-weight: 600;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.range-slider {
+  width: 100%;
+  height: 8px;
+  border-radius: 5px;
+  background: linear-gradient(to right, #27ae60 0%, #27ae60 100%);
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+}
+
+.range-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #27ae60;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.range-slider::-moz-range-thumb {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #27ae60;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Trajectory Buttons */
+.trajectory-buttons {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.trajectory-btn {
+  flex: 1;
+  min-width: 80px;
+  padding: 0.8rem;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  background: white;
+  color: #555;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.95rem;
+}
+
+.trajectory-btn:active {
+  transform: scale(0.98);
+}
+
+.trajectory-btn.active {
+  background: #27ae60;
+  color: white;
+  border-color: #27ae60;
+}
+
+/* Practice Section */
+.practice-section {
+  background: linear-gradient(135deg, #f0f9ff 0%, #e8f5e9 100%);
+}
+
+.no-distance {
+  text-align: center;
+  padding: 2rem 0;
+  color: #555;
+}
+
+.no-distance p {
+  margin: 0 0 1.5rem 0;
+  font-size: 1.1rem;
+}
+
+.distance-display {
+  text-align: center;
+  margin: 2rem 0;
+  padding: 2rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(39, 174, 96, 0.15);
+}
+
+.distance-number {
+  font-size: 4rem;
+  font-weight: bold;
+  color: #27ae60;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.distance-unit {
+  font-size: 1.2rem;
+  color: #888;
+  letter-spacing: 2px;
+}
+
+.trajectory-display {
+  text-align: center;
+  padding: 1rem;
+  background: rgba(39, 174, 96, 0.1);
+  border-radius: 8px;
+  color: #27ae60;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.attempts-input {
+  width: 100%;
+  padding: 0.8rem;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease;
+}
+
+.attempts-input:focus {
+  outline: none;
+  border-color: #27ae60;
+}
+
+.attempts-input::placeholder {
+  color: #ccc;
+}
+
+/* Buttons */
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-top: 1.5rem;
+}
+
+.btn-primary,
+.btn-secondary,
+.btn-danger,
+.btn-toggle-history {
+  padding: 1rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.btn-primary {
+  background: #27ae60;
+  color: white;
+}
+
+.btn-primary:active {
+  background: #229954;
+  transform: scale(0.98);
+}
+
+.btn-primary:disabled {
+  background: #bdc3c7;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background: #3498db;
+  color: white;
+  border: 2px solid #3498db;
+}
+
+.btn-secondary:active {
+  background: #2980b9;
+  transform: scale(0.98);
+}
+
+.btn-large {
+  padding: 1.5rem;
+  font-size: 1.2rem;
+}
+
+.btn-danger {
+  background: #e74c3c;
+  color: white;
+  margin-top: 1rem;
+}
+
+.btn-danger:active {
+  background: #c0392b;
+  transform: scale(0.98);
+}
+
+.btn-toggle-history {
+  width: auto;
+  padding: 0.5rem 1rem;
+  background: none;
+  color: #27ae60;
+  font-size: 1.2rem;
+}
+
+/* History Section */
+.history-section {
+  background: #f0f7f4;
+}
+
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.history-header h3 {
+  margin: 0;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 1rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.8rem;
+  color: #888;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stat-value {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #27ae60;
+}
+
+.stats-progress {
+  background: white;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid #3498db;
+}
+
+.progress-item {
+  padding: 0.5rem 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.progress-item strong {
+  color: #3498db;
+  font-weight: 600;
+}
+
+.history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+  max-height: 300px;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+.history-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: white;
+  border-radius: 8px;
+  border-left: 4px solid #27ae60;
+}
+
+.history-distance {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #27ae60;
+  min-width: 60px;
+  text-align: center;
+}
+
+.history-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.history-details > div:first-child {
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.history-attempts {
+  font-weight: 600;
+  color: #555;
+}
+
+/* Responsive adjustments */
+@media (min-width: 600px) {
+  .distance-practice {
+    padding: 2rem;
+  }
+
+  .button-group {
+    flex-direction: row;
+  }
+
+  .btn-primary,
+  .btn-secondary,
+  .btn-danger {
+    width: auto;
+    flex: 1;
+  }
+
+  .trajectory-buttons {
+    gap: 1rem;
+  }
+
+  .trajectory-btn {
+    min-width: 100px;
+  }
+}
+
+/* View Switcher */
+.view-switcher {
+  display: flex;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+  background: white;
+  border-radius: 8px;
+  padding: 0.4rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.view-btn {
+  flex: 1;
+  padding: 0.8rem;
+  border: none;
+  background: transparent;
+  color: #888;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  font-size: 0.95rem;
+}
+
+.view-btn.active {
+  background: #27ae60;
+  color: white;
+}
+
+.view-btn:active {
+  transform: scale(0.98);
+}
+
+/* Chart Section */
+.chart-section {
+  background: white;
+  max-width: 100%;
+}
+
+.chart-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 1.5rem 0;
+  overflow-x: auto;
+}
+
+.line-chart {
+  min-width: 300px;
+  height: auto;
+}
+
+.chart-hint {
+  font-size: 0.85rem;
+  color: #888;
+  text-align: center;
+  margin: 1rem 0 0 0;
+  padding: 0;
+}
+
+/* Today's Attempts Section */
+.todays-attempts-section {
+  background: #fff5f5;
+  border: 2px solid #e74c3c;
+}
+
+.todays-attempts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.todays-attempt-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8rem;
+  background: white;
+  border-radius: 6px;
+  border-left: 4px solid #e74c3c;
+}
+
+.todays-attempt-item .attempt-info {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  flex: 1;
+}
+
+.todays-attempt-item .attempt-distance {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #e74c3c;
+  min-width: 50px;
+  text-align: center;
+}
+
+.todays-attempt-item .attempt-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.todays-attempt-item .attempt-details > div:first-child {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.todays-attempt-item .attempt-attempts {
+  font-weight: 600;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.btn-delete-todays {
+  padding: 0.4rem 0.6rem;
+  background: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: all 0.2s ease;
+  min-width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-delete-todays:active {
+  background: #c0392b;
+  transform: scale(0.95);
+}
+
+/* Chart Detail Section */
+.chart-detail-section {
+  background: white;
+}
+
+.btn-back-to-chart {
+  display: block;
+  margin-bottom: 1.5rem;
+  padding: 0.6rem 1rem;
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  width: fit-content;
+  transition: all 0.2s ease;
+}
+
+.btn-back-to-chart:active {
+  background: #2980b9;
+  transform: scale(0.98);
+}
+
+.date-attempts {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.attempt-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #27ae60;
+}
+
+.attempt-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+}
+
+.attempt-distance {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #27ae60;
+  min-width: 60px;
+  text-align: center;
+}
+
+.attempt-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.attempt-details > div:first-child {
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.attempt-details > div:last-child {
+  font-weight: 600;
+  color: #555;
+}
+
+.btn-delete-attempt {
+  padding: 0.4rem 0.6rem;
+  background: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: all 0.2s ease;
+  min-width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-delete-attempt:active {
+  background: #c0392b;
+  transform: scale(0.95);
+}

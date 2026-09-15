@@ -1,0 +1,102 @@
+.golf-container {
+  padding: 2rem;
+  font-family: inherit;
+}
+
+.golf-container h2 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.golf-container p {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.golf-tools-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.golf-tool-button {
+  padding: 1.5rem;
+  background: white;
+  border: 2px solid #27ae60;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+  text-decoration: none;
+  font-family: inherit;
+}
+
+.golf-tool-button:not(.disabled):active {
+  background: #f0f9ff;
+  transform: scale(0.98);
+}
+
+.golf-tool-button.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  border-color: #bdc3c7;
+}
+
+.tool-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.tool-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #27ae60;
+  margin-bottom: 0.3rem;
+}
+
+.tool-desc {
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.btn-back-to-menu {
+  display: block;
+  margin-bottom: 1.5rem;
+  padding: 0.6rem 1rem;
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  width: fit-content;
+  transition: all 0.2s ease;
+}
+
+.btn-back-to-menu:active {
+  background: #2980b9;
+  transform: scale(0.98);
+}
+
+.golf-section {
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: 8px;
+  border-left: 4px solid #2ecc71;
+}
+
+.golf-section h3 {
+  color: #27ae60;
+  margin: 0 0 0.5rem 0;
+}
+
+.golf-section p {
+  margin: 0;
+  color: #666;
+}
+

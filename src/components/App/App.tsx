@@ -3,6 +3,7 @@ import * as React from "react";
 import { About } from 'components/About';
 import { BlogPanel } from 'components/BlogPanel';
 import { EducationPanel } from 'components/EducationPanel';
+import { GolfTools } from 'components/Golf';
 import { PixelLogoAction } from 'components/Logo';
 import { PortfolioPanel } from 'components/PortfolioPanel';
 import { Route, BrowserRouter } from 'react-router-dom';
@@ -15,7 +16,7 @@ import favicon from './favicon';
 
 
 enum CurrentPage {
-  ABOUT, PROFESSIONAL, EDUCATION, PORTFOLIO, BLOG
+  ABOUT, PROFESSIONAL, EDUCATION, PORTFOLIO, BLOG, GOLF
 }
 
 export interface AppState {
@@ -28,6 +29,7 @@ const PAGE_TO_COLOR = {
   EDUCATION: '#f1c2bb',
   PORTFOLIO: '#a8d6c7',
   BLOG: '#fdfdfd',
+  GOLF: '#e8f5e9',
 }
 
 const PAGE_TO_PIXEL_ACTION = {
@@ -36,6 +38,7 @@ const PAGE_TO_PIXEL_ACTION = {
   EDUCATION: PixelLogoAction.DRINKING,
   PORTFOLIO: PixelLogoAction.THINKING,
   BLOG: PixelLogoAction.READING,
+  GOLF: PixelLogoAction.THINKING,
 }
 
 export class App extends React.Component<{}, AppState> {
@@ -58,6 +61,8 @@ export class App extends React.Component<{}, AppState> {
       return CurrentPage.EDUCATION;
     } else if (window.location.pathname === '/portfolio') {
       return CurrentPage.PORTFOLIO;
+    } else if (window.location.pathname === '/golf') {
+      return CurrentPage.GOLF;
     } else {
       return CurrentPage.BLOG;
     }
@@ -98,6 +103,10 @@ export class App extends React.Component<{}, AppState> {
             />
           )}
           />
+
+          <Route exact path="/golf" render={(routeProps) => (
+            <GolfTools renderCallback={this.handleTransition(CurrentPage.GOLF)} />
+          )} />
         </Wrapper>
       </BrowserRouter>
     );
