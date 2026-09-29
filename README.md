@@ -5,9 +5,8 @@ from the source.
 
 ### Commands
 ```
-npm run start - start the service locally
-npm run deploy - triggers the crawler to generate static web pages and deploys the build to
-                 the master branch
+./manage.sh serve - start the service locally
+./manage.sh deploy - build, generate static pages, and deploy to the master branch
 ```
 
 https://jeremyaguilon.me

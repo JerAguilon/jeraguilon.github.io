@@ -612,3 +612,171 @@
   background: #c0392b;
   transform: scale(0.95);
 }
+
+.first-shot-input-group {
+  margin-top: 1rem;
+}
+
+.distance-input-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.distance-input-wrap span {
+  color: #666;
+  font-weight: 600;
+}
+
+.first-shot-input-group small,
+.bucket-metric small {
+  color: #888;
+  line-height: 1.4;
+}
+
+.first-shot-result,
+.history-first-shot {
+  font-size: 0.82rem;
+  color: #3498db;
+}
+
+.distance-bucket-section {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e8ecef;
+}
+
+.bucket-heading h3 {
+  margin-bottom: 0.4rem;
+}
+
+.bucket-heading p {
+  margin: 0 0 1.2rem;
+  color: #777;
+  font-size: 0.9rem;
+}
+
+.date-range-controls {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.8rem;
+  margin-bottom: 1.2rem;
+}
+
+.date-range-controls .input-group {
+  flex: 1;
+  min-width: 0;
+}
+
+.date-range-controls input[type="date"] {
+  width: 100%;
+  min-height: 42px;
+  padding: 0.5rem;
+  border: 1px solid #d5dce0;
+  border-radius: 6px;
+  background: white;
+  color: #444;
+  font: inherit;
+  box-sizing: border-box;
+}
+
+.btn-clear-dates {
+  min-height: 42px;
+  padding: 0.5rem 0.7rem;
+  border: 1px solid #27ae60;
+  border-radius: 6px;
+  background: white;
+  color: #219653;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.bucket-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.bucket-row {
+  display: grid;
+  grid-template-columns: 78px minmax(100px, 1fr) minmax(120px, 1.2fr);
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.9rem;
+  border: 1px solid #e8ecef;
+  border-radius: 8px;
+  background: #fbfcfc;
+}
+
+.bucket-range {
+  color: #2c3e50;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.bucket-metric-label {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.4rem;
+  margin-bottom: 0.45rem;
+  color: #6b747b;
+  font-size: 0.78rem;
+}
+
+.bucket-metric-label strong {
+  color: #34495e;
+  white-space: nowrap;
+}
+
+.bucket-meter {
+  height: 7px;
+  overflow: hidden;
+  border-radius: 5px;
+  background: #e9eef0;
+}
+
+.bucket-meter span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+}
+
+.tries-meter {
+  background: #27ae60;
+}
+
+.proximity-meter {
+  background: #3498db;
+}
+
+.bucket-metric small {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 0.72rem;
+}
+
+.bucket-empty-state {
+  padding: 1rem;
+  border-radius: 8px;
+  background: #f8f9fa;
+  color: #777;
+  text-align: center;
+}
+
+@media (max-width: 420px) {
+  .date-range-controls {
+    flex-wrap: wrap;
+  }
+
+  .date-range-controls .input-group {
+    flex-basis: 40%;
+  }
+
+  .bucket-row {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .bucket-range {
+    grid-column: 1 / -1;
+  }
+}

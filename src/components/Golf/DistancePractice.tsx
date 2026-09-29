@@ -6,6 +6,15 @@ export interface Attempt {
   trajectories: string[];
   attempts: number;
   timestamp: number;
+  firstShotProximity?: number;
+}
+
+export interface DistanceBucketStats {
+  startDistance: number;
+  attemptsAverage: number;
+  proximityAverage: number | null;
+  roundCount: number;
+  proximityCount: number;
 }
 
 export interface DistancePracticeState {
@@ -14,9 +23,12 @@ export interface DistancePracticeState {
   selectedTrajectories: string[];
   currentDistance: number | null;
   attemptsInput: string;
+  firstShotProximityInput: string;
   attemptHistory: Attempt[];
   showHistory: boolean;
   selectedDate: string | null;
+  chartStartDate: string;
+  chartEndDate: string;
   view: 'practice' | 'chart';
 }
 
@@ -29,9 +41,12 @@ export class DistancePractice extends React.Component<{}, DistancePracticeState>
       selectedTrajectories: ['Low', 'Medium', 'High'],
       currentDistance: null,
       attemptsInput: '',
+      firstShotProximityInput: '',
       attemptHistory: this.loadHistory(),
       showHistory: false,
       selectedDate: null,
+      chartStartDate: '',
+      chartEndDate: '',
       view: 'practice',
     };
   }
@@ -51,6 +66,7 @@ export class DistancePractice extends React.Component<{}, DistancePracticeState>
     this.setState({
       currentDistance: newDistance,
       attemptsInput: '',
+      firstShotProximityInput: '',
     });
   };
 
@@ -67,11 +83,19 @@ export class DistancePractice extends React.Component<{}, DistancePracticeState>
   };
 
   private saveAttempt = () => {
-    const { currentDistance, attemptsInput, selectedTrajectories, attemptHistory } = this.state;
+    const { currentDistance, attemptsInput, firstShotProximityInput, selectedTrajectories, attemptHistory } = this.state;
     const attempts = parseInt(attemptsInput, 10);
+    const firstShotProximity = firstShotProximityInput.trim() === ''
+      ? null
+      : parseFloat(firstShotProximityInput);
 
     if (!currentDistance || !attemptsInput || isNaN(attempts) || attempts < 1) {
       alert('Please enter a valid number of attempts');
+      return;
+    }
+
+    if (firstShotProximityInput.trim() !== '' && (firstShotProximity === null || isNaN(firstShotProximity) || firstShotProximity < 0)) {
+      alert('Please enter a valid first-shot proximity, or leave it blank');
       return;
     }
 
@@ -80,6 +104,7 @@ export class DistancePractice extends React.Component<{}, DistancePracticeState>
       trajectories: selectedTrajectories,
       attempts,
       timestamp: Date.now(),
+      ...(firstShotProximity === null ? {} : { firstShotProximity }),
     };
 
     const updated = [...attemptHistory, newAttempt];
@@ -123,8 +148,48 @@ export class DistancePractice extends React.Component<{}, DistancePracticeState>
     };
   }
 
+  private getFilteredAttempts() {
+    const { attemptHistory, chartStartDate, chartEndDate } = this.state;
+    if (chartStartDate && chartEndDate && chartStartDate > chartEndDate) return [];
+
+    return attemptHistory.filter(attempt => {
+      const date = new Date(attempt.timestamp).toISOString().split('T')[0];
+      return (!chartStartDate || date >= chartStartDate) && (!chartEndDate || date <= chartEndDate);
+    });
+  }
+
+  private getDistanceBucketStats(): DistanceBucketStats[] {
+    const bucketMap: { [key: number]: { attemptsTotal: number; roundCount: number; proximityTotal: number; proximityCount: number } } = {};
+
+    this.getFilteredAttempts().forEach(attempt => {
+      const bucketStart = Math.floor(attempt.distance / 10) * 10;
+      if (!bucketMap[bucketStart]) {
+        bucketMap[bucketStart] = { attemptsTotal: 0, roundCount: 0, proximityTotal: 0, proximityCount: 0 };
+      }
+
+      const bucket = bucketMap[bucketStart];
+      bucket.attemptsTotal += attempt.attempts;
+      bucket.roundCount += 1;
+      if (typeof attempt.firstShotProximity === 'number') {
+        bucket.proximityTotal += attempt.firstShotProximity;
+        bucket.proximityCount += 1;
+      }
+    });
+
+    return Object.keys(bucketMap).map(Number).sort((a, b) => a - b).map(startDistance => {
+      const bucket = bucketMap[startDistance];
+      return {
+        startDistance,
+        attemptsAverage: bucket.attemptsTotal / bucket.roundCount,
+        proximityAverage: bucket.proximityCount > 0 ? bucket.proximityTotal / bucket.proximityCount : null,
+        roundCount: bucket.roundCount,
+        proximityCount: bucket.proximityCount,
+      };
+    });
+  }
+
   private getDailyStats() {
-    const { attemptHistory } = this.state;
+    const attemptHistory = this.getFilteredAttempts();
     const dailyMap: { [key: string]: number[] } = {};
 
     attemptHistory.forEach(attempt => {
@@ -301,9 +366,13 @@ export class DistancePractice extends React.Component<{}, DistancePracticeState>
   }
 
   public render() {
-    const { minDistance, maxDistance, selectedTrajectories, currentDistance, attemptsInput, attemptHistory, showHistory, view, selectedDate } = this.state;
+    const { minDistance, maxDistance, selectedTrajectories, currentDistance, attemptsInput, firstShotProximityInput, attemptHistory, showHistory, view, selectedDate, chartStartDate, chartEndDate } = this.state;
     const stats = this.getStats();
     const chartData = this.getChartData();
+    const filteredAttempts = this.getFilteredAttempts();
+    const distanceBuckets = this.getDistanceBucketStats();
+    const maxBucketAttempts = Math.max(1, ...distanceBuckets.map(bucket => bucket.attemptsAverage));
+    const maxBucketProximity = Math.max(1, ...distanceBuckets.map(bucket => bucket.proximityAverage || 0));
 
     return (
       <div className="distance-practice">
@@ -408,6 +477,24 @@ export class DistancePractice extends React.Component<{}, DistancePracticeState>
                 />
               </div>
 
+              <div className="input-group first-shot-input-group">
+                <label htmlFor="first-shot-proximity">First-shot proximity (optional)</label>
+                <div className="distance-input-wrap">
+                  <input
+                    id="first-shot-proximity"
+                    type="number"
+                    min="0"
+                    step="1"
+                    value={firstShotProximityInput}
+                    onChange={(e) => this.setState({ firstShotProximityInput: e.target.value })}
+                    placeholder="Yards from target"
+                    className="attempts-input"
+                  />
+                  <span>yd</span>
+                </div>
+                <small>Enter the yards remaining to the target after your first shot.</small>
+              </div>
+
               <div className="button-group">
                 <button className="btn-primary" onClick={this.saveAttempt}>
                   Save & Next Distance
@@ -485,6 +572,9 @@ export class DistancePractice extends React.Component<{}, DistancePracticeState>
                         <div className="attempt-details">
                           <div>{attempt.trajectories.join(' / ')}</div>
                           <div className="attempt-attempts">{attempt.attempts} attempt{attempt.attempts !== 1 ? 's' : ''}</div>
+                          {typeof attempt.firstShotProximity === 'number' && (
+                            <div className="first-shot-result">First-shot proximity: {attempt.firstShotProximity}yd</div>
+                          )}
                         </div>
                       </div>
                       <button
@@ -507,6 +597,9 @@ export class DistancePractice extends React.Component<{}, DistancePracticeState>
                     <div className="history-details">
                       <div>{attempt.trajectories.join(' / ')}</div>
                       <div className="history-attempts">{attempt.attempts} attempt{attempt.attempts !== 1 ? 's' : ''}</div>
+                        {typeof attempt.firstShotProximity === 'number' && (
+                          <div className="history-first-shot">First-shot proximity: {attempt.firstShotProximity}yd</div>
+                      )}
                     </div>
                   </div>
                 ))}
@@ -539,6 +632,9 @@ export class DistancePractice extends React.Component<{}, DistancePracticeState>
                         <div className="attempt-details">
                           <div>{attempt.trajectories.join(' / ')}</div>
                           <div>{attempt.attempts} attempt{attempt.attempts !== 1 ? 's' : ''}</div>
+                          {typeof attempt.firstShotProximity === 'number' && (
+                            <div className="first-shot-result">First-shot proximity: {attempt.firstShotProximity}yd</div>
+                          )}
                         </div>
                       </div>
                       <button
@@ -551,17 +647,86 @@ export class DistancePractice extends React.Component<{}, DistancePracticeState>
                   ))}
                 </div>
               </div>
-            ) : chartData ? (
+            ) : (
               <div className="distance-section chart-section">
                 <h3>Progress Over Time</h3>
-                <div className="chart-container">
-                  {this.renderLineChart()}
+                {chartData ? (
+                  <>
+                    <div className="chart-container">
+                      {this.renderLineChart()}
+                    </div>
+                    <p className="chart-hint">Click on a date point to see and manage attempts for that day</p>
+                  </>
+                ) : (
+                  <p className="bucket-empty-state">No chart data for this date selection.</p>
+                )}
+
+                <div className="distance-bucket-section">
+                  <div className="bucket-heading">
+                    <h3>Distance Breakdown</h3>
+                    <p>Compare average tries and first-shot proximity by 10-yard target range.</p>
+                  </div>
+                  <div className="date-range-controls">
+                    <div className="input-group">
+                      <label htmlFor="chart-start-date">From</label>
+                      <input
+                        id="chart-start-date"
+                        type="date"
+                        value={chartStartDate}
+                        max={chartEndDate || undefined}
+                        onChange={(e) => this.setState({ chartStartDate: e.target.value })}
+                      />
+                    </div>
+                    <div className="input-group">
+                      <label htmlFor="chart-end-date">To</label>
+                      <input
+                        id="chart-end-date"
+                        type="date"
+                        value={chartEndDate}
+                        min={chartStartDate || undefined}
+                        onChange={(e) => this.setState({ chartEndDate: e.target.value })}
+                      />
+                    </div>
+                    {(chartStartDate || chartEndDate) && (
+                      <button
+                        className="btn-clear-dates"
+                        onClick={() => this.setState({ chartStartDate: '', chartEndDate: '' })}
+                      >
+                        All dates
+                      </button>
+                    )}
+                  </div>
+
+                  {chartStartDate && chartEndDate && chartStartDate > chartEndDate ? (
+                    <p className="bucket-empty-state">Choose a start date that is on or before the end date.</p>
+                  ) : distanceBuckets.length === 0 ? (
+                    <p className="bucket-empty-state">No rounds in this date selection yet.</p>
+                  ) : (
+                    <div className="bucket-list">
+                      {distanceBuckets.map(bucket => (
+                        <div className="bucket-row" key={bucket.startDistance}>
+                          <div className="bucket-range">{bucket.startDistance}–{bucket.startDistance + 9} yd</div>
+                          <div className="bucket-metric">
+                            <div className="bucket-metric-label">
+                              <span>Avg tries</span>
+                              <strong>{bucket.attemptsAverage.toFixed(1)}</strong>
+                            </div>
+                            <div className="bucket-meter"><span className="tries-meter" style={{ width: `${(bucket.attemptsAverage / maxBucketAttempts) * 100}%` }} /></div>
+                          </div>
+                          <div className="bucket-metric">
+                            <div className="bucket-metric-label">
+                              <span>1st-shot proximity</span>
+                              <strong>{bucket.proximityAverage === null ? '—' : `${bucket.proximityAverage.toFixed(1)} yd`}</strong>
+                            </div>
+                            <div className="bucket-meter"><span className="proximity-meter" style={{ width: `${bucket.proximityAverage === null ? 0 : (bucket.proximityAverage / maxBucketProximity) * 100}%` }} /></div>
+                            <small>{bucket.proximityCount} of {bucket.roundCount} rounds recorded</small>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                  <p className="chart-hint">{filteredAttempts.length} round{filteredAttempts.length !== 1 ? 's' : ''} included. Proximity averages include only rounds where a first-shot value was recorded.</p>
                 </div>
-                <p className="chart-hint">Click on a date point to see and manage attempts for that day</p>
-              </div>
-            ) : (
-              <div className="distance-section">
-                <p>No data yet. Complete some practice rounds to see your progress!</p>
               </div>
             )}
           </>
