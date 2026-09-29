@@ -702,10 +702,28 @@
   grid-template-columns: 78px minmax(100px, 1fr) minmax(120px, 1.2fr);
   align-items: center;
   gap: 0.8rem;
+  width: 100%;
   padding: 0.9rem;
   border: 1px solid #e8ecef;
   border-radius: 8px;
   background: #fbfcfc;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.18s ease, background-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.bucket-row:hover,
+.bucket-row:focus-visible {
+  border-color: #27ae60;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(39, 174, 96, 0.14);
+}
+
+.bucket-row.selected {
+  border-color: #27ae60;
+  background: #f0faf4;
 }
 
 .bucket-range {
@@ -763,6 +781,107 @@
   text-align: center;
 }
 
+.bucket-trend-detail {
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 1px solid #dce8e2;
+  border-radius: 10px;
+  background: #fbfdfc;
+}
+
+.bucket-trend-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.bucket-trend-header h4,
+.bucket-trend-metric h4,
+.bucket-trend-empty h4 {
+  margin: 0 0 0.35rem;
+  color: #2c3e50;
+  font-size: 0.98rem;
+}
+
+.bucket-trend-header p,
+.bucket-trend-empty p {
+  margin: 0;
+  color: #77818a;
+  font-size: 0.84rem;
+}
+
+.btn-close-bucket-trend {
+  flex: 0 0 34px;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #edf2ef;
+  color: #52615a;
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.bucket-trend-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.bucket-trend-metric,
+.bucket-trend-empty {
+  min-width: 0;
+  padding: 0.8rem;
+  border: 1px solid #edf0f1;
+  border-radius: 8px;
+  background: white;
+}
+
+.bucket-trend-chart {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.bucket-axis-label {
+  fill: #89939a;
+  font-size: 10px;
+}
+
+.bucket-trend-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1rem;
+  color: #68737a;
+  font-size: 0.73rem;
+}
+
+.bucket-trend-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.bucket-trend-legend i {
+  display: inline-block;
+  width: 12px;
+  height: 3px;
+  border-radius: 2px;
+}
+
+.bucket-trend-legend .smoothed-legend {
+  background: repeating-linear-gradient(to right, #34495e 0, #34495e 4px, transparent 4px, transparent 7px);
+}
+
+.bucket-trend-empty {
+  grid-column: 1 / -1;
+}
+
 @media (max-width: 420px) {
   .date-range-controls {
     flex-wrap: wrap;
@@ -778,5 +897,9 @@
 
   .bucket-range {
     grid-column: 1 / -1;
+  }
+
+  .bucket-trend-grid {
+    grid-template-columns: 1fr;
   }
 }

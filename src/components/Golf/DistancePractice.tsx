@@ -17,6 +17,14 @@ export interface DistanceBucketStats {
   proximityCount: number;
 }
 
+export interface BucketDailyStats {
+  date: string;
+  attemptsAverage: number;
+  proximityAverage: number | null;
+  roundCount: number;
+  proximityCount: number;
+}
+
 export interface DistancePracticeState {
   minDistance: number;
   maxDistance: number;
@@ -27,6 +35,7 @@ export interface DistancePracticeState {
   attemptHistory: Attempt[];
   showHistory: boolean;
   selectedDate: string | null;
+  selectedBucket: number | null;
   chartStartDate: string;
   chartEndDate: string;
   view: 'practice' | 'chart';
@@ -45,6 +54,7 @@ export class DistancePractice extends React.Component<{}, DistancePracticeState>
       attemptHistory: this.loadHistory(),
       showHistory: false,
       selectedDate: null,
+      selectedBucket: null,
       chartStartDate: '',
       chartEndDate: '',
       view: 'practice',
@@ -186,6 +196,112 @@ export class DistancePractice extends React.Component<{}, DistancePracticeState>
         proximityCount: bucket.proximityCount,
       };
     });
+  }
+
+  private getBucketDailyStats(startDistance: number): BucketDailyStats[] {
+    const dailyMap: { [key: string]: { attemptsTotal: number; roundCount: number; proximityTotal: number; proximityCount: number } } = {};
+    this.getFilteredAttempts()
+      .filter(attempt => Math.floor(attempt.distance / 10) * 10 === startDistance)
+      .forEach(attempt => {
+        const date = new Date(attempt.timestamp).toISOString().split('T')[0];
+        if (!dailyMap[date]) {
+          dailyMap[date] = { attemptsTotal: 0, roundCount: 0, proximityTotal: 0, proximityCount: 0 };
+        }
+        const daily = dailyMap[date];
+        daily.attemptsTotal += attempt.attempts;
+        daily.roundCount += 1;
+        if (typeof attempt.firstShotProximity === 'number') {
+          daily.proximityTotal += attempt.firstShotProximity;
+          daily.proximityCount += 1;
+        }
+      });
+
+    return Object.keys(dailyMap).sort().map(date => {
+      const daily = dailyMap[date];
+      return {
+        date,
+        attemptsAverage: daily.attemptsTotal / daily.roundCount,
+        proximityAverage: daily.proximityCount > 0 ? daily.proximityTotal / daily.proximityCount : null,
+        roundCount: daily.roundCount,
+        proximityCount: daily.proximityCount,
+      };
+    });
+  }
+
+  private renderBucketTrendMetric(points: Array<{ date: string; average: number }>, title: string, color: string, unit: string) {
+    if (points.length === 0) {
+      return (
+        <div className="bucket-trend-empty">
+          <h4>{title}</h4>
+          <p>No first-shot proximity values recorded for this bucket in the selected dates.</p>
+        </div>
+      );
+    }
+
+    const width = 360;
+    const height = 190;
+    const padding = { top: 20, right: 18, bottom: 42, left: 38 };
+    const graphWidth = width - padding.left - padding.right;
+    const graphHeight = height - padding.top - padding.bottom;
+    const values = points.map(point => point.average);
+    const minValue = Math.min(...values);
+    const maxValue = Math.max(...values);
+    const range = maxValue - minValue || Math.max(1, maxValue * 0.2);
+    const lowerBound = Math.max(0, minValue - range * 0.15);
+    const upperBound = maxValue + range * 0.15;
+    const yRange = upperBound - lowerBound || 1;
+    const plottedPoints = points.map((point, index) => ({
+      ...point,
+      x: padding.left + (index / (points.length - 1 || 1)) * graphWidth,
+      y: height - padding.bottom - ((point.average - lowerBound) / yRange) * graphHeight,
+    }));
+    const trendPoints = plottedPoints.map((point, index) => {
+      const start = Math.max(0, index - 1);
+      const end = Math.min(plottedPoints.length, index + 2);
+      const window = plottedPoints.slice(start, end);
+      const average = window.reduce((sum, entry) => sum + entry.average, 0) / window.length;
+      return {
+        x: point.x,
+        y: height - padding.bottom - ((average - lowerBound) / yRange) * graphHeight,
+      };
+    });
+    const dataPath = plottedPoints.map((point, index) => `${index === 0 ? 'M' : 'L'} ${point.x} ${point.y}`).join(' ');
+    const trendPath = trendPoints.map((point, index) => `${index === 0 ? 'M' : 'L'} ${point.x} ${point.y}`).join(' ');
+
+    return (
+      <div className="bucket-trend-metric">
+        <h4>{title}</h4>
+        <svg viewBox={`0 0 ${width} ${height}`} className="bucket-trend-chart" role="img" aria-label={`${title} over time`}>
+          {[0, 0.5, 1].map((ratio, index) => {
+            const y = height - padding.bottom - ratio * graphHeight;
+            const value = lowerBound + ratio * yRange;
+            return (
+              <g key={`grid-${index}`}>
+                <line x1={padding.left} y1={y} x2={width - padding.right} y2={y} stroke="#e7ecef" />
+                <text x={padding.left - 6} y={y + 4} textAnchor="end" className="bucket-axis-label">{value.toFixed(1)}</text>
+              </g>
+            );
+          })}
+          <path d={dataPath} fill="none" stroke={color} strokeWidth="2.5" />
+          <path d={trendPath} fill="none" stroke="#34495e" strokeWidth="2" strokeDasharray="5 4" />
+          {plottedPoints.map(point => (
+            <g key={point.date}>
+              <circle cx={point.x} cy={point.y} r="4" fill={color} />
+              <title>{point.date}: {point.average.toFixed(1)} {unit}</title>
+            </g>
+          ))}
+          {plottedPoints.map((point, index) => (
+            index === 0 || index === plottedPoints.length - 1 || index % Math.ceil(plottedPoints.length / 4) === 0 ? (
+              <text key={`date-${point.date}`} x={point.x} y={height - 14} textAnchor="middle" className="bucket-axis-label">{point.date.slice(5)}</text>
+            ) : null
+          ))}
+        </svg>
+        <div className="bucket-trend-legend">
+          <span><i style={{ backgroundColor: color }} /> Daily average ({unit})</span>
+          <span><i className="smoothed-legend" /> 3-point smoothed trend</span>
+        </div>
+      </div>
+    );
   }
 
   private getDailyStats() {
@@ -366,7 +482,7 @@ export class DistancePractice extends React.Component<{}, DistancePracticeState>
   }
 
   public render() {
-    const { minDistance, maxDistance, selectedTrajectories, currentDistance, attemptsInput, firstShotProximityInput, attemptHistory, showHistory, view, selectedDate, chartStartDate, chartEndDate } = this.state;
+    const { minDistance, maxDistance, selectedTrajectories, currentDistance, attemptsInput, firstShotProximityInput, attemptHistory, showHistory, view, selectedDate, selectedBucket, chartStartDate, chartEndDate } = this.state;
     const stats = this.getStats();
     const chartData = this.getChartData();
     const filteredAttempts = this.getFilteredAttempts();
@@ -704,7 +820,13 @@ export class DistancePractice extends React.Component<{}, DistancePracticeState>
                   ) : (
                     <div className="bucket-list">
                       {distanceBuckets.map(bucket => (
-                        <div className="bucket-row" key={bucket.startDistance}>
+                        <button
+                          type="button"
+                          className={`bucket-row ${selectedBucket === bucket.startDistance ? 'selected' : ''}`}
+                          key={bucket.startDistance}
+                          aria-expanded={selectedBucket === bucket.startDistance}
+                          onClick={() => this.setState({ selectedBucket: selectedBucket === bucket.startDistance ? null : bucket.startDistance })}
+                        >
                           <div className="bucket-range">{bucket.startDistance}–{bucket.startDistance + 9} yd</div>
                           <div className="bucket-metric">
                             <div className="bucket-metric-label">
@@ -721,8 +843,38 @@ export class DistancePractice extends React.Component<{}, DistancePracticeState>
                             <div className="bucket-meter"><span className="proximity-meter" style={{ width: `${bucket.proximityAverage === null ? 0 : (bucket.proximityAverage / maxBucketProximity) * 100}%` }} /></div>
                             <small>{bucket.proximityCount} of {bucket.roundCount} rounds recorded</small>
                           </div>
-                        </div>
+                        </button>
                       ))}
+                    </div>
+                  )}
+                  {selectedBucket !== null && (
+                    <div className="bucket-trend-detail">
+                      <div className="bucket-trend-header">
+                        <div>
+                          <h4>{selectedBucket}–{selectedBucket + 9} yd historical trend</h4>
+                          <p>Daily averages for this target bucket{chartStartDate || chartEndDate ? ' within the selected dates' : ''}.</p>
+                        </div>
+                        <button type="button" className="btn-close-bucket-trend" onClick={() => this.setState({ selectedBucket: null })} aria-label="Close bucket trend">×</button>
+                      </div>
+                      {(() => {
+                        const bucketDaily = this.getBucketDailyStats(selectedBucket);
+                        return (
+                          <div className="bucket-trend-grid">
+                            {this.renderBucketTrendMetric(
+                              bucketDaily.map(day => ({ date: day.date, average: day.attemptsAverage })),
+                              'Average tries to succeed',
+                              '#27ae60',
+                              'tries'
+                            )}
+                            {this.renderBucketTrendMetric(
+                              bucketDaily.filter(day => day.proximityAverage !== null).map(day => ({ date: day.date, average: day.proximityAverage as number })),
+                              'Average first-shot proximity',
+                              '#3498db',
+                              'yd'
+                            )}
+                          </div>
+                        );
+                      })()}
                     </div>
                   )}
                   <p className="chart-hint">{filteredAttempts.length} round{filteredAttempts.length !== 1 ? 's' : ''} included. Proximity averages include only rounds where a first-shot value was recorded.</p>
